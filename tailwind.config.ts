@@ -1,6 +1,5 @@
 import type { Config } from 'tailwindcss';
 import {nextui} from "@nextui-org/react";
-
 const config: Config = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -30,6 +29,7 @@ const config: Config = {
     },
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],
+      Graphik: ['Graphik', 'sans-serif'],
     },
     extend: {
       backgroundImage: {
