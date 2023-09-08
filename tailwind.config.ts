@@ -9,8 +9,11 @@ const config: Config = {
   theme: {
     colors: {
       transparent: 'transparent',
-      primary: '#0252CD',
-      secondary: "#FFBE62",
+      Accent: {
+        'light': '#0252CD',
+        'dark': '#428DFF',
+        'secondary': "#FFBE62",
+      },
       black: {
         200: '#151E2C',
         300: '#192333',
