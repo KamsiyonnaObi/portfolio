@@ -3,6 +3,18 @@
 @tailwind utilities;
 
 @layer base {
+  span{
+    position: relative;
+  }
+  .highlight::after {
+    content: ""; /* Ensure the pseudo-element has content */
+    position: absolute;
+    display: block; /* Make it a block-level element to take the full width */
+    border-bottom: 28px solid #FFBE62; /* Define the yellow bottom border */
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
   .header1{
     font-size: 56px;
     font-weight: 700;
