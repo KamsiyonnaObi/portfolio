@@ -3,15 +3,17 @@
 @tailwind utilities;
 
 @layer base {
-  span{
+  .highlight{
     position: relative;
+    z-index: 1;
   }
-  .highlight::after {
+  .highlight::before {
     content: ""; /* Ensure the pseudo-element has content */
     position: absolute;
-    display: block; /* Make it a block-level element to take the full width */
-    border-bottom: 28px solid #FFBE62; /* Define the yellow bottom border */
-    top: 0;
+    display: block; 
+    border-bottom: 26px solid #FFBE62; /* Define the yellow bottom border */
+    top: 58%;
+    right: 0;
     left: 0;
     z-index: -1;
   }
