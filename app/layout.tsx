@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 
 import NavigationBar from '@/components/NavigationBar';
+import Footer from '@/components/Footer';
 import {Providers} from "./providers";
 
 
@@ -28,6 +29,7 @@ export default function RootLayout({
         <Providers>
           <NavigationBar />
           {children}
+          <Footer />
         </Providers>    
       </body>
     </html>
