@@ -8,30 +8,30 @@ const config: Config = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
-    colors: {
-      transparent: 'transparent',
-      Accent: {
-        'light': '#0252CD',
-        'dark': '#428DFF',
-        'secondary': "#FFBE62",
-      },
-      black: {
-        200: '#151E2C',
-        300: '#192333',
-        400: '#778295'
-      },
-      white: {
-        900: '#FFFFFF',
-        800: '#F3F8FF',
-        500: '#6F74A7'
-      },
-      
-    },
-    fontFamily: {
-      poppins: ['Poppins', 'sans-serif'],
-      Graphik: ['Graphik', 'sans-serif'],
-    },
     extend: {
+      colors: {
+        transparent: 'transparent',
+        Accent: {
+          'light': '#0252CD',
+          'dark': '#428DFF',
+          'secondary': "#FFBE62",
+        },
+        black: {
+          200: '#151E2C',
+          300: '#192333',
+          400: '#778295'
+        },
+        white: {
+          900: '#FFFFFF',
+          800: '#F3F8FF',
+          500: '#6F74A7'
+        },
+        
+      },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+        Graphik: ['Graphik', 'sans-serif'],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
