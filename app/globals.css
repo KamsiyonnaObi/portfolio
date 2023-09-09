@@ -2,6 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  .header1{
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 83.2px;
+    letter-spacing: -1%;
+  }
+  .header2{
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 55.2px;
+    letter-spacing: -1%;
+  }
+  .header3{
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 33.6px;
+    letter-spacing: -0.5%;
+  }
+  .base1{
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 33.6px;
+    letter-spacing: -0.5%;
+  }
+  .base-bold{
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 31.2px;
+  }
+  .paragraph{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+  }
+  .paragraph-bold{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 26px;
+  }
+  .body-reg{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28.8px;
+  }
+  .body-bold{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28.8px;
+  }
+  .sm-reg{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21.7px;
+  }
+  .sm-bold{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20.3px;
+  }
+}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

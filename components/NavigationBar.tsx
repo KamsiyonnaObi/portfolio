@@ -18,7 +18,25 @@ export default function App() {
 
   return (
     <Navbar
-      className="bg-white-800 dark:bg-black-300 "
+    className="bg-white-800 dark:bg-black-300"
+      classNames={{
+        item: [
+          "flex",
+          "relative",
+          "h-full",
+          
+          "items-center",
+          "data-[active=true]:after:content-['']",
+          "data-[active=true]:after:absolute",
+          "data-[active=true]:after:bottom-0",
+          "data-[active=true]:after:left-0",
+          "data-[active=true]:after:right-0",
+          "data-[active=true]:after:h-[2px]",
+          "data-[active=true]:after:rounded-[2px]",
+          "data-[active=true]:after:bg-primary",
+        ],
+        
+      }} 
       isBlurred={false}
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
@@ -40,19 +58,19 @@ export default function App() {
           <p className="font-bold font-Graphik text-3xl text-black-300 dark:text-white-800">Kamsiyonna</p>
           <span className="font-thin font-Graphik text-3xl text-black-300 dark:text-white-800">Obi</span>
         </NavbarBrand>
-        <NavbarItem>
+        <NavbarItem isActive >
           <Link color="foreground" href="#">
-            Home 
+            <p className="sm-reg text-white-500">Home </p>
           </Link>
         </NavbarItem>
-        <NavbarItem isActive>
+        <NavbarItem >
           <Link href="#" aria-current="page">
-            Case Studies
+            <p className="sm-reg text-white-500">Case Studies </p>
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="#">
-            Contact
+            <p className="sm-reg text-white-500">Contact </p>
           </Link>
         </NavbarItem>
         <NavbarItem>
@@ -61,7 +79,7 @@ export default function App() {
               <div>
                 <Image src={vector} alt="download-icon"/>
               </div>
-              <p>Resume</p>
+              <p className="sm-reg text-black-200">Resume</p>
             </div>
           </Link>
         </NavbarItem>
