@@ -1,0 +1,46 @@
+import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+
+import heroBanner from '../public/heroImages/heroBanner.svg';
+
+type Props = {}
+
+const Hero = (props: Props) => {
+  return (
+    <div className="flex flex-col w-full gap-[27px] border">
+        <div className="flex flex-col mx-6 mt-12 gap-5">
+            <p className="text-Accent-light text-sm leading-[18.2px] tracking-[4.2px] font-semibold">HI, I AM KAMSIYONNA</p>
+            <div className="flex flex-col gap-3.5 font-bold text-[36px] text-black-200">
+                <h1>Professional 
+                    <span className="line-clamp-1"> Software Engineer </span> 
+                    Based in Canada
+                </h1>
+                <p className="text-white-500 text-xs font-normal">
+                    Transforming the web one line of code at a time: Crafting cutting-edge digital 
+                    experiences with precision, passion, and a profound commitment to excellence
+                </p>
+            </div>
+            <div className="flex flex-col gap-3.5">
+                <Link 
+                href={"#"}
+                className="flex w-full bg-Accent-light py-[12.5px] font-semibold text-sm text-white-900 justify-center rounded-full"
+                >
+                    My Work 
+                </Link>
+                <Link 
+                href={"#"}
+                className="flex w-full bg-white-900 py-[12.5px] font-semibold text-sm text-white-500 justify-center rounded-full"
+                > 
+                    Contact Me 
+                </Link>
+            </div>
+        </div>
+        <div className="w-full h-[262px] mb-6">
+            <Image className="object-contain" src={heroBanner} alt="hero-banner"/>
+        </div>
+    </div>
+  )
+}
+
+export default Hero
