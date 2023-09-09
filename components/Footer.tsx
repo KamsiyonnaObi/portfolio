@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 
 import linkedIn from '../public/linkedIn.svg'
 import github from '../public/github.svg'
@@ -14,8 +13,8 @@ const Footer = (props: Props) => {
                 <p className="text-black-400 items-center body-reg">&copy; 2023 Kamsiyonna. All rights reserved.</p>
             </div>
             <div className="flex gap-6 justify-center">
-                <Link href={"https://www.linkedin.com/in/kamsiyonna-obi-50a020167/"} className="w-6 h-6"><Image src={linkedIn} alt="linkedIn"/></Link>
-                <Link href={"https://github.com/KamsiyonnaObi"} className="w-6 h-6"><Image src={github} alt="github"/></Link>
+                <a href={"https://www.linkedin.com/in/kamsiyonna-obi-50a020167/"} className="w-6 h-6"><Image src={linkedIn} alt="linkedIn"/></a>
+                <a href={"https://github.com/KamsiyonnaObi"} className="w-6 h-6"><Image src={github} alt="github"/></a>
             </div>
         </div>
     </footer>
