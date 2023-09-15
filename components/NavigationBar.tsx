@@ -1,6 +1,7 @@
 "use client"
 import React from "react";
 import Image from "next/image";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, NavbarMenuToggle, Link, Divider} from "@nextui-org/react";
 
 import theme from '../public/theme.svg'
@@ -92,6 +93,9 @@ export default function App() {
               </div>
             </div>
           </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <ThemeSwitcher />
         </NavbarItem>
       </NavbarContent>
 
