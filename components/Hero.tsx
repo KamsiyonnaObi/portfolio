@@ -15,7 +15,7 @@ const Hero = (props: Props) => {
             </p>
             <div className="flex flex-col gap-3.5 font-bold text-[30px] text-black-200">
                 <h1 className="lg:header1 lg:text-[48px] xl:header1">Professional 
-                    <span className="highlight line-clamp-1"> Software Engineer </span> 
+                    <span className="highlight line-clamp-1 w-fit"> Software Engineer </span> 
                     based in Canada
                 </h1>
                 <p className="text-white-500 text-xs font-normal md:body-reg">
