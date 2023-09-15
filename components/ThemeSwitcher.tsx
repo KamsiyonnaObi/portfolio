@@ -2,6 +2,10 @@
 import { useState, useEffect } from "react"
 import { useTheme } from "next-themes";
 
+import lightIcon from '../public/theme.svg'
+import darkIcon from '../public/moon.svg'
+import Image from "next/image";
+
 export const ThemeSwitcher = () => {
     const [mounted, setMounted] = useState(false);
     const {theme, setTheme} = useTheme();
@@ -16,10 +20,23 @@ export const ThemeSwitcher = () => {
 
     return (
         <button
-            className={`w-fit absolute right-5 top-2 p-2 rounded-md hover:scale-110 active:scale-100 duration-200 bg-slate-200 dark:bg-[#212933]`}
+            className={`p-2 rounded-md hover:scale-110 duration-200 `}
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         >
-            {theme === "light" ? "Dark" : "Light"}
+            {theme === "light" ? (
+                <div className="flex items-center w-6 h-6">
+                    <div>
+                        <Image className="object-fit" src={darkIcon} alt="dark-icon"/>
+                    </div>
+                </div>
+           ): (
+                <div className="flex items-center w-6 h-6">
+                    <div>
+                        <Image className="object-fit" src={lightIcon} alt="light-icon"/>
+                    </div>
+                </div>
+            )
+             }
         </button> 
     )
     
