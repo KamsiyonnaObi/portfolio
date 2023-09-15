@@ -10,7 +10,7 @@ type Props = {}
 
 const Skills = (props: Props) => {
   return (
-   <div className="flex flex-col justify-center gap-10">
+   <article className="flex flex-col justify-center gap-10">
     {/* Heading */}
     <div className="flex mx-auto">
       <h1 className="text-black-200 text-[36px] font-bold sm:header2">My Skills</h1>
@@ -38,7 +38,7 @@ const Skills = (props: Props) => {
         </div>
       </div>
     </div>
-   </div>
+   </article>
   )
 }
 
