@@ -2,9 +2,18 @@
 import React from "react";
 import Image from "next/image";
 import { ThemeSwitcher } from "./ThemeSwitcher";
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, NavbarMenuToggle, Link, Divider} from "@nextui-org/react";
+import {
+  Navbar, 
+  NavbarBrand, 
+  NavbarContent, 
+  NavbarItem, 
+  NavbarMenu, 
+  NavbarMenuItem, 
+  NavbarMenuToggle, 
+  Link, 
+  Divider
+} from "@nextui-org/react";
 
-import theme from '../public/theme.svg'
 import vector from '../public/Vector.svg'
 
 export default function App() {
@@ -85,15 +94,7 @@ export default function App() {
           </Link>
         </NavbarItem>
         {/* <Divider orientation="vertical" /> */}
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            <div className="flex items-center w-6 h-6">
-              <div>
-                <Image className="object-fit" src={theme} alt="theme-icon"/>
-              </div>
-            </div>
-          </Link>
-        </NavbarItem>
+        
         <NavbarItem>
           <ThemeSwitcher />
         </NavbarItem>
