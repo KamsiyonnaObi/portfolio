@@ -11,7 +11,7 @@
     content: ""; /* Ensure the pseudo-element has content */
     position: absolute;
     display: block; 
-    border-bottom: 26px solid #FFBE62; /* Define the yellow bottom border */
+    border-bottom: 24px solid #FFBE62; /* Define the bottom border */
     top: 58%;
     right: 0;
     left: 0;

@@ -13,7 +13,7 @@ const Skills = (props: Props) => {
    <article className="flex flex-col justify-center gap-10">
     {/* Heading */}
     <div className="flex mx-auto">
-      <h1 className="text-black-200 text-[36px] font-bold sm:header2">My Skills</h1>
+      <h1 className="text-black-200 text-[36px] font-bold highlight sm:header2 dark:text-white-900">My Skills</h1>
     </div>
     {/* Skill Icons */}
     <div className="flex justify-between sm:flex-wrap sm:justify-center sm:gap-[43.74px]">
