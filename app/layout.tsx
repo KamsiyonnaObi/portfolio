@@ -4,7 +4,7 @@ import { Poppins } from 'next/font/google'
 
 import NavigationBar from '@/components/NavigationBar';
 import Footer from '@/components/Footer';
-import {Providers} from "./providers";
+import { Providers } from "./providers";
 
 
 const poppins = Poppins({
@@ -23,14 +23,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      
+    <html lang="en">  
       <body className={poppins.className}>
-        <Providers>
-          <NavigationBar />
-          {children}
-          <Footer />
-        </Providers>    
+          <Providers>
+            <NavigationBar />
+            {children}
+            <Footer />
+          </Providers>    
       </body>
     </html>
   )

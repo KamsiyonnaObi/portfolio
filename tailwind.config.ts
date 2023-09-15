@@ -26,7 +26,7 @@ const config: Config = {
           800: '#F3F8FF',
           500: '#6F74A7'
         },
-        
+        backg: "#F3F8FF",
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
@@ -40,20 +40,7 @@ const config: Config = {
     },
   },
   darkMode: "class",
-  plugins: [nextui({
-    themes: {
-      light: {
-        colors: {
-          background: "#F3F8FF",
-        }
-      },
-      dark: {
-        colors: {
-          background: "#428DFF",
-        }
-      }
-    },
-  }),
+  plugins: [nextui()
 ],
 }
 export default config
