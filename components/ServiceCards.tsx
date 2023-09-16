@@ -9,7 +9,7 @@ type Props = {}
 const ServiceCards = (props: Props) => {
   return (
     <>
-        <Card className="group max-w-[400px] py-[30px] pl-[25px] pr-[29.36px] rounded-[10px] gap-9 bg-white-800 shadow-serv cursor-pointer hover:bg-Accent-light">
+        <Card className="group max-w-[287.358px] py-[30px] pl-[25px] pr-[29.36px] rounded-[10px] gap-9 bg-white-800 shadow-serv cursor-pointer hover:bg-Accent-light">
             <CardHeader className="flex p-0">
                 <div className="h-[62px] w-[62px] rounded-[10px] bg-Accent-light shadow-serv-img group-hover:bg-white-900">
                     <Image
@@ -31,7 +31,7 @@ const ServiceCards = (props: Props) => {
                 </div>
             </CardBody>
         </Card>
-        <Card className="group max-w-[400px] py-[30px] pl-[25px] pr-[29.36px] rounded-[10px] gap-9 bg-white-800 shadow-serv cursor-pointer hover:bg-Accent-light">
+        <Card className="group max-w-[287.358px] py-[30px] pl-[25px] pr-[29.36px] rounded-[10px] gap-9 bg-white-800 shadow-serv cursor-pointer hover:bg-Accent-light">
             <CardHeader className="flex p-0">
                 <div className="h-[62px] w-[62px] rounded-[10px] bg-Accent-light shadow-serv-img group-hover:bg-white-900">
                     <Image
