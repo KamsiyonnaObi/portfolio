@@ -32,6 +32,10 @@ const config: Config = {
         poppins: ['Poppins', 'sans-serif'],
         Graphik: ['Graphik', 'sans-serif'],
       },
+      boxShadow: {
+        'serv': '0 1px 20px 0 rgba(224, 236, 255, 1)',
+        'serv-img': '10px 10px 26px 0 rgba(2, 82, 205, 0.28)',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
