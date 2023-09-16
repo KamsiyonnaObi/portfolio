@@ -5,7 +5,7 @@ type Props = {}
 
 const Services = (props: Props) => {
   return (
-    <article className="flex flex-col px-[28.82px] mx-auto gap-10">
+    <article className="flex flex-col items-center px-[28.82px] gap-10">
         {/* Heading */}
         <div className="flex">
             <h1 
@@ -14,6 +14,7 @@ const Services = (props: Props) => {
                 What <span className="highlight">service</span> do I provide
             </h1>
         </div>
+        {/* Service Cards */}
         <div className="flex flex-col gap-10 sm:flex-row">
             <ServiceCards />
             

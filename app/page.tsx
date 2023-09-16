@@ -7,15 +7,15 @@ export default function Home() {
     <main className="flex flex-col min-h-screen p-0 m-0 items-center justify-between">
       <div className="flex flex-col">
         {/* Hero Section */}
-        <section className="bg-white-800 sm:pb-12 dark:bg-black-300">   
+        <section className="bg-white-800 sm:py-[72px] dark:bg-black-300">   
           <Hero />
         </section>
         {/* Skills Section */}
-        <section className="py-12 bg-white-900 dark:bg-black-200">
+        <section className="py-12 bg-white-900 sm:py-[72px] dark:bg-black-200">
           <Skills />
         </section>
         {/* Services Section */}
-        <section className="py-12 px-6 bg-white-900 sm:bg-white-800 sm:pb-12 dark:bg-black-300">   
+        <section className="py-12 bg-white-900 sm:bg-white-800 sm:py-[72px] dark:bg-black-300">   
           <Services/>
         </section>
         {/* Work Experience */}
