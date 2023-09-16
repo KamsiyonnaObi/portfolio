@@ -1,42 +1,59 @@
 "use client"
 import React from 'react';
-import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Image} from "@nextui-org/react";
+import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
+
+import jsIcon from "../public/service-icons/pointer.svg";
 
 type Props = {}
 
 const ServiceCards = (props: Props) => {
   return (
-    <div>
-        <Card className="max-w-[400px]">
-            <CardHeader className="flex gap-3">
-                <Image
-                alt="nextui logo"
-                height={40}
-                radius="sm"
-                src="https://avatars.githubusercontent.com/u/86160567?s=200&v=4"
-                width={40}
-                />
-                <div className="flex flex-col">
-                    <p className="text-md">NextUI</p>
-                    <p className="text-small text-default-500">nextui.org</p>
+    <>
+        <Card className="group max-w-[400px] py-[30px] pl-[25px] pr-[29.36px] rounded-[10px] gap-9 bg-white-800 shadow-serv cursor-pointer hover:bg-Accent-light">
+            <CardHeader className="flex p-0">
+                <div className="h-[62px] w-[62px] rounded-[10px] bg-Accent-light shadow-serv-img group-hover:bg-white-900">
+                    <Image
+                    alt="nextui logo"
+                    height={62}
+                    radius="sm"
+                    src="../public/service-icons/pointer.png"
+                    width={62}
+                    />
                 </div>
             </CardHeader>
-            <Divider/>
-            <CardBody>
-                <p>Make beautiful websites regardless of your design experience.</p>
+            
+            <CardBody className="p-0">
+                <div className="flex flex-col gap-2.5">
+                    <h3 className="base-bold text-black-200 group-hover:text-white-900">Front-End Dev</h3>
+                    <p className="sm-reg text-white-500 group-hover:text-white-800">
+                        Front-end dev includes creating the user interface and interactive elements of websites and apps.
+                    </p>
+                </div>
             </CardBody>
-            <Divider/>
-            <CardFooter>
-                <Link
-                isExternal
-                showAnchorIcon
-                href="https://github.com/nextui-org/nextui"
-                >
-                Visit source code on GitHub.
-                </Link>
-            </CardFooter>
         </Card>
-    </div>
+        <Card className="group max-w-[400px] py-[30px] pl-[25px] pr-[29.36px] rounded-[10px] gap-9 bg-white-800 shadow-serv cursor-pointer hover:bg-Accent-light">
+            <CardHeader className="flex p-0">
+                <div className="h-[62px] w-[62px] rounded-[10px] bg-Accent-light shadow-serv-img group-hover:bg-white-900">
+                    <Image
+                    alt="nextui logo"
+                    height={62}
+                    radius="sm"
+                    src="../public/service-icons/pointer.png"
+                    width={62}
+                    />
+                </div>
+            </CardHeader>
+            
+            <CardBody className="p-0">
+                <div className="flex flex-col gap-2.5">
+                    <h3 className="base-bold text-black-200 group-hover:text-white-900">Front-End Dev</h3>
+                    <p className="sm-reg text-white-500 group-hover:text-white-800">
+                        Front-end dev includes creating the user interface and interactive elements of websites and apps.
+                    </p>
+                </div>
+            </CardBody>
+        </Card>
+    </>
   )
 }
 
