@@ -14,7 +14,7 @@ const Services = (props: Props) => {
                 What <span className="highlight">service</span> do I provide
             </h1>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-10 sm:flex-row">
             <ServiceCards />
             
         </div>

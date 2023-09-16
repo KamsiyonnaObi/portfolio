@@ -15,7 +15,7 @@ export default function Home() {
           <Skills />
         </section>
         {/* Services Section */}
-        <section className="py-12 px-6 bg-white-800 sm:pb-12 dark:bg-black-300">   
+        <section className="py-12 px-6 bg-white-900 sm:bg-white-800 sm:pb-12 dark:bg-black-300">   
           <Services/>
         </section>
         {/* Work Experience */}
