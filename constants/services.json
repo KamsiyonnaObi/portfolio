@@ -1,0 +1,24 @@
+{
+    "data": [
+      {
+        "img": "https://example.com",
+        "title": "Mobile Dev",
+        "desc": "Mobile dev inncludes building beautiful and functional mobile applications using React Native and Ionic."
+      },
+      {
+        "img": "https://example.com",
+        "title": "Front-End Dev",
+        "desc": "Front-end includes creating the user interface and interactive elements of websites and apps."
+      },
+      {
+        "img": "https://example.com",
+        "title": "Back-End Dev",
+        "desc": "Back-end includes creating small scale functional databases in Java and Python"
+      },
+      {
+        "img": "https://example.com",
+        "title": "Web Optimization",
+        "desc": "Web optimization focuses on improving website performance for a smoother user experience"
+      }
+    ]
+  }
