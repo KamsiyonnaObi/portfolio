@@ -1,9 +1,8 @@
 import React from 'react';
-import ServiceCards from './ServiceCards';
+import ServiceCard from './ServiceCard';
+import data from '../constants/services.json'
 
-type Props = {}
-
-const Services = (props: Props) => {
+const Services = () => {
   return (
     <article className="flex flex-col items-center px-[28.82px] gap-10">
         {/* Heading */}
@@ -16,7 +15,9 @@ const Services = (props: Props) => {
         </div>
         {/* Service Cards */}
         <div className="flex flex-col gap-10 sm:flex-row">
-            <ServiceCards />
+            <ServiceCard 
+            services = {data}
+            />
             
         </div>
     </article>
