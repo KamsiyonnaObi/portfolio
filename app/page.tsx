@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Hero from '@/components/Hero';
 import Skills from '@/components/Skills';
 import Services from '@/components/Services';
+import WorkExperience from '@/components/WorkExperience';
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen p-0 m-0 items-center justify-between">
@@ -19,8 +20,8 @@ export default function Home() {
           <Services/>
         </section>
         {/* Work Experience */}
-        <section className="py-12 bg-white-900 dark:bg-black-200">
-          <div>Work Experience</div>
+        <section className="py-12 bg-white-900 sm:py-[72px] dark:bg-black-200">
+          <WorkExperience />
           <div>Featured Projects</div>
         </section>
         {/* Testimonials */}

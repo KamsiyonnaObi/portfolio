@@ -9,7 +9,6 @@ type Props = {
 }
 
 const ServiceCards = (props: Props) => {
-   console.log("here", props.services.data) 
   return (
     <>
         {props.services.data.map((service, idx) => (
