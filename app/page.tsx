@@ -3,6 +3,8 @@ import Hero from '@/components/Hero';
 import Skills from '@/components/Skills';
 import Services from '@/components/Services';
 import WorkExperience from '@/components/WorkExperience';
+import Projects from '@/components/Projects';
+
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen p-0 m-0 items-center justify-between">
@@ -22,8 +24,12 @@ export default function Home() {
         {/* Work Experience */}
         <section className="py-12 bg-white-900 sm:py-[72px] dark:bg-black-200">
           <WorkExperience />
-          <div>Featured Projects</div>
         </section>
+        {/* Projects */}
+        <section className="py-12 bg-white-900 sm:py-[72px] dark:bg-black-200">
+          <Projects />
+        </section>
+          
         {/* Testimonials */}
         <section className="bg-white-800 sm:pb-12 dark:bg-black-300">   
           <div>What they say about me</div>
