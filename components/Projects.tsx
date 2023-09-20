@@ -1,5 +1,6 @@
 import React from 'react'
-import ProjectCard from './ProjectCard'
+import ProjectCard from './ProjectCard';
+import data from '../constants/projects.json';
 
 const Projects = () => {
   return (
@@ -12,7 +13,9 @@ const Projects = () => {
         </div>
         {/* Projects Icons */}
         <div className="flex justify-between sm:flex-wrap sm:justify-center sm:gap-[43.74px]">
-            <ProjectCard />
+            <ProjectCard 
+            projects={data}
+            />
         </div>
    </article>
   )
