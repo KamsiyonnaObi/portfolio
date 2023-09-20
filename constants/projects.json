@@ -1,0 +1,21 @@
+{
+    "data": [
+        {
+            "img": "https://example.com",
+            "title": "Morrent",
+            "desc": "A Car Rental Application",
+            "Front-end": ["ReactJS","NextJS"],
+            "Back-end": ["NodeJS", "MongoDB"],
+            "color": "#416CEA"
+        },
+        {
+            "img": "https://example.com",
+            "title": "JobIT",
+            "desc": "A Job Finding Application",
+            "Front-end": ["ReactJS","NextJS"],
+            "Back-end": ["NodeJS", "MongoDB"],
+            "color": "#0BAB7C"
+        }
+        
+    ]
+}
