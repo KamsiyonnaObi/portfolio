@@ -18,7 +18,7 @@ const ExperienceCard = (props: Props) => {
   return (
     <>
         {props.experiences.data.map((exp, idx) => (
-            <Card key={idx} className="w-[345px] py-[36px] pl-[36px] rounded-[10px] gap-[18px] bg-white-900 shadow-work cursor-pointer sm:w-[607px] sm:border sm:border-white-800 sm:dark:border-none sm:shadow-none sm:hover:shadow-work sm:hover:ml-[30px] dark:bg-transparent hover:dark:bg-black-300">
+            <Card key={idx} className="Card Card:hover w-[345px] py-[36px] pl-[36px] rounded-[10px] gap-[18px] sm:w-[607px] dark:bg-transparent hover:dark:bg-black-300">
                 <div className="sm:flex sm:gap-9">
                     <CardHeader className="flex p-0 w-auto">
                         <div className="h-[58px] w-[58px] rounded-[10px] border">
