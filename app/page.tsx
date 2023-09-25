@@ -10,7 +10,7 @@ export default function Home() {
     <main className="flex flex-col min-h-screen p-0 m-0 items-center justify-between">
       <div className="flex flex-col">
         {/* Hero Section */}
-        <section className="bg-white-800 sm:py-[72px] dark:bg-black-300">   
+        <section className="px-6 bg-white-800 sm:py-[72px] sm:px-[85px] dark:bg-black-300">   
           <Hero />
         </section>
         {/* Skills Section */}
