@@ -4,7 +4,7 @@ import data from '../constants/projects.json';
 
 const Projects = () => {
   return (
-    <article className="flex flex-col px-6 justify-center gap-10">
+    <article className="flex flex-col justify-center gap-10">
     {/* Heading */}
         <div className="flex mx-auto">
             <h1 className="text-black-200 text-[36px] font-bold sm:header2 dark:text-white-900">
