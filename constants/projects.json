@@ -6,7 +6,7 @@
             "desc": "A Car Rental Application",
             "frontEnd": ["ReactJS","NextJS"],
             "backEnd": ["NodeJS", "MongoDB"],
-            "color": "#416CEA"
+            "color": "bg-Accent-light"
         },
         {
             "img": "https://example.com",
@@ -14,7 +14,7 @@
             "desc": "A Job Finding Application",
             "frontEnd": ["ReactJS","NextJS"],
             "backEnd": ["NodeJS", "MongoDB"],
-            "color": "#0BAB7C"
+            "color": "bg-project-two"
         }
         
     ]

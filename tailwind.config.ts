@@ -16,6 +16,10 @@ const config: Config = {
           'dark': '#428DFF',
           'secondary': "#FFBE62",
         },
+        project: {
+          'one': '#416CEA',
+          'two': '#0BAB7C',
+        },
         black: {
           200: '#151E2C',
           300: '#192333',
