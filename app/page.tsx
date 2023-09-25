@@ -4,6 +4,7 @@ import Skills from '@/components/Skills';
 import Services from '@/components/Services';
 import WorkExperience from '@/components/WorkExperience';
 import Projects from '@/components/Projects';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -35,8 +36,20 @@ export default function Home() {
           <div>What they say about me</div>
         </section>
         {/* Contact Me */}
-        <section className="py-12 bg-white-900 dark:bg-black-200">
-          <div>Contact section</div>
+        <section className="px-6 py-12 bg-white-900 dark:bg-black-200 sm:px-[85px] sm:py-[72px]">
+          <article className="flex flex-col mx-auto max-w-[1270px] gap-4 px-[17px] py-[77px] rounded-[20px] bg-Accent-secondary bg-footer-pattern bg-cover sm:flex-row sm:justify-between sm:px-[70px] sm:py-[83px] sm:bg-footer-pattern-lg">
+            <div className="sm:w-[520px]">
+              <h1 className="text-black-200 font-bold text-[30px] leading-[31.5px] tracking-[-0.15px] sm:header2">Have a project in mind that requires technical expertise?</h1>
+            </div>
+            <div className="sm:flex sm:items-end">
+              <Link 
+              href={"/"}
+              className="flex justify-center text-sm font-semibold leading-[22.4px] rounded-full py-[12.5px] bg-Accent-light dark:bg-Accent-dark sm:body-bold sm:px-[54px] sm:py-5"
+              >
+                Get in Touch with Me 
+              </Link>
+            </div>
+          </article>
         </section>
       </div>
     </main>

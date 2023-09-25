@@ -38,6 +38,8 @@ const config: Config = {
         'work': '-25px 47px 66px 0 rgba(0, 0, 0, 0.08)'
       },
       backgroundImage: {
+        'footer-pattern': "url('../public/footer-images/contact-bg.png')",
+        'footer-pattern-lg': "url('../public/footer-images/contact-bgpattern.png')",
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
