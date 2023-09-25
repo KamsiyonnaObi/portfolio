@@ -12,7 +12,7 @@ const Projects = () => {
             </h1>
         </div>
         {/* Projects Icons */}
-        <div className="flex justify-between sm:flex-wrap sm:justify-center sm:gap-[43.74px]">
+        <div className="flex sm:flex-wrap sm:justify-center sm:gap-[43.74px]">
             <ProjectCard 
             projects={data}
             />
