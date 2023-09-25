@@ -35,6 +35,7 @@ const config: Config = {
       boxShadow: {
         'serv': '0 1px 20px 0 rgba(224, 236, 255, 1)',
         'serv-img': '10px 10px 26px 0 rgba(2, 82, 205, 0.28)',
+        'work': '-25px 47px 66px 0 rgba(0, 0, 0, 0.08)'
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

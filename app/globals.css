@@ -77,6 +77,14 @@
     line-height: 20.3px;
   }
 }
+@layer utilities{
+  .Card{
+    @apply shadow-work cursor-pointer bg-white-900 sm:border sm:border-white-800 sm:dark:border-none sm:shadow-none
+  }
+  .Card:hover{
+    @apply sm:hover:shadow-work sm:hover:ml-[30px]
+  }
+ }
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
