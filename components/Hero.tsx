@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import heroBanner from '../public/heroImages/heroBanner.svg';
+import { HeroImage } from './svg/HeroSVG';
 
 type Props = {}
 
@@ -41,7 +42,7 @@ const Hero = (props: Props) => {
             </div>
         </div>
         <div className="sm:flex sm:mx-auto w-full h-[262px] mb-6 sm:h-[335px] md:h-[518.85px] md:w-[628.07px]">
-            <Image className="object-contain" src={heroBanner} alt="hero-banner"/>
+            <HeroImage />
         </div>
     </div>
   )
