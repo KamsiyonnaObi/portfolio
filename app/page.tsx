@@ -22,7 +22,7 @@ export default function Home() {
           <Services/>
         </section>
         {/* Work Experience */}
-        <section className="py-12 bg-white-900 sm:py-[72px] dark:bg-black-200">
+        <section className="px-6 py-12 bg-white-900 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-200">
           <WorkExperience />
         </section>
         {/* Projects */}
