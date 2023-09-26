@@ -26,7 +26,7 @@ export default function Home() {
           <WorkExperience />
         </section>
         {/* Projects */}
-        <section className="px-6 py-12 bg-white-900 sm:px-[85px] sm:py-[72px] dark:bg-black-200">
+        <section className="px-6 py-12 bg-white-900 sm:py-[72px] lg:px-12 xl:px-[85px] dark:bg-black-200">
           <Projects />
         </section>
           
