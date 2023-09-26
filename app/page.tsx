@@ -14,11 +14,11 @@ export default function Home() {
           <Hero />
         </section>
         {/* Skills Section */}
-        <section className="py-12 bg-white-900 sm:py-[72px] dark:bg-black-200">
+        <section className="px-6 py-12 bg-white-900 sm:px-[85px] sm:py-[72px] dark:bg-black-200">
           <Skills />
         </section>
         {/* Services Section */}
-        <section className="py-12 bg-white-900 sm:bg-white-800 sm:py-[72px] dark:bg-black-300">   
+        <section className="px-6 py-12 bg-white-900 sm:bg-white-800 sm:px-[85px] sm:py-[72px] dark:bg-black-300">   
           <Services/>
         </section>
         {/* Work Experience */}

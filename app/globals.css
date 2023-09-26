@@ -84,6 +84,12 @@
   .Card:hover{
     @apply sm:hover:shadow-work sm:hover:ml-[30px]
   }
+  .service-card{
+    @apply shadow-serv cursor-pointer
+  }
+  .service-card:hover{
+    @apply hover:bg-Accent-light dark:hover:bg-Accent-dark dark:hover:shadow-serv-hover
+  }
  }
 :root {
   --foreground-rgb: 0, 0, 0;
