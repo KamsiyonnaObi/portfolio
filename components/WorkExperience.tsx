@@ -6,7 +6,7 @@ import lineIcon from '../public/line.svg';
 
 const WorkExperience = () => {
   return (
-    <article className="flex flex-col items-center gap-4 xl:gap-[26px] xl:flex-row">
+    <article className="flex flex-col items-center gap-4 xl:gap-[26px] xl:flex-row xl:justify-center">
         {/* Heading */}
         <div className="flex flex-col max-w-[345px] rounded-[10px] pt-[58.91px] pb-[38.27px] px-[38px] gap-[13.82px] bg-black-200 sm:max-w-[607px] sm:pl-[105px] sm:pt-[152px] sm:pr-[143px] sm:pb-[105px] dark:bg-white-900">
             <div>
