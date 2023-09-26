@@ -4,7 +4,7 @@ import data from '../constants/services.json'
 
 const Services = () => {
   return (
-    <article className="flex flex-col items-center px-[28.82px] gap-10">
+    <article className="flex flex-col items-center gap-10">
         {/* Heading */}
         <div className="flex">
             <h1 
@@ -14,7 +14,7 @@ const Services = () => {
             </h1>
         </div>
         {/* Service Cards */}
-        <div className="flex flex-col gap-10 sm:flex-row">
+        <div className="flex flex-col flex-wrap justify-center gap-10 sm:flex-row">
             <ServiceCard 
             services = {data}
             />

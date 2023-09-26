@@ -9,21 +9,21 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen p-0 m-0 items-center justify-between">
-      <div className="flex flex-col">
+      <div className="flex flex-col w-full">
         {/* Hero Section */}
-        <section className="bg-white-800 sm:py-[72px] dark:bg-black-300">   
+        <section className="px-6 bg-white-800 sm:py-[72px] lg:px-12 xl:px-[85px] dark:bg-black-300">   
           <Hero />
         </section>
         {/* Skills Section */}
-        <section className="py-12 bg-white-900 sm:py-[72px] dark:bg-black-200">
+        <section className="px-6 py-12 bg-white-900 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-200">
           <Skills />
         </section>
         {/* Services Section */}
-        <section className="py-12 bg-white-900 sm:bg-white-800 sm:py-[72px] dark:bg-black-300">   
+        <section className="px-6 py-12 bg-white-900 sm:bg-white-800 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-300">   
           <Services/>
         </section>
         {/* Work Experience */}
-        <section className="py-12 bg-white-900 sm:py-[72px] dark:bg-black-200">
+        <section className="px-6 py-12 bg-white-900 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-200">
           <WorkExperience />
         </section>
         {/* Projects */}
