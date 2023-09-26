@@ -19,13 +19,13 @@ const ProjectCard = (props: Props) => {
   return (
     <>
         {props.projects.data.map((project, idx) => {
-            // const pcolor = `bg-${project.color}`;
+            const swap = idx % 2;
             const pcolor = {
                 backgroundColor: project.color,
             };
 
             return (
-            <div key={idx} style={pcolor} className={`flex flex-col w-[345px] h-fit mx-auto justify-center rounded-[20px] gap-6 py-[46px] lg:w-fit lg:flex-row lg:gap-[30.89px]`}>
+            <div key={idx} style={pcolor} className={`flex flex-col ${swap ? 'lg:flex-row-reverse' : ''} w-[345px] h-fit mx-auto justify-center rounded-[20px] gap-6 py-[46px] lg:w-fit lg:flex-row lg:gap-[30.89px]`}>
                 <div className="flex flex-col self-center content-center gap-[30px] px-6 lg:gap-6">
                     <div>
                         <h1 className="text-white-900 text-[32px] leading-[36.8px] tracking-[-0.36px] font-bold lg:header2">
