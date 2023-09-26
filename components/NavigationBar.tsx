@@ -70,17 +70,17 @@ export default function App() {
         </NavbarBrand>
         <NavbarItem isActive >
           <Link color="foreground" href="#">
-            <p className="sm-reg text-white-500">Home </p>
+            <p className="sm-reg text-white-500 dark:text-white-800">Home </p>
           </Link>
         </NavbarItem>
         <NavbarItem >
           <Link href="#" aria-current="page">
-            <p className="sm-reg text-white-500">Case Studies </p>
+            <p className="sm-reg text-white-500 dark:text-white-800">Case Studies </p>
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="#">
-            <p className="sm-reg text-white-500">Contact </p>
+            <p className="sm-reg text-white-500 dark:text-white-800">Contact </p>
           </Link>
         </NavbarItem>
         <NavbarItem>
@@ -89,7 +89,7 @@ export default function App() {
               <div>
                 <Image src={vector} alt="download-icon"/>
               </div>
-              <p className="sm-reg text-black-200">Resume</p>
+              <p className="sm-reg text-black-200 dark:text-white-900">Resume</p>
             </div>
           </Link>
         </NavbarItem>

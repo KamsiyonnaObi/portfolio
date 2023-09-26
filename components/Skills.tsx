@@ -17,22 +17,22 @@ const Skills = (props: Props) => {
     </div>
     {/* Skill Icons */}
     <div className="flex justify-between sm:flex-wrap sm:justify-center sm:gap-[43.74px]">
-      <div className="flex p-2 rounded-full bg-white-800 w-[52.77px] h-[52.77px] sm:w-[100px] sm:h-[100px] sm:p-4 hover:shadow-lg hover:w-[116px] hover:h-[116px]">
+      <div className="flex p-2 rounded-full bg-white-800 w-[52.77px] h-[52.77px] sm:w-[100px] sm:h-[100px] sm:p-4 dark:bg-black-300 hover:shadow-lg hover:w-[116px] hover:h-[116px]">
         <div className=" self-center">
           <Image className="grayscale hover:grayscale-0" src={jsIcon} alt="javascript"/>
         </div>
       </div>
-      <div className="flex p-2 rounded-full bg-white-800 w-[52.77px] h-[52.77px] sm:w-[100px] sm:h-[100px] sm:p-4 hover:shadow-lg hover:w-[116px] hover:h-[116px]">
+      <div className="flex p-2 rounded-full bg-white-800 w-[52.77px] h-[52.77px] sm:w-[100px] sm:h-[100px] sm:p-4 dark:bg-black-300 hover:shadow-lg hover:w-[116px] hover:h-[116px]">
         <div className=" self-center">
           <Image className="grayscale hover:grayscale-0" src={reduxIcon} alt="redux"/>
         </div>
       </div>
-      <div className="flex p-2 rounded-full bg-white-800 w-[52.77px] h-[52.77px] sm:w-[100px] sm:h-[100px] sm:p-4 hover:shadow-lg hover:w-[116px] hover:h-[116px]">
+      <div className="flex p-2 rounded-full bg-white-800 w-[52.77px] h-[52.77px] sm:w-[100px] sm:h-[100px] sm:p-4 dark:bg-black-300 hover:shadow-lg hover:w-[116px] hover:h-[116px]">
         <div className=" self-center">
           <Image className="grayscale hover:grayscale-0" src={tsIcon} alt="typescript"/>
         </div>
       </div>
-      <div className="flex p-2 rounded-full bg-white-800 w-[52.77px] h-[52.77px] sm:w-[100px] sm:h-[100px] sm:p-4 hover:shadow-lg hover:w-[116px] hover:h-[116px]">
+      <div className="flex p-2 rounded-full bg-white-800 w-[52.77px] h-[52.77px] sm:w-[100px] sm:h-[100px] sm:p-4 dark:bg-black-300 hover:shadow-lg hover:w-[116px] hover:h-[116px]">
         <div className=" self-center">
           <Image className="grayscale hover:grayscale-0" src={gitIcon} alt="git"/>
         </div>
