@@ -8,20 +8,22 @@ type Props = {}
 
 const Hero = (props: Props) => {
   return (
-    <div className="flex flex-col w-full gap-[27px] items-center sm:flex-row">
+    <div className="flex flex-col w-full gap-[27px] justify-center sm:flex-row">
         <div className="flex flex-col mx-6 mt-12 gap-5">
-            <p className="text-Accent-light text-sm leading-[18.2px] tracking-[4.2px] font-semibold sm:tracking-[6px] sm:leading-[26px] sm:text-[20px] dark:text-Accent-dark">
-                HI, I AM KAMSIYONNA
-            </p>
-            <div className="flex flex-col gap-3.5 font-bold text-[30px] text-black-200 dark:text-white-900">
-                <h1 className="lg:header1 lg:text-[48px] xl:header1">Professional 
-                    <span className="highlight line-clamp-1 w-fit"> Software Engineer </span> 
-                    based in Canada
-                </h1>
-                <p className="text-white-500 text-xs font-normal md:body-reg dark:text-white-800">
-                    Transforming the web one line of code at a time: Crafting cutting-edge digital 
-                    experiences with precision, passion, and a profound commitment to excellence
+            <div className="max-w-[511px]">
+                <p className="text-Accent-light text-sm leading-[18.2px] tracking-[4.2px] font-semibold sm:tracking-[6px] sm:leading-[26px] sm:text-[20px] dark:text-Accent-dark">
+                    HI, I AM KAMSIYONNA
                 </p>
+                <div className="flex flex-col gap-3.5 font-bold text-[30px] text-black-200 dark:text-white-900">
+                    <h1 className="lg:header1 lg:text-[48px] xl:header1">Professional 
+                        <span className="highlight line-clamp-1 w-fit"> Software Engineer </span> 
+                        based in Canada
+                    </h1>
+                    <p className="text-white-500 text-xs font-normal md:body-reg dark:text-white-800">
+                        Transforming the web one line of code at a time: Crafting cutting-edge digital 
+                        experiences with precision, passion, and a profound commitment to excellence
+                    </p>
+                </div>
             </div>
             <div className="flex flex-col gap-3.5 sm:flex-row md:gap-[18px]">
                 <Link 
@@ -38,7 +40,7 @@ const Hero = (props: Props) => {
                 </Link>
             </div>
         </div>
-        <div className="sm:flex w-full h-[262px] mb-6 sm:h-[335px] md:h-full">
+        <div className="sm:flex w-full h-[262px] mb-6 sm:h-[335px] md:h-[518.85px] md:w-[628.07px]">
             <Image className="object-contain" src={heroBanner} alt="hero-banner"/>
         </div>
     </div>
