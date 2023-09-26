@@ -3,12 +3,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import heroBanner from '../public/heroImages/heroBanner.svg';
+import { HeroImage } from './svg/HeroSVG';
 
 type Props = {}
 
 const Hero = (props: Props) => {
   return (
-    <div className="flex flex-col w-full gap-[27px] justify-center lg:flex-row xl:mx-auto">
+    <div className="flex flex-col w-full gap-[27px] justify-center lg:flex-row xl:mx-auto xl:max-w-[1270px]">
         <div className="flex flex-col max-w-[345px] mt-12 gap-5 mx-auto sm:max-w-[511px]">
             <div className="">
                 <p className="text-Accent-light text-sm pb-5 leading-[18.2px] tracking-[4.2px] font-semibold sm:tracking-[6px] sm:leading-[26px] sm:text-[20px] dark:text-Accent-dark">
@@ -41,7 +42,7 @@ const Hero = (props: Props) => {
             </div>
         </div>
         <div className="sm:flex sm:mx-auto w-full h-[262px] mb-6 sm:h-[335px] md:h-[518.85px] md:w-[628.07px]">
-            <Image className="object-contain" src={heroBanner} alt="hero-banner"/>
+            <HeroImage />
         </div>
     </div>
   )

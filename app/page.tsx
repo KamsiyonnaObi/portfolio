@@ -4,6 +4,7 @@ import Skills from '@/components/Skills';
 import Services from '@/components/Services';
 import WorkExperience from '@/components/WorkExperience';
 import Projects from '@/components/Projects';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -26,7 +27,7 @@ export default function Home() {
           <WorkExperience />
         </section>
         {/* Projects */}
-        <section className="px-6 py-12 bg-white-900 sm:py-[72px] lg:px-12 xl:px-[85px] dark:bg-black-200">
+        <section className="px-6 py-12 bg-white-900 sm:px-[85px] sm:py-[72px] dark:bg-black-200">
           <Projects />
         </section>
           
@@ -34,10 +35,7 @@ export default function Home() {
         <section className="bg-white-800 sm:pb-12 dark:bg-black-300">   
           <div>What they say about me</div>
         </section>
-        {/* Contact Me */}
-        <section className="py-12 bg-white-900 dark:bg-black-200">
-          <div>Contact section</div>
-        </section>
+        
       </div>
     </main>
   )
