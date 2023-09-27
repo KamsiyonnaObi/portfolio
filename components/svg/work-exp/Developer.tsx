@@ -1,6 +1,6 @@
 export const DevIcon = () => (
     <svg 
-    className="fill-white-900 group-hover:fill-Accent-light dark:group-hover:fill-Accent-dark" 
+    className="flex self-center mx-auto fill-white-900 group-hover:fill-Accent-light dark:group-hover:fill-Accent-dark" 
     width="25" height="20" 
     viewBox="0 0 25 20" 
     fill="none" 

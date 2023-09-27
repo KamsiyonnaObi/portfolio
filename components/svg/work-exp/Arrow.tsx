@@ -1,6 +1,6 @@
-export const DownloadIcon = () => (
+export const ArrowIcon = () => (
     <svg
-        className="fill-white-900 group-hover:fill-Accent-light dark:group-hover:fill-Accent-dark"  
+        className="flex self-center mx-auto fill-white-900 group-hover:fill-Accent-light dark:group-hover:fill-Accent-dark"  
         width="25" height="24" 
         viewBox="0 0 25 24" 
         fill="none" 

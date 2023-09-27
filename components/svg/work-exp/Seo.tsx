@@ -1,6 +1,6 @@
 export const SeoIcon = () => (
     <svg 
-        className="fill-white-900 group-hover:fill-Accent-light dark:group-hover:fill-Accent-dark"
+        className="flex self-center mx-auto fill-white-900 group-hover:fill-Accent-light dark:group-hover:fill-Accent-dark"
         width="23" height="22" 
         viewBox="0 0 23 22" 
         fill="none" 
