@@ -32,7 +32,7 @@ export default function Home() {
         </section>
           
         {/* Testimonials */}
-        <section className="bg-white-800 sm:pb-12 dark:bg-black-300">   
+        <section className="hidden bg-white-800 sm:pb-12 dark:bg-black-300">   
           <div>What they say about me</div>
         </section>
         
