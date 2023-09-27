@@ -1,6 +1,7 @@
 "use client"
 import React from 'react';
 import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
+import { DownloadIcon, WebIcon, SeoIcon, DevIcon } from './svg/work-exp';
 
 import jsIcon from "../public/service-icons/pointer.svg";
 
