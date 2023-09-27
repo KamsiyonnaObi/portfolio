@@ -1,11 +1,15 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import React from 'react'
 
+import projects from '@/public/project-images/Morrent/Morrent-Laptop.png'
 type Props = {
     projects: { 
         data: 
         { 
-            img: string; 
+            laptopImg: string; 
+            mobileImg: string; 
+            imgAlt: string; 
             title: string; 
             desc: string; 
             frontEnd: string[] | null;
@@ -47,7 +51,9 @@ const ProjectCard = (props: Props) => {
                     </div>
                 </div>
                 <div className="w-[320px] pl-6 lg:w-[585px]">
-                    <div className="h-[155px] border lg:h-[331px]"></div>
+                    <div className="h-[155px] border lg:h-[331px]">
+                        <Image src={project.laptopImg} width={500} height={500} alt={project.imgAlt}/>
+                    </div>
                 </div>
             </div>
             )
