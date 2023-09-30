@@ -11,7 +11,7 @@ type Props = {};
 
 const Skills = (props: Props) => {
   return (
-    <article className="flex min-h-[150px] flex-col justify-center gap-10">
+    <article className="flex min-h-[250px] flex-col justify-center gap-10">
       {/* Heading */}
       <section className="flex flex-col mx-auto justify-start gap-y-10">
         <div className="flex mx-auto ">
@@ -20,7 +20,7 @@ const Skills = (props: Props) => {
           </h1>
         </div>
         {/* Skill Icons */}
-        <div className="flex flex-wrap w-[348px] h-[120px] gap-10 justify-center sm:gap-[43.74px] sm:w-fit sm:h-fit">
+        <div className="flex flex-wrap w-[348px] min-h-[120px] gap-10 justify-center sm:gap-[43.74px] sm:w-fit sm:h-fit">
           <div className="flex p-2 rounded-full bg-white-800 w-[52.77px] h-[52.77px] sm:w-[100px] sm:h-[100px] sm:p-4 dark:bg-black-300 sm:hover:shadow-lg sm:hover:w-[116px] sm:hover:h-[116px]">
             <div className=" self-center">
               <Image
