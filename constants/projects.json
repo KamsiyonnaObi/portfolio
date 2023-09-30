@@ -2,8 +2,8 @@
     "data": [
         {
             "title": "Morrent",
-            "mobileImg": "@/public/project-images/Morrent/Morrent-Mobile.png",
-            "laptopImg": "/public/project-images/Morrent/Morrent-Laptop.png",
+            "mobileImg": "/project-images/Morrent/Morrent-Mobile.png",
+            "laptopImg": "/project-images/Morrent/Morrent-Laptop.png",
             "imgAlt": "Morrent",
             "desc": "A Car Rental Application",
             "frontEnd": ["ReactJS","NextJS"],
@@ -12,8 +12,8 @@
         },
         {
             "title": "JobIT",
-            "mobileImg": "@/public/project-images/Jobit/JobIT-Mobile.png",
-            "laptopImg": "/public/project-images/Jobit/JobIT-Laptop.png",
+            "mobileImg": "/project-images/Jobit/JobIT-Mobile.png",
+            "laptopImg": "/project-images/Jobit/JobIT-Laptop.png",
             "imgAlt": "JobIT",
             "desc": "A Job Finding Application",
             "frontEnd": ["ReactJS","NextJS"],
