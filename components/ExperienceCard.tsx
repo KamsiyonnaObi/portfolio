@@ -1,6 +1,7 @@
 "use client"
 import React from 'react';
 import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
+import { DigitalIcon, SlackIcon, FirefoxIcon, MailchimpIcon } from './svg/workIcons';
 
 type Props = {
     experiences: { 
@@ -15,14 +16,17 @@ type Props = {
 }
 
 const ExperienceCard = (props: Props) => {
+    const svgComponent = [SlackIcon, FirefoxIcon, DigitalIcon, MailchimpIcon]
   return (
     <>
-        {props.experiences.data.map((exp, idx) => (
-            <Card key={idx} className="Card w-[345px] py-[36px] pl-[36px] rounded-[10px] gap-[18px] sm:w-[607px] dark:bg-transparent hover:dark:bg-black-300">
+        {props.experiences.data.map((exp, idx) => {
+            const IconComponent = svgComponent[idx];
+            return (
+            <Card key={idx} className="Card group w-[345px] py-[36px] pl-[36px] rounded-[10px] gap-[18px] sm:w-[607px] dark:bg-transparent hover:dark:bg-black-300">
                 <div className="sm:flex sm:gap-9">
                     <CardHeader className="flex p-0 w-auto">
-                        <div className="h-[58px] w-[58px] rounded-[10px] border">
-                            
+                        <div className="flex h-[58px] w-[58px] rounded-[10px]">
+                            <IconComponent />
                         </div>
                     </CardHeader>
                     
@@ -36,7 +40,7 @@ const ExperienceCard = (props: Props) => {
                     </CardBody>
                 </div>
             </Card>
-        ))}
+        )})}
     </>
   )
 }

@@ -1,6 +1,7 @@
 "use client"
 import React from 'react';
 import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
+import { ArrowIcon, WebIcon, SeoIcon, DevIcon } from './svg/serviceIcons';
 
 import jsIcon from "../public/service-icons/pointer.svg";
 
@@ -9,19 +10,18 @@ type Props = {
 }
 
 const ServiceCards = (props: Props) => {
+    const svgComponents = [ArrowIcon, WebIcon, SeoIcon, DevIcon]; // Icon Component array
+
   return (
     <>
-        {props.services.data.map((service, idx) => (
+        {props.services.data.map((service, idx) => {
+
+            const IconComponent = svgComponents[idx]; // Get the appropriate Icon
+            return (
             <Card key={idx} className="group service-card w-[287.358px] py-[30px] pl-[25px] pr-[29.36px] rounded-[10px] gap-9 bg-white-800  dark:bg-black-300  dark:shadow-serv-dark ">
                 <CardHeader className="flex p-0">
-                    <div className="h-[62px] w-[62px] rounded-[10px] bg-Accent-light shadow-serv-img group-hover:bg-white-900 dark:bg-Accent-dark">
-                        <Image
-                        alt="nextui logo"
-                        height={62}
-                        radius="sm"
-                        src="../public/service-icons/pointer.png"
-                        width={62}
-                        />
+                    <div className="flex self-center h-[62px] w-[62px] rounded-[10px] bg-Accent-light shadow-serv-img group-hover:bg-white-900 dark:bg-Accent-dark">
+                       <IconComponent /> 
                     </div>
                 </CardHeader>
                 
@@ -34,7 +34,7 @@ const ServiceCards = (props: Props) => {
                     </div>
                 </CardBody>
             </Card>
-        ))}
+        )})}
     </>
   )
 }

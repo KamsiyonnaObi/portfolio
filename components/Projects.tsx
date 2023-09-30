@@ -1,6 +1,6 @@
 import React from 'react'
 import ProjectCard from './ProjectCard';
-import data from '../constants/projects.json';
+import projects from '../constants/projects.json';
 import Link from 'next/link';
 
 const Projects = () => {
@@ -14,9 +14,18 @@ const Projects = () => {
         </div>
         {/* Project Cards */}
         <div className="flex gap-9 flex-wrap sm:justify-center lg:gap-12">
-            <ProjectCard 
-            projects={data}
+        {projects.data.map((project, idx) => {
+            const swap = idx % 2;
+            const pcolor = {
+                backgroundColor: project.color,
+            };
+            return <ProjectCard
+            project={project}
+            key={project.title}
+            swap={swap}
+            pcolor={pcolor}
             />
+        })}
         </div>
         {/* See More */}
         <Link

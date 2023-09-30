@@ -14,7 +14,8 @@ import {
   Divider
 } from "@nextui-org/react";
 
-import vector from '../public/Vector.svg'
+import vector from '../public/Vector.svg';
+import { DownloadIcon } from "./svg/Download";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -87,7 +88,7 @@ export default function App() {
           <Link color="foreground" href="#">
             <div className="flex items-center gap-1.5">
               <div>
-                <Image src={vector} alt="download-icon"/>
+                <DownloadIcon />
               </div>
               <p className="sm-reg text-black-200 dark:text-white-900">Resume</p>
             </div>

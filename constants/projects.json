@@ -1,16 +1,20 @@
 {
     "data": [
         {
-            "img": "https://example.com",
             "title": "Morrent",
+            "mobileImg": "/project-images/Morrent/Morrent-Mobile.png",
+            "laptopImg": "/project-images/Morrent/Morrent-Laptop.png",
+            "imgAlt": "Morrent",
             "desc": "A Car Rental Application",
             "frontEnd": ["ReactJS","NextJS"],
             "backEnd": ["NodeJS", "MongoDB"],
             "color": "#416CEA"
         },
         {
-            "img": "https://example.com",
             "title": "JobIT",
+            "mobileImg": "/project-images/Jobit/JobIT-Mobile.png",
+            "laptopImg": "/project-images/Jobit/JobIT-Laptop.png",
+            "imgAlt": "JobIT",
             "desc": "A Job Finding Application",
             "frontEnd": ["ReactJS","NextJS"],
             "backEnd": ["NodeJS", "MongoDB"],
