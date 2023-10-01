@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import Projects from "../../constants/projects.json";
+import projects from "../../constants/projects.json";
 
 type Project = {
   title: string;
@@ -42,21 +42,21 @@ const CaseStudies = () => {
       </section>
       {/* Contact Form */}
       <section className="px-6 py-12 bg-white-900 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-200">
-        <div className="flex flex-col gap-5 items-center md:flex-row md:justify-center md:flex-wrap">
-          {Projects.data.map((project: Project) => {
+        <div className="flex flex-col gap-5 items-center md:flex-row md:justify-center md:flex-wrap lg:gap-9">
+          {projects.data.map((project: Project) => {
             const pcolor = {
               backgroundColor: project.color,
             };
             return (
               <div
-                className="flex flex-col gap-6 max-w-[345px]"
+                className="flex flex-col gap-6 max-w-[345px] lg:max-w-[550px]"
                 key={project.title}
               >
                 <div
                   className="rounded-[10px] pt-[43.66px] px-[30.74px]"
                   style={pcolor}
                 >
-                  <div className="relative w-[270px] h-[155px] lg:w-[575.3px] lg:h-[331px] overflow-hidden">
+                  <div className="relative w-[270px] h-[155px] lg:w-[460px] lg:h-[264px] overflow-hidden">
                     <Image
                       src={project.laptopImg}
                       className="object-contain"
@@ -66,10 +66,12 @@ const CaseStudies = () => {
                   </div>
                 </div>
                 <div className="flex flex-col gap-[6.27px] px-[30.74px]">
-                  <h2 className="paragraph-bold text-black-200 dark:text-white-900">
+                  <h2 className="paragraph-bold text-black-200 dark:text-white-900 lg:header3">
                     {project.title}
                   </h2>
-                  <p className="sm-reg text-white-500">{project.desc}</p>
+                  <p className="sm-reg text-white-500 lg:paragraph">
+                    {project.desc}
+                  </p>
                 </div>
               </div>
             );
