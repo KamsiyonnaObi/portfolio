@@ -32,7 +32,7 @@ const Hero = (props: Props) => {
         </div>
         <div className="flex flex-col gap-3.5 sm:flex-row md:gap-[18px]">
           <Link
-            href={"#"}
+            href={"/projects"}
             className="flex w-full bg-Accent-light py-[12.5px] font-semibold text-sm text-white-900 justify-center rounded-full sm:body-bold sm:py-5 sm:px-3 dark:bg-Accent-dark"
           >
             My Work
