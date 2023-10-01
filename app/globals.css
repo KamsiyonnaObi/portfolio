@@ -78,6 +78,9 @@
   }
 }
 @layer utilities {
+  .skills {
+    @apply transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300;
+  }
   .Card {
     @apply shadow-work cursor-pointer bg-white-900 sm:border sm:border-white-800 sm:dark:border-none sm:shadow-none;
   }
