@@ -3,94 +3,94 @@
 @tailwind utilities;
 
 @layer base {
-  .highlight{
+  .highlight {
     position: relative;
     z-index: 1;
   }
   .highlight::before {
     content: ""; /* Ensure the pseudo-element has content */
     position: absolute;
-    display: block; 
-    border-bottom: 18px solid #FFBE62; /* Define the bottom border */
+    display: block;
+    border-bottom: 18px solid #ffbe62; /* Define the bottom border */
     top: 58%;
     right: 0;
     left: 0;
     z-index: -1;
   }
-  .header1{
+  .header1 {
     font-size: 56px;
     font-weight: 700;
     line-height: 83.2px;
     letter-spacing: -1%;
   }
-  .header2{
+  .header2 {
     font-size: 48px;
     font-weight: 700;
     line-height: 55.2px;
     letter-spacing: -1%;
   }
-  .header3{
+  .header3 {
     font-size: 32px;
     font-weight: 600;
     line-height: 33.6px;
     letter-spacing: -0.5%;
   }
-  .base1{
+  .base1 {
     font-size: 24px;
     font-weight: 400;
     line-height: 33.6px;
     letter-spacing: -0.5%;
   }
-  .base-bold{
+  .base-bold {
     font-size: 24px;
     font-weight: 600;
     line-height: 31.2px;
   }
-  .paragraph{
+  .paragraph {
     font-size: 20px;
     font-weight: 400;
     line-height: 30px;
   }
-  .paragraph-bold{
+  .paragraph-bold {
     font-size: 20px;
     font-weight: 600;
     line-height: 26px;
   }
-  .body-reg{
+  .body-reg {
     font-size: 18px;
     font-weight: 400;
     line-height: 28.8px;
   }
-  .body-bold{
+  .body-bold {
     font-size: 18px;
     font-weight: 600;
     line-height: 28.8px;
   }
-  .sm-reg{
+  .sm-reg {
     font-size: 14px;
     font-weight: 400;
     line-height: 21.7px;
   }
-  .sm-bold{
+  .sm-bold {
     font-size: 14px;
     font-weight: 600;
     line-height: 20.3px;
   }
 }
-@layer utilities{
-  .Card{
-    @apply shadow-work cursor-pointer bg-white-900 sm:border sm:border-white-800 sm:dark:border-none sm:shadow-none
+@layer utilities {
+  .Card {
+    @apply shadow-work cursor-pointer bg-white-900 sm:border sm:border-white-800 sm:dark:border-none sm:shadow-none;
   }
-  .Card:hover{
-    @apply sm:hover:shadow-work sm:hover:ml-[30px]
+  .Card:hover {
+    @apply sm:hover:shadow-work transition duration-300 sm:translate-x-6;
   }
-  .service-card{
-    @apply shadow-serv cursor-pointer
+  .service-card {
+    @apply shadow-serv cursor-pointer;
   }
-  .service-card:hover{
-    @apply hover:bg-Accent-light dark:hover:bg-Accent-dark dark:hover:shadow-serv-hover
+  .service-card:hover {
+    @apply hover:bg-Accent-light dark:hover:bg-Accent-dark dark:hover:shadow-serv-hover;
   }
- }
+}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

@@ -1,6 +1,6 @@
 export const HeroImage = () => (
     <svg 
-        className="object-contain" 
+        className="object-fit w-full h-full" 
         
         viewBox="0 0 678 595" 
         fill="none" 
