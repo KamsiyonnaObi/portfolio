@@ -12,7 +12,7 @@ const Contact = () => {
   return (
     <form className="max-w-[1270px] lg:mx-auto">
       <div className="space-y-12 lg:flex lg:gap-[143px] lg:space-y-0">
-        <div className="pb-12">
+        <div className="pb-12 lg:w-full">
           <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div className="sm:col-span-4 lg:col-span-full">
               <label
@@ -22,13 +22,13 @@ const Contact = () => {
                 What&apos;s your name?
               </label>
               <div className="mt-2">
-                <div className="flex rounded-[10px] bg-white-800 border border-[#CCE1FF] min-h-[60px] focus-within:ring-2 focus-within:ring-inset focus-within:ring-Accent-light ">
+                <div className="flex rounded-[10px] bg-white-800 border border-[#CCE1FF] min-h-[60px] focus-within:ring-2 focus-within:ring-inset focus-within:ring-Accent-light dark:bg-black-300 dark:border-[#2C3C56]">
                   <input
                     type="text"
                     name="name"
                     id="name"
                     autoComplete="name"
-                    className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-black-200 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                    className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-black-200 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 dark:text-white-900"
                   />
                 </div>
               </div>
@@ -41,13 +41,13 @@ const Contact = () => {
               >
                 What&apos;s your email?
               </label>
-              <div className="flex rounded-[10px] bg-white-800 border border-[#CCE1FF] min-h-[60px] mt-2 focus-within:ring-2 focus-within:ring-inset focus-within:ring-Accent-light ">
+              <div className="flex rounded-[10px] bg-white-800 border border-[#CCE1FF] min-h-[60px] mt-2 focus-within:ring-2 focus-within:ring-inset focus-within:ring-Accent-light dark:bg-black-300 dark:border-[#2C3C56]">
                 <input
                   id="email"
                   name="email"
                   type="email"
                   autoComplete="email"
-                  className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-black-200 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                  className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-black-200 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 dark:text-white-900"
                 />
               </div>
             </div>
@@ -59,12 +59,12 @@ const Contact = () => {
               >
                 Write something about your project goals and timeframe
               </label>
-              <div className="mt-2 flex rounded-[10px] bg-white-800 border border-[#CCE1FF] min-h-[190px] focus-within:ring-2 focus-within:ring-inset focus-within:ring-Accent-light ">
+              <div className="mt-2 flex rounded-[10px] bg-white-800 border border-[#CCE1FF] min-h-[190px] focus-within:ring-2 focus-within:ring-inset focus-within:ring-Accent-light dark:bg-black-300 dark:border-[#2C3C56]">
                 <textarea
                   id="about"
                   name="about"
                   rows={3}
-                  className="block w-full bg-white-800 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="resize-none block w-full bg-white-800 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-inset  placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-Accent-light sm:text-sm sm:leading-6 dark:bg-black-300 dark:border-[#2C3C56] dark:text-white-900"
                   defaultValue={""}
                 />
               </div>
@@ -76,17 +76,17 @@ const Contact = () => {
               >
                 How to reach out to you back?
               </label>
-              <span className="text-black-400 body-reg">
+              <span className="block text-black-400 body-reg lg:inline-block">
                 {" "}
                 e.g phone number or email{" "}
               </span>
               <div className="mt-2">
-                <div className="flex rounded-[10px] bg-white-800 border border-[#CCE1FF] min-h-[60px] focus-within:ring-2 focus-within:ring-inset focus-within:ring-Accent-light ">
+                <div className="flex rounded-[10px] bg-white-800 border border-[#CCE1FF] min-h-[60px] focus-within:ring-2 focus-within:ring-inset focus-within:ring-Accent-light dark:bg-black-300 dark:border-[#2C3C56]">
                   <input
                     type="text"
                     name="contact"
                     id="contact"
-                    className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-black-200 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                    className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-black-200 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 dark:text-white-900"
                   />
                 </div>
               </div>
@@ -140,7 +140,7 @@ const Contact = () => {
                 <EmailIcon />
               </div>
               <p className="paragraph-bold text-black-400 dark:text-white-800 lg:base-bold">
-                obikamsigmail.com
+                obikamsi@gmail.com
               </p>
             </div>
           </div>
