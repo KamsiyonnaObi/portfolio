@@ -1,5 +1,22 @@
 import React from "react";
+import Image from "next/image";
 
+import Projects from "../../constants/projects.json";
+
+type Project = {
+  title: string;
+  mobileImg: string;
+  laptopImg: string;
+  imgAlt: string;
+  desc: string;
+  frontEnd: string[];
+  backEnd: string[];
+  color: string;
+};
+
+type Projects = {
+  data: Project[];
+};
 const CaseStudies = () => {
   return (
     <>
@@ -13,8 +30,8 @@ const CaseStudies = () => {
               </h1>
             </div>
 
-            <div className="flex justify-center sm:w-fit sm:h-fit">
-              <p className="text-white-500 sm-reg text-center sm:body-reg dark:text-white-800">
+            <div className="flex justify-center sm:w-fit sm:h-fit max-w-[704px]">
+              <p className="text-white-500 sm-reg px-[3.5px] text-center sm:paragraph dark:text-white-800">
                 Dive into my recent success stories and discover how I&apos;ve
                 helped clients overcome challenges, innovate, and achieve their
                 goals
@@ -24,7 +41,41 @@ const CaseStudies = () => {
         </article>
       </section>
       {/* Contact Form */}
-      <section className="px-6 py-12 bg-white-900 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-200"></section>
+      <section className="px-6 py-12 bg-white-900 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-200">
+        <div className="flex flex-col gap-5 items-center md:flex-row md:justify-center md:flex-wrap">
+          {Projects.data.map((project: Project) => {
+            const pcolor = {
+              backgroundColor: project.color,
+            };
+            return (
+              <div
+                className="flex flex-col gap-6 max-w-[345px]"
+                key={project.title}
+              >
+                <div
+                  className="rounded-[10px] pt-[43.66px] px-[30.74px]"
+                  style={pcolor}
+                >
+                  <div className="relative w-[270px] h-[155px] lg:w-[575.3px] lg:h-[331px] overflow-hidden">
+                    <Image
+                      src={project.laptopImg}
+                      className="object-contain"
+                      fill
+                      alt={project.imgAlt}
+                    />
+                  </div>
+                </div>
+                <div className="flex flex-col gap-[6.27px] px-[30.74px]">
+                  <h2 className="paragraph-bold text-black-200 dark:text-white-900">
+                    {project.title}
+                  </h2>
+                  <p className="sm-reg text-white-500">{project.desc}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
     </>
   );
 };
