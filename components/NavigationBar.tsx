@@ -75,12 +75,12 @@ export default function App() {
           </span>
         </NavbarBrand>
         <NavbarItem isActive>
-          <Link color="foreground" href="#">
+          <Link color="foreground" href="/">
             <p className="sm-reg text-white-500 dark:text-white-800">Home </p>
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="#" aria-current="page">
+          <Link href="/projects" aria-current="page">
             <p className="sm-reg text-white-500 dark:text-white-800">
               Case Studies{" "}
             </p>

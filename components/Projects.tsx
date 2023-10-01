@@ -33,7 +33,7 @@ const Projects = () => {
       </div>
       {/* See More */}
       <Link
-        href={"/"}
+        href={"/projects"}
         className="hidden body-bold py-5 px-[45.5px] rounded-full self-center bg-Accent-light dark:bg-Accent-dark sm:flex"
       >
         See more case studies
