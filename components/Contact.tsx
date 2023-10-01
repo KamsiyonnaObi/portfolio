@@ -12,7 +12,7 @@ const Contact = () => {
   return (
     <form className="max-w-[1270px] lg:mx-auto">
       <div className="space-y-12 lg:flex lg:gap-[143px] lg:space-y-0">
-        <div className="pb-12">
+        <div className="pb-12 lg:w-full">
           <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div className="sm:col-span-4 lg:col-span-full">
               <label
