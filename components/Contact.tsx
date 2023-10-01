@@ -1,16 +1,20 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
-type Props = {};
+import linkedIn from "../public/linkedIn.svg";
+import github from "../public/github.svg";
 
-const Contact = (props: Props) => {
+import { EmailIcon, PhoneIcon } from "./svg";
+
+const Contact = () => {
   return (
-    <form>
-      <div className="space-y-12">
-        <div className="border-b border-gray-900/10 pb-12">
-          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-            <div className="sm:col-span-4">
+    <form className="max-w-[1270px] lg:mx-auto">
+      <div className="space-y-12 lg:flex lg:gap-[143px] lg:space-y-0">
+        <div className="pb-12">
+          <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+            <div className="sm:col-span-4 lg:col-span-full">
               <label
                 htmlFor="name"
                 className="block body-reg text-black-300 dark:text-white-900"
@@ -18,7 +22,7 @@ const Contact = (props: Props) => {
                 What&apos;s your name?
               </label>
               <div className="mt-2">
-                <div className="flex rounded-[10px] bg-white-800 border border-[#CCE1FF] min-h-[60px] focus-within:ring-2 focus-within:ring-inset focus-within:ring-Accent-light sm:max-w-md">
+                <div className="flex rounded-[10px] bg-white-800 border border-[#CCE1FF] min-h-[60px] focus-within:ring-2 focus-within:ring-inset focus-within:ring-Accent-light ">
                   <input
                     type="text"
                     name="name"
@@ -30,14 +34,14 @@ const Contact = (props: Props) => {
               </div>
             </div>
 
-            <div className="sm:col-span-4">
+            <div className="sm:col-span-4 lg:col-span-full">
               <label
                 htmlFor="email"
                 className="block body-reg text-black-300 dark:text-white-900"
               >
                 What&apos;s your email?
               </label>
-              <div className="flex rounded-[10px] bg-white-800 border border-[#CCE1FF] min-h-[60px] mt-2 focus-within:ring-2 focus-within:ring-inset focus-within:ring-Accent-light sm:max-w-md">
+              <div className="flex rounded-[10px] bg-white-800 border border-[#CCE1FF] min-h-[60px] mt-2 focus-within:ring-2 focus-within:ring-inset focus-within:ring-Accent-light ">
                 <input
                   id="email"
                   name="email"
@@ -48,14 +52,14 @@ const Contact = (props: Props) => {
               </div>
             </div>
 
-            <div className="col-span-full">
+            <div className="sm:col-span-4 lg:col-span-full">
               <label
                 htmlFor="about"
                 className="block body-reg text-black-300 dark:text-white-900"
               >
                 Write something about your project goals and timeframe
               </label>
-              <div className="mt-2 flex rounded-[10px] bg-white-800 border border-[#CCE1FF] min-h-[190px] focus-within:ring-2 focus-within:ring-inset focus-within:ring-Accent-light sm:max-w-md">
+              <div className="mt-2 flex rounded-[10px] bg-white-800 border border-[#CCE1FF] min-h-[190px] focus-within:ring-2 focus-within:ring-inset focus-within:ring-Accent-light ">
                 <textarea
                   id="about"
                   name="about"
@@ -65,7 +69,7 @@ const Contact = (props: Props) => {
                 />
               </div>
             </div>
-            <div className="sm:col-span-4">
+            <div className="sm:col-span-4 lg:col-span-full">
               <label
                 htmlFor="contact"
                 className="block body-reg text-black-300 dark:text-white-900"
@@ -77,7 +81,7 @@ const Contact = (props: Props) => {
                 e.g phone number or email{" "}
               </span>
               <div className="mt-2">
-                <div className="flex rounded-[10px] bg-white-800 border border-[#CCE1FF] min-h-[60px] focus-within:ring-2 focus-within:ring-inset focus-within:ring-Accent-light sm:max-w-md">
+                <div className="flex rounded-[10px] bg-white-800 border border-[#CCE1FF] min-h-[60px] focus-within:ring-2 focus-within:ring-inset focus-within:ring-Accent-light ">
                   <input
                     type="text"
                     name="contact"
@@ -89,12 +93,64 @@ const Contact = (props: Props) => {
             </div>
           </div>
         </div>
+        {/* socials */}
+        <div className="flex flex-col py-12 gap-9 lg:order-first lg:gap-20 lg:justify-start">
+          <div className="flex flex-col gap-3.5">
+            <p className="paragraph text-black-300 dark:text-white-900 lg:base1">
+              My Socials
+            </p>
+            <div className="flex gap-6 justify-start">
+              <a
+                href={"https://www.linkedin.com/in/kamsiyonna-obi-50a020167/"}
+                target="_blank"
+                rel="noopener"
+                className="w-6 h-6 lg:w-[30px] lg:h-[30px]"
+              >
+                <Image src={linkedIn} alt="linkedIn" />
+              </a>
+              <a
+                href={"https://github.com/KamsiyonnaObi"}
+                target="_blank"
+                rel="noopener"
+                className="w-6 h-6 lg:w-[30px] lg:h-[30px]"
+              >
+                <Image src={github} alt="github" />
+              </a>
+            </div>
+          </div>
+          <div className="flex flex-col gap-3.5">
+            <p className="paragraph text-black-300 dark:text-white-900 lg:base1">
+              Phone Number
+            </p>
+            <div className="flex gap-[13px]">
+              <div>
+                <PhoneIcon />
+              </div>
+              <p className="paragraph-bold text-black-400 dark:text-white-800 lg:base-bold">
+                +1(204)396-5056
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col gap-3.5">
+            <p className="paragraph text-black-300 dark:text-white-900 lg:base1">
+              Email Address
+            </p>
+            <div className="flex gap-[13px]">
+              <div>
+                <EmailIcon />
+              </div>
+              <p className="paragraph-bold text-black-400 dark:text-white-800 lg:base-bold">
+                obikamsigmail.com
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="flex w-full md:justify-end">
         <button
           type="submit"
-          className="w-full rounded-full bg-Accent-light px-[69.5px] py-5 sm-bold font-semibold text-white dark:bg-Accent-dark hover:bg-Accent-dark dark:hover:bg-Accent-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 md:body-bold"
+          className="w-full rounded-full bg-Accent-light px-[69.5px] py-5 sm-bold font-semibold text-white dark:bg-Accent-dark hover:bg-Accent-dark dark:hover:bg-Accent-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 md:body-bold md:w-fit"
         >
           Send
         </button>
