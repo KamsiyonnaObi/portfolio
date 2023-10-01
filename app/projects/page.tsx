@@ -26,7 +26,10 @@ const CaseStudies = () => {
           <section className="flex flex-col mx-auto items-center gap-y-5">
             <div className="flex mx-auto ">
               <h1 className="text-black-200 text-[42px] text-center leading-[48.3px] font-bold sm:text-[64px] sm:leading-[83.2px] dark:text-white-900 ">
-                Recent <span className="w-fit highlight">Case Studies</span>
+                Recent{" "}
+                <span className="w-fit highlight inline-block">Case</span>
+                <span className="w-fit highlight"> </span>
+                <span className="w-fit highlight inline-block">Studies</span>
               </h1>
             </div>
 
