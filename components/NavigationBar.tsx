@@ -87,7 +87,7 @@ export default function App() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link color="foreground" href="/contact">
             <p className="sm-reg text-white-500 dark:text-white-800">
               Contact{" "}
             </p>
