@@ -38,7 +38,7 @@ const Hero = (props: Props) => {
             My Work
           </Link>
           <Link
-            href={"#"}
+            href={"/contact"}
             className="flex w-full bg-white-900 py-[12.5px] font-semibold text-sm text-white-500 justify-center rounded-full sm:body-bold sm:py-5 dark:text-white-900 dark:bg-black-200"
           >
             Contact Me

@@ -18,7 +18,7 @@ const Footer = (props: Props) => {
         </div>
         <div className="sm:flex sm:items-end">
           <Link
-            href={"/"}
+            href={"/contact"}
             className="flex justify-center text-sm font-semibold leading-[22.4px] rounded-full py-[12.5px] bg-Accent-light dark:bg-Accent-dark lg:body-bold sm:px-10 lg:px-[54px] lg:py-5"
           >
             Get in Touch with Me
