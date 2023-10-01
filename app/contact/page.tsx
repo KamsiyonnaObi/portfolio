@@ -2,7 +2,7 @@ import React from "react";
 
 import Contact from "@/components/Contact";
 
-const page = () => {
+const ContactPage = () => {
   return (
     <>
       <section className="px-6 bg-white-800 sm:py-[72px] lg:px-12 xl:px-[85px] dark:bg-black-300">
@@ -31,4 +31,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default ContactPage;
