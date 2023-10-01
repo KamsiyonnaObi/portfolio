@@ -76,7 +76,7 @@ const Contact = () => {
               >
                 How to reach out to you back?
               </label>
-              <span className="text-black-400 body-reg">
+              <span className="block text-black-400 body-reg lg:inline-block">
                 {" "}
                 e.g phone number or email{" "}
               </span>
@@ -140,7 +140,7 @@ const Contact = () => {
                 <EmailIcon />
               </div>
               <p className="paragraph-bold text-black-400 dark:text-white-800 lg:base-bold">
-                obikamsigmail.com
+                obikamsi@gmail.com
               </p>
             </div>
           </div>
