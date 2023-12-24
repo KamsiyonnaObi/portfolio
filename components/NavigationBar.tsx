@@ -47,13 +47,18 @@ export default function App() {
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
     >
-      <NavbarContent className="sm:hidden" justify="start">
-        <NavbarBrand>
-          <p className="font-bold font-Graphik text-lg text-Accent-light dark:text-white-800">
-            Kamsiyonna
-          </p>
-        </NavbarBrand>
-      </NavbarContent>
+      <NavbarBrand>
+        <Link color="foreground" href="/">
+          <div className=" w-10 h-10 rounded-full absolute">
+            <Image
+              className="rounded-full"
+              src="/kamsidev.png"
+              alt="logo"
+              fill
+            />
+          </div>
+        </Link>
+      </NavbarBrand>
 
       <NavbarContent
         className="sm:hidden border border-black-300"
@@ -66,14 +71,6 @@ export default function App() {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4 items-center">
-        <NavbarBrand>
-          <p className="font-bold font-Graphik text-3xl text-black-300 dark:text-white-800">
-            Kamsiyonna
-          </p>
-          <span className="font-thin font-Graphik text-3xl text-black-300 dark:text-white-800">
-            Obi
-          </span>
-        </NavbarBrand>
         <NavbarItem isActive>
           <Link color="foreground" href="/">
             <p className="sm-reg text-white-500 dark:text-white-800">Home </p>
