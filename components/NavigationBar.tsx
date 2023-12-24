@@ -13,19 +13,26 @@ import {
   Divider,
 } from "@nextui-org/react";
 
-import vector from "../public/Vector.svg";
-
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { DownloadIcon } from "./svg/Download";
+import { Close, Hamburger } from "./svg/NavbarIcons";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+  const renderIcon = (isOpen: boolean) => {
+    if (isOpen) {
+      return <Close />;
+    } else {
+      return <Hamburger />;
+    }
+  };
 
   const menuItems = ["Home", "Case Studies", "Contact", "Resume"];
 
   return (
     <Navbar
-      className="bg-white-800 dark:bg-black-300"
+      className="flex justify-between bg-white-800 dark:bg-black-300 max-w-full"
       classNames={{
         item: [
           "flex",
@@ -48,29 +55,24 @@ export default function App() {
       onMenuOpenChange={setIsMenuOpen}
     >
       <NavbarBrand>
-        <Link color="foreground" href="/">
-          <div className=" w-10 h-10 rounded-full absolute">
-            <Image
-              className="rounded-full"
-              src="/kamsidev.png"
-              alt="logo"
-              fill
-            />
-          </div>
-        </Link>
+        <div className=" w-[30px] h-[30px] sm:w-[45px] sm:h-[45px] rounded-full absolute">
+          <Image className="rounded-full" src="/kamsidev.png" alt="logo" fill />
+        </div>
       </NavbarBrand>
 
-      <NavbarContent
-        className="sm:hidden border border-black-300"
-        justify="end"
-      >
+      <NavbarContent className="sm:hidden " justify="end">
+        <ThemeSwitcher />
         <NavbarMenuToggle
-          className="border border-black-300"
+          icon={renderIcon(isMenuOpen)}
+          className=""
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         />
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4 items-center">
+      <NavbarContent
+        className="hidden sm:flex gap-4 items-center"
+        justify="end"
+      >
         <NavbarItem isActive>
           <Link color="foreground" href="/">
             <p className="sm-reg text-white-500 dark:text-white-800">Home </p>
