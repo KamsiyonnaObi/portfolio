@@ -32,7 +32,7 @@ export default function App() {
 
   return (
     <Navbar
-      className="flex justify-between bg-white-800 dark:bg-black-300 max-w-full"
+      className="flex px-6  xl:px-[61px] mx-auto lg:justify-center justify-between bg-white-800 dark:bg-black-300 max-w-full"
       classNames={{
         item: [
           "flex",
@@ -40,27 +40,28 @@ export default function App() {
           "h-full",
 
           "items-center",
-          "data-[active=true]:after:content-['']",
-          "data-[active=true]:after:absolute",
-          "data-[active=true]:after:bottom-0",
-          "data-[active=true]:after:left-0",
-          "data-[active=true]:after:right-0",
-          "data-[active=true]:after:h-[2px]",
-          "data-[active=true]:after:rounded-[2px]",
-          "data-[active=true]:after:bg-primary",
+          "data-[active=true]:*text-Accent-light",
         ],
       }}
-      isBlurred={false}
+      maxWidth="xl"
+      isBlurred={true}
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
     >
       <NavbarBrand>
-        <div className=" w-[30px] h-[30px] sm:w-[45px] sm:h-[45px] rounded-full absolute">
-          <Image className="rounded-full" src="/kamsidev.png" alt="logo" fill />
-        </div>
+        <Link color="foreground" href="/">
+          <div className=" w-[30px] h-[30px] sm:w-10 sm:h-10 rounded-full absolute">
+            <Image
+              className="rounded-full"
+              src="/kamsidev.png"
+              alt="logo"
+              fill
+            />
+          </div>
+        </Link>
       </NavbarBrand>
 
-      <NavbarContent className="sm:hidden " justify="end">
+      <NavbarContent className="md:hidden " justify="end">
         <ThemeSwitcher />
         <NavbarMenuToggle
           icon={renderIcon(isMenuOpen)}
@@ -70,12 +71,12 @@ export default function App() {
       </NavbarContent>
 
       <NavbarContent
-        className="hidden sm:flex gap-4 items-center"
+        className="hidden md:flex gap-9 items-center"
         justify="end"
       >
         <NavbarItem isActive>
-          <Link color="foreground" href="/">
-            <p className="sm-reg text-white-500 dark:text-white-800">Home </p>
+          <Link className="sm-reg text-white-500 dark:text-white-800" href="/">
+            Home
           </Link>
         </NavbarItem>
         <NavbarItem>
@@ -104,7 +105,9 @@ export default function App() {
             </div>
           </Link>
         </NavbarItem>
-        {/* <Divider orientation="vertical" /> */}
+        <NavbarItem className="py-5">
+          <Divider orientation="vertical" />
+        </NavbarItem>
 
         <NavbarItem>
           <ThemeSwitcher />
