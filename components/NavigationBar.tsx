@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import {
+  Button,
   Navbar,
   NavbarBrand,
   NavbarContent,
@@ -28,8 +29,6 @@ export default function App() {
     }
   };
 
-  const menuItems = ["Home", "Case Studies", "Contact", "Resume"];
-
   return (
     <Navbar
       className="flex px-6  xl:px-[61px] mx-auto lg:justify-center justify-between bg-white-800 dark:bg-black-300 max-w-full"
@@ -40,7 +39,8 @@ export default function App() {
           "h-full",
 
           "items-center",
-          "data-[active=true]:*text-Accent-light",
+          "data-[active=true]:bg-Accent-light",
+          "data-[active=true]:dark:bg-Accent-dark",
         ],
       }}
       maxWidth="xl"
@@ -74,7 +74,7 @@ export default function App() {
         className="hidden md:flex gap-9 items-center"
         justify="end"
       >
-        <NavbarItem isActive>
+        <NavbarItem>
           <Link className="sm-reg text-white-500 dark:text-white-800" href="/">
             Home
           </Link>
@@ -114,26 +114,41 @@ export default function App() {
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarMenu>
-        <NavbarMenuItem>
-          <Link href="/" size="lg">
+      <NavbarMenu className="pt-[22px]">
+        <NavbarMenuItem className="py-3 px-6" isActive>
+          <Link
+            className="sm-reg text-white-500 dark:text-white-800"
+            href="/"
+            size="lg"
+          >
             Home
           </Link>
         </NavbarMenuItem>
-        <NavbarMenuItem>
-          <Link href="/projects" size="lg">
+        <NavbarMenuItem className="py-3 px-6">
+          <Link
+            className="sm-reg text-white-500 dark:text-white-800"
+            href="/projects"
+            size="lg"
+          >
             Case Studies
           </Link>
         </NavbarMenuItem>
-        <NavbarMenuItem>
-          <Link href="/contact" size="lg">
+        <NavbarMenuItem className="py-3 px-6">
+          <Link
+            className="*:sm-reg text-white-500 dark:text-white-800"
+            href="/contact"
+            size="lg"
+          >
             Contact
           </Link>
         </NavbarMenuItem>
-        <NavbarMenuItem>
-          <Link href="/" size="lg">
-            Resume
-          </Link>
+        <NavbarMenuItem className="pt-5">
+          <Button
+            size="lg"
+            className="text-Accent-light dark:text-Accent-dark bg-white-800 dark:bg-black-300 w-full"
+          >
+            <p className="body-reg">Resume</p>
+          </Button>
         </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>
