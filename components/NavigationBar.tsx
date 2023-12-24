@@ -115,24 +115,26 @@ export default function App() {
       </NavbarContent>
 
       <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              className="w-full"
-              color={
-                index === 2
-                  ? "warning"
-                  : index === menuItems.length - 1
-                  ? "danger"
-                  : "foreground"
-              }
-              href="#"
-              size="lg"
-            >
-              {item}
-            </Link>
-          </NavbarMenuItem>
-        ))}
+        <NavbarMenuItem>
+          <Link href="/" size="lg">
+            Home
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem>
+          <Link href="/projects" size="lg">
+            Case Studies
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem>
+          <Link href="/contact" size="lg">
+            Contact
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem>
+          <Link href="/" size="lg">
+            Resume
+          </Link>
+        </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>
   );
