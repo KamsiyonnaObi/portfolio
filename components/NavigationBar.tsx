@@ -13,19 +13,26 @@ import {
   Divider,
 } from "@nextui-org/react";
 
-import vector from "../public/Vector.svg";
-
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { DownloadIcon } from "./svg/Download";
+import { Close, Hamburger } from "./svg/NavbarIcons";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+  const renderIcon = (isOpen: boolean) => {
+    if (isOpen) {
+      return <Close />;
+    } else {
+      return <Hamburger />;
+    }
+  };
 
   const menuItems = ["Home", "Case Studies", "Contact", "Resume"];
 
   return (
     <Navbar
-      className="bg-white-800 dark:bg-black-300"
+      className="flex px-6  xl:px-[61px] mx-auto lg:justify-center justify-between bg-white-800 dark:bg-black-300 max-w-full"
       classNames={{
         item: [
           "flex",
@@ -33,50 +40,43 @@ export default function App() {
           "h-full",
 
           "items-center",
-          "data-[active=true]:after:content-['']",
-          "data-[active=true]:after:absolute",
-          "data-[active=true]:after:bottom-0",
-          "data-[active=true]:after:left-0",
-          "data-[active=true]:after:right-0",
-          "data-[active=true]:after:h-[2px]",
-          "data-[active=true]:after:rounded-[2px]",
-          "data-[active=true]:after:bg-primary",
+          "data-[active=true]:*text-Accent-light",
         ],
       }}
-      isBlurred={false}
+      maxWidth="xl"
+      isBlurred={true}
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
     >
-      <NavbarContent className="sm:hidden" justify="start">
-        <NavbarBrand>
-          <p className="font-bold font-Graphik text-lg text-Accent-light dark:text-white-800">
-            Kamsiyonna
-          </p>
-        </NavbarBrand>
-      </NavbarContent>
+      <NavbarBrand>
+        <Link color="foreground" href="/">
+          <div className=" w-[30px] h-[30px] sm:w-10 sm:h-10 rounded-full absolute">
+            <Image
+              className="rounded-full"
+              src="/kamsidev.png"
+              alt="logo"
+              fill
+            />
+          </div>
+        </Link>
+      </NavbarBrand>
 
-      <NavbarContent
-        className="sm:hidden border border-black-300"
-        justify="end"
-      >
+      <NavbarContent className="md:hidden " justify="end">
+        <ThemeSwitcher />
         <NavbarMenuToggle
-          className="border border-black-300"
+          icon={renderIcon(isMenuOpen)}
+          className=""
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         />
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4 items-center">
-        <NavbarBrand>
-          <p className="font-bold font-Graphik text-3xl text-black-300 dark:text-white-800">
-            Kamsiyonna
-          </p>
-          <span className="font-thin font-Graphik text-3xl text-black-300 dark:text-white-800">
-            Obi
-          </span>
-        </NavbarBrand>
+      <NavbarContent
+        className="hidden md:flex gap-9 items-center"
+        justify="end"
+      >
         <NavbarItem isActive>
-          <Link color="foreground" href="/">
-            <p className="sm-reg text-white-500 dark:text-white-800">Home </p>
+          <Link className="sm-reg text-white-500 dark:text-white-800" href="/">
+            Home
           </Link>
         </NavbarItem>
         <NavbarItem>
@@ -105,7 +105,9 @@ export default function App() {
             </div>
           </Link>
         </NavbarItem>
-        {/* <Divider orientation="vertical" /> */}
+        <NavbarItem className="py-5">
+          <Divider orientation="vertical" />
+        </NavbarItem>
 
         <NavbarItem>
           <ThemeSwitcher />
