@@ -94,6 +94,49 @@
     @apply hover:bg-Accent-light dark:hover:bg-Accent-dark dark:hover:shadow-serv-hover;
   }
 }
+
+@layer components {
+  /*********** Baseline, reset styles ***********/
+  input[type="range"] {
+    @apply appearance-none bg-transparent cursor-pointer w-full;
+  }
+
+  /* Removes default focus */
+  input[type="range"]:focus {
+    @apply outline-none;
+  }
+
+  /******** Chrome, Safari, Opera and Edge Chromium styles ********/
+  /* slider track */
+  input[type="range"]::-webkit-slider-runnable-track {
+    @apply dark:bg-[#151E2C] bg-[#778295] h-[1px];
+  }
+
+  /* slider thumb */
+  input[type="range"]::-webkit-slider-thumb {
+    @apply appearance-none mt-[-14.5px] sm:mt-[-21.5px] dark:bg-black-200 bg-white-900 rounded-full h-[30px] sm:h-11 w-[30px] sm:w-11;
+  }
+
+  input[type="range"]:focus::-webkit-slider-thumb {
+    @apply outline outline-1 dark:outline-[#151E2C] outline-[#778295] outline-offset-8 sm:outline-offset-[10px];
+  }
+
+  /*********** Firefox styles ***********/
+  /* slider track */
+  input[type="range"]::-moz-range-track {
+    @apply dark:bg-[#151E2C] bg-[#778295] h-[1px];
+  }
+
+  /* slider thumb */
+  input[type="range"]::-moz-range-thumb {
+    @apply outline outline-1 dark:outline-[#151E2C] outline-[#778295] outline-offset-8 sm:outline-offset-[10px]
+ border-none;
+  }
+
+  input[type="range"]:focus::-moz-range-thumb {
+    @apply outline outline-1 dark:outline-[#151E2C] outline-[#778295] outline-offset-8 sm:outline-offset-[10px];
+  }
+}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

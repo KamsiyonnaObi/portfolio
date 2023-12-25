@@ -4,6 +4,7 @@ import data from "../constants/experiences.json";
 import lineIcon from "../public/line.svg";
 
 import ExperienceCard from "./ExperienceCard";
+import Slider from "./WorkExperience/Slider";
 
 const WorkExperience = () => {
   return (
@@ -19,12 +20,13 @@ const WorkExperience = () => {
             and achievements in my career.
           </p>
         </div>
-        <div className="h-[58px]">
-          <Image
+        <div className="h-[47px] sm:h-[70px]">
+          {/* <Image
             className="object-fit dark:fill-black-200"
             src={lineIcon}
             alt="line"
-          />
+          /> */}
+          <Slider />
         </div>
       </div>
       {/* Service Cards */}
