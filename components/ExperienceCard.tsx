@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { MouseEvent } from "react";
 import { Card, CardHeader, CardBody } from "@nextui-org/react";
 
 import { useSliderState } from "@/store/sliderStore";
@@ -23,9 +23,13 @@ type Props = {
 };
 
 const ExperienceCard = (props: Props) => {
-  const { sliderValue } = useSliderState();
+  const { sliderValue, setSliderValue } = useSliderState();
   // divide into five stages
-  const quarter = Math.floor(sliderValue / 20);
+  const stage = Math.floor(sliderValue / 20);
+
+  const handleClick = (index: number) => {
+    setSliderValue(Math.floor((index + 1) * 20));
+  };
   const svgComponent = [SlackIcon, FirefoxIcon, DigitalIcon, MailchimpIcon];
   return (
     <>
@@ -35,8 +39,12 @@ const ExperienceCard = (props: Props) => {
           <Card
             key={idx}
             className={`Card group w-[345px] py-[36px] pl-[36px] rounded-[10px] gap-[18px] sm:w-[607px] dark:bg-transparent hover:dark:bg-black-300 ${
-              quarter === idx + 1 ? "selected" : ""
+              stage === idx + 1 ? "selected" : ""
             }`}
+            isPressable={true}
+            onPress={() => {
+              handleClick(idx);
+            }}
           >
             <div className="sm:flex sm:gap-9">
               <CardHeader className="flex p-0 w-auto">
