@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
-import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
+import { Card, CardHeader, CardBody } from "@nextui-org/react";
+
+import { useSliderState } from "@/store/sliderStore";
 
 import {
   DigitalIcon,
@@ -21,6 +23,9 @@ type Props = {
 };
 
 const ExperienceCard = (props: Props) => {
+  const { sliderValue } = useSliderState();
+  // divide into five stages
+  const quarter = Math.floor(sliderValue / 20);
   const svgComponent = [SlackIcon, FirefoxIcon, DigitalIcon, MailchimpIcon];
   return (
     <>
@@ -29,7 +34,9 @@ const ExperienceCard = (props: Props) => {
         return (
           <Card
             key={idx}
-            className="Card group w-[345px] py-[36px] pl-[36px] rounded-[10px] gap-[18px] sm:w-[607px] dark:bg-transparent hover:dark:bg-black-300"
+            className={`Card group w-[345px] py-[36px] pl-[36px] rounded-[10px] gap-[18px] sm:w-[607px] dark:bg-transparent hover:dark:bg-black-300 ${
+              quarter === idx + 1 ? "selected" : ""
+            }`}
           >
             <div className="sm:flex sm:gap-9">
               <CardHeader className="flex p-0 w-auto">

@@ -14,15 +14,17 @@ type Props = {
 };
 const WorkExpDesc = (props: Props) => {
   const { sliderValue } = useSliderState();
-  const quarter = Math.floor(sliderValue / 25);
+  const stage = Math.floor(sliderValue / 20);
+
   const workStage = {
-    employer: props.data[quarter]?.employer || "",
-    jobDesc: props.data[quarter]?.job_desc || "",
-    jobDescCont: props.data[quarter]?.job_desc_cont || "",
+    employer: props.data[stage - 1]?.employer || "",
+    jobDesc: props.data[stage - 1]?.job_desc || "",
+    jobDescCont: props.data[stage - 1]?.job_desc_cont || "",
   };
+
   return (
     <>
-      {sliderValue === 0 ? (
+      {stage === 0 ? (
         <>
           <h1 className="dark:text-white-900 text-[36px] mb-[23.82px] font-bold leading-[41.4px] tracking-[-0.36px] sm:header2 text-black-200">
             <span className="w-fit highlight"> Work </span> Experience
@@ -58,7 +60,7 @@ const WorkExpDesc = (props: Props) => {
         </>
       ) : (
         <>
-          <h1 className="dark:text-white-900 text-[36px] font-bold leading-[41.4px] tracking-[-0.36px] sm:header2 text-black-200">
+          <h1 className="dark:text-white-900 text-[36px] sm:delay-150 sm:duration-300 font-bold leading-[41.4px] tracking-[-0.36px] sm:header2 text-black-200">
             {workStage?.employer}
           </h1>
           <p className="sm-reg dark:text-white-800 sm:body-reg text-white-500 transition delay-150 duration-300 ease-in-out">

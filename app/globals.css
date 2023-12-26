@@ -87,6 +87,9 @@
   .Card:hover {
     @apply sm:hover:shadow-work transition duration-300 sm:translate-x-6;
   }
+  .selected {
+    @apply sm:shadow-work transition duration-300 sm:translate-x-6 dark:bg-black-300 !important;
+  }
   .service-card {
     @apply shadow-serv cursor-pointer;
   }
