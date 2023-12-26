@@ -87,11 +87,57 @@
   .Card:hover {
     @apply sm:hover:shadow-work transition duration-300 sm:translate-x-6;
   }
+  .selected {
+    @apply sm:shadow-work transition duration-300 sm:translate-x-6 dark:bg-black-300 !important;
+  }
   .service-card {
     @apply shadow-serv cursor-pointer;
   }
   .service-card:hover {
     @apply hover:bg-Accent-light dark:hover:bg-Accent-dark dark:hover:shadow-serv-hover;
+  }
+}
+
+@layer components {
+  /*********** Baseline, reset styles ***********/
+  input[type="range"] {
+    @apply appearance-none bg-transparent cursor-pointer w-full;
+  }
+
+  /* Removes default focus */
+  input[type="range"]:focus {
+    @apply outline-none;
+  }
+
+  /******** Chrome, Safari, Opera and Edge Chromium styles ********/
+  /* slider track */
+  input[type="range"]::-webkit-slider-runnable-track {
+    @apply bg-[#151E2C] dark:bg-[#778295] h-[1px];
+  }
+
+  /* slider thumb */
+  input[type="range"]::-webkit-slider-thumb {
+    @apply appearance-none mt-[-14.5px] sm:mt-[-21.5px] bg-black-200 dark:bg-white-900 rounded-full h-[30px] sm:h-11 w-[30px] sm:w-11;
+  }
+
+  input[type="range"]:focus::-webkit-slider-thumb {
+    @apply outline outline-1 outline-[#151E2C] dark:outline-[#778295] outline-offset-8 sm:outline-offset-[10px];
+  }
+
+  /*********** Firefox styles ***********/
+  /* slider track */
+  input[type="range"]::-moz-range-track {
+    @apply bg-[#151E2C] dark:bg-[#778295] h-[1px];
+  }
+
+  /* slider thumb */
+  input[type="range"]::-moz-range-thumb {
+    @apply outline outline-1 outline-[#151E2C] dark:outline-[#778295] outline-offset-8 sm:outline-offset-[10px]
+ border-none;
+  }
+
+  input[type="range"]:focus::-moz-range-thumb {
+    @apply outline outline-1 outline-[#151E2C] dark:outline-[#778295] outline-offset-8 sm:outline-offset-[10px];
   }
 }
 :root {
