@@ -16,7 +16,7 @@ const Slider = () => {
         className="h-full w-full appearance-none bg-transparent"
         type="range"
         min={0}
-        max={100}
+        max={99}
         value={sliderValue}
         onChange={handleSliderChange}
       />

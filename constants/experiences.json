@@ -1,28 +1,36 @@
 {
-    "data": [
-        {
-            "img": "https://example.com",
-            "employer": "Slack",
-            "job_title": "Product Design",
-            "years_worked": "4"
-        },
-        {
-            "img": "https://example.com",
-            "employer": "Firefox",
-            "job_title": "Sofware Engineer",
-            "years_worked": "3"
-        },
-        {
-            "img": "https://example.com",
-            "employer": "Digital Ocean",
-            "job_title": "Sr. Sofware Dev",
-            "years_worked": "4"
-        },
-        {
-            "img": "https://example.com",
-            "employer": "Mailchimp",
-            "job_title": "Intern",
-            "years_worked": "1"
-        }
-    ]
+  "data": [
+    {
+      "img": "https://example.com",
+      "employer": "Slack",
+      "job_title": "Product Design",
+      "years_worked": "4",
+      "job_desc": "As a Firefox Developer at Mozilla Corporation, I've had the privilege of contributing to the development of one of the world's most widely used web browsers. ",
+      "job_desc_cont": "My role involves collaborating with a talented team of engineers and designers to enhance Firefox's performance, security, and user experience. I'm proud to have contributed to an open-source project that empowers users to explore the web safely & efficiently."
+    },
+    {
+      "img": "https://example.com",
+      "employer": "Firefox",
+      "job_title": "Sofware Engineer",
+      "years_worked": "3",
+      "job_desc": "As a Firefox Developer at Mozilla Corporation, I've had the privilege of contributing to the development of one of the world's most widely used web browsers. ",
+      "job_desc_cont": "My role involves collaborating with a talented team of engineers and designers to enhance Firefox's performance, security, and user experience. I'm proud to have contributed to an open-source project that empowers users to explore the web safely & efficiently."
+    },
+    {
+      "img": "https://example.com",
+      "employer": "Digital Ocean",
+      "job_title": "Sr. Sofware Dev",
+      "years_worked": "4",
+      "job_desc": "As a Firefox Developer at Mozilla Corporation, I've had the privilege of contributing to the development of one of the world's most widely used web browsers. ",
+      "job_desc_cont": "My role involves collaborating with a talented team of engineers and designers to enhance Firefox's performance, security, and user experience. I'm proud to have contributed to an open-source project that empowers users to explore the web safely & efficiently."
+    },
+    {
+      "img": "https://example.com",
+      "employer": "Mailchimp",
+      "job_title": "Intern",
+      "years_worked": "1",
+      "job_desc": "As a Firefox Developer at Mozilla Corporation, I've had the privilege of contributing to the development of one of the world's most widely used web browsers. ",
+      "job_desc_cont": "My role involves collaborating with a talented team of engineers and designers to enhance Firefox's performance, security, and user experience. I'm proud to have contributed to an open-source project that empowers users to explore the web safely & efficiently."
+    }
+  ]
 }
