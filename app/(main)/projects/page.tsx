@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import projects from "../../constants/projects.json";
+import projects from "../../../constants/projects.json";
 
 type Project = {
   title: string;
