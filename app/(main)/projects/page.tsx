@@ -1,5 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import { SanityDocument } from "next-sanity";
+
+import { loadQuery } from "@/.sanity/lib/store";
+import { POSTS_QUERY, GET_ALL } from "@/.sanity/lib/queries";
+import Posts from "@/components/Posts";
 
 import projects from "../../../constants/projects.json";
 
@@ -17,7 +22,9 @@ type Project = {
 type Projects = {
   data: Project[];
 };
-const CaseStudies = () => {
+const CaseStudies = async () => {
+  const initial = await loadQuery<SanityDocument[]>(POSTS_QUERY);
+
   return (
     <>
       <section className="px-6 bg-white-800 sm:py-[72px] lg:px-12 xl:px-[85px] dark:bg-black-300">
@@ -43,7 +50,7 @@ const CaseStudies = () => {
           </section>
         </article>
       </section>
-      {/* Contact Form */}
+      {/* Case Studies */}
       <section className="px-6 py-12 bg-white-900 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-200">
         <div className="flex flex-col gap-5 items-center md:flex-row md:justify-center md:flex-wrap lg:gap-9">
           {projects.data.map((project: Project) => {
@@ -80,6 +87,10 @@ const CaseStudies = () => {
             );
           })}
         </div>
+      </section>
+      <section>
+        Sanity Section
+        <Posts posts={initial.data} />
       </section>
     </>
   );
