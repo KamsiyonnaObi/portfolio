@@ -75,7 +75,10 @@ export default function App() {
         justify="end"
       >
         <NavbarItem>
-          <Link className="sm-reg text-white-500 dark:text-white-800" href="/">
+          <Link
+            className="sm-reg text-white-500 dark:text-white-800"
+            href="/home"
+          >
             Home
           </Link>
         </NavbarItem>
@@ -118,7 +121,7 @@ export default function App() {
         <NavbarMenuItem className="py-3 px-6" isActive>
           <Link
             className="sm-reg text-white-500 dark:text-white-800"
-            href="/"
+            href="/home"
             size="lg"
           >
             Home

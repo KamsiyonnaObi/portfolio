@@ -1,6 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
-
 import Hero from "@/components/Hero";
 import Skills from "@/components/Skills";
 import Services from "@/components/Services";
