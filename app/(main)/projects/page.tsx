@@ -1,30 +1,21 @@
 import React from "react";
 import Image from "next/image";
 import { SanityDocument } from "next-sanity";
+import imageUrlBuilder from "@sanity/image-url";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 import { loadQuery } from "@/.sanity/lib/store";
-import { POSTS_QUERY, GET_ALL } from "@/.sanity/lib/queries";
-import Posts from "@/components/Posts";
+import { client } from "@/.sanity/lib/client";
+import { POSTS_QUERY } from "@/.sanity/lib/queries";
 
-import projects from "../../../constants/projects.json";
-
-type Project = {
-  title: string;
-  mobileImg: string;
-  laptopImg: string;
-  imgAlt: string;
-  desc: string;
-  frontEnd: string[];
-  backEnd: string[];
-  color: string;
-};
-
-type Projects = {
-  data: Project[];
-};
 const CaseStudies = async () => {
   const initial = await loadQuery<SanityDocument[]>(POSTS_QUERY);
 
+  const builder = imageUrlBuilder(client);
+
+  function urlFor(source: SanityImageSource) {
+    return builder.image(source);
+  }
   return (
     <>
       <section className="px-6 bg-white-800 sm:py-[72px] lg:px-12 xl:px-[85px] dark:bg-black-300">
@@ -53,10 +44,11 @@ const CaseStudies = async () => {
       {/* Case Studies */}
       <section className="px-6 py-12 bg-white-900 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-200">
         <div className="flex flex-col gap-5 items-center md:flex-row md:justify-center md:flex-wrap lg:gap-9">
-          {projects.data.map((project: Project) => {
+          {initial.data.map((project: SanityDocument) => {
             const pcolor = {
               backgroundColor: project.color,
             };
+            // console.log(initial.data[0].laptopImg.asset._ref);
             return (
               <div
                 className="flex flex-col gap-6 max-w-[345px] lg:max-w-[550px]"
@@ -68,10 +60,10 @@ const CaseStudies = async () => {
                 >
                   <div className="relative w-[270px] h-[155px] lg:w-[460px] lg:h-[264px] overflow-hidden">
                     <Image
-                      src={project.laptopImg}
+                      src={urlFor(project.laptopImg.asset._ref).url()}
                       className="object-contain"
                       fill
-                      alt={project.imgAlt}
+                      alt={project.laptopImg.caption}
                     />
                   </div>
                 </div>
@@ -87,10 +79,6 @@ const CaseStudies = async () => {
             );
           })}
         </div>
-      </section>
-      <section>
-        Sanity Section
-        <Posts posts={initial.data} />
       </section>
     </>
   );
