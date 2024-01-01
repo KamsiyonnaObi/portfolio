@@ -1,21 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import { SanityDocument } from "next-sanity";
-import imageUrlBuilder from "@sanity/image-url";
-import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
+import { urlFor } from "@/utils/utils";
 import { loadQuery } from "@/.sanity/lib/store";
-import { client } from "@/.sanity/lib/client";
 import { POSTS_QUERY } from "@/.sanity/lib/queries";
 
 const CaseStudies = async () => {
   const initial = await loadQuery<SanityDocument[]>(POSTS_QUERY);
 
-  const builder = imageUrlBuilder(client);
-
-  function urlFor(source: SanityImageSource) {
-    return builder.image(source);
-  }
   return (
     <>
       <section className="px-6 bg-white-800 sm:py-[72px] lg:px-12 xl:px-[85px] dark:bg-black-300">
