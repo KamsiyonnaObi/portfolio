@@ -25,6 +25,16 @@ export default {
       title: "Description",
     },
     {
+      name: "demo",
+      type: "url",
+      title: "Demo",
+    },
+    {
+      name: "github",
+      type: "url",
+      title: "GitHub",
+    },
+    {
       title: "MobileImg",
       name: "mobileImg",
       type: "image",
