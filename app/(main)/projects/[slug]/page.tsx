@@ -19,7 +19,7 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
   return (
     <main className="flex flex-col w-full min-h-screen p-0 m-0 items-center justify-between">
       {/* Title Section */}
-      <section className="px-6 bg-white-800 sm:py-[72px] lg:px-12 xl:px-[85px] dark:bg-black-300 w-full">
+      <section className="px-6 py-12 bg-white-800 lg:py-[60px] lg:px-12 xl:px-[85px] dark:bg-black-300 w-full">
         <p className="sm-reg mb-2.5 text-center text-Accent-light dark:text-Accent-dark lg:paragraph-bold lg:mb-[30px]">
           WEB DEV PROJECT
         </p>
@@ -79,8 +79,43 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
           </div>
         </div>
       </section>
-      {/* Skills Section */}
-      <section className="px-6 py-12 bg-white-900 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-200"></section>
+      {/* Role & Tech Stack Section */}
+      <section className="px-6 py-10 bg-white-900 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-200 w-full">
+        <section className="flex flex-col gap-9 mb-10 w-fit lg:flex-row lg:justify-between lg:w-full lg:max-w-[880px] lg:mx-auto">
+          <div className="flex flex-col gap-2.5">
+            <h1 className="sm-bold text-black-400 dark:text-white-500 lg:body-bold">
+              {" "}
+              My Role
+            </h1>
+            <p className="paragraph-bold text-black-200 dark:text-white-900 lg:base-bold">
+              Software Engineer
+            </p>
+          </div>
+          <div className="flex flex-col gap-2.5">
+            <h1 className="sm-bold text-black-400 dark:text-white-500 lg:body-bold">
+              Start Date
+            </h1>
+            <p className="paragraph-bold text-black-200 dark:text-white-900 lg:base-bold">
+              24/01/2023
+            </p>
+          </div>
+          <div className="flex flex-col gap-2.5">
+            <h1 className="sm-bold text-black-400 dark:text-white-500 lg:body-bold">
+              End Date
+            </h1>
+            <p className="paragraph-bold text-black-200 dark:text-white-900 lg:base-bold">
+              02/03/2023
+            </p>
+          </div>
+        </section>
+        <section>
+          <div>
+            <p></p>
+            <h1></h1>
+          </div>
+          <div></div>
+        </section>
+      </section>
       {/* Services Section */}
       <section className="px-6 py-12 bg-white-900 sm:bg-white-800 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-300"></section>
       {/* Work Experience */}
