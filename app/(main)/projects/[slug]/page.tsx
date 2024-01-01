@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import { SanityDocument } from "next-sanity";
@@ -7,6 +6,7 @@ import { loadQuery } from "@/.sanity/lib/store";
 import { POST_QUERY } from "@/.sanity/lib/queries";
 import { Earth, GitHub, Arrow } from "@/components/svg";
 import { urlFor } from "@/utils/utils";
+import tsIcon from "@/public/skill-icons/redux.png";
 
 import Error from "../error";
 
@@ -108,12 +108,22 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
             </p>
           </div>
         </section>
-        <section>
-          <div>
-            <p></p>
-            <h1></h1>
+        <section className="flex flex-col gap-6 mt-[42px] lg:w-full lg:gap-11 lg:max-w-[880px] lg:mx-auto lg:mt-[72px]">
+          <div className="flex flex-col gap-[9px]">
+            <p className="caption-bold text-Accent-light dark:text-Accent-dark lg:sm-bold">
+              Technologies Used
+            </p>
+            <h1 className="heading3 text-black-200 dark:text-white-900 lg:header3">
+              Tech Stack
+            </h1>
           </div>
-          <div></div>
+          <div className="flex flex-wrap gap-x-5 gap-y-[33px] lg:gap-x-9">
+            <div className="flex group skills p-2 rounded-full bg-white-800 w-[50px] h-[50px] lg:w-[93px] lg:h-[93px] lg:p-4 dark:bg-black-300 sm:hover:shadow-lg ">
+              <div className=" self-center">
+                <Image className="" src={tsIcon} alt="javascript" />
+              </div>
+            </div>
+          </div>
         </section>
       </section>
       {/* Services Section */}
