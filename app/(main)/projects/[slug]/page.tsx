@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import moment from "moment";
 import { SanityDocument } from "next-sanity";
 
 import { loadQuery } from "@/.sanity/lib/store";
@@ -88,7 +89,7 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
               My Role
             </h1>
             <p className="paragraph-bold text-black-200 dark:text-white-900 lg:base-bold">
-              Software Engineer
+              {projectData.data[0].role}
             </p>
           </div>
           <div className="flex flex-col gap-2.5">
@@ -96,7 +97,7 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
               Start Date
             </h1>
             <p className="paragraph-bold text-black-200 dark:text-white-900 lg:base-bold">
-              24/01/2023
+              {moment(projectData.data[0].startDate).format("DD/MM/YYYY")}
             </p>
           </div>
           <div className="flex flex-col gap-2.5">
@@ -104,7 +105,7 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
               End Date
             </h1>
             <p className="paragraph-bold text-black-200 dark:text-white-900 lg:base-bold">
-              02/03/2023
+              {moment(projectData.data[0].endDate).format("DD/MM/YYYY")}
             </p>
           </div>
         </section>

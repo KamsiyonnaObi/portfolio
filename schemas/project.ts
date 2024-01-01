@@ -35,6 +35,23 @@ export default {
       title: "GitHub",
     },
     {
+      name: "role",
+      type: "string",
+      title: "Role",
+    },
+    {
+      name: "startDate",
+      type: "date",
+      title: "Start Date",
+      options: { dateFormat: "DD/MM/YYYY" },
+    },
+    {
+      name: "endDate",
+      type: "date",
+      title: "End Date",
+      options: { dateFormat: "DD/MM/YYYY" },
+    },
+    {
       title: "MobileImg",
       name: "mobileImg",
       type: "image",
