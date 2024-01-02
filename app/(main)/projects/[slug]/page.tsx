@@ -7,13 +7,13 @@ import { loadQuery } from "@/.sanity/lib/store";
 import { POST_QUERY } from "@/.sanity/lib/queries";
 import { Earth, GitHub, Arrow } from "@/components/svg";
 import { urlFor } from "@/utils/utils";
-import tsIcon from "@/public/skill-icons/redux.png";
 
 import Error from "../error";
 
 const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
   const projectData = await loadQuery<SanityDocument[]>(POST_QUERY, params);
 
+  // console.log(projectData.data[0]);
   if (!projectData.data[0]) {
     return <Error />;
   }
@@ -119,11 +119,24 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
             </h1>
           </div>
           <div className="flex flex-wrap gap-x-5 gap-y-[33px] lg:gap-x-9">
-            <div className="flex group skills p-2 rounded-full bg-white-800 w-[50px] h-[50px] lg:w-[93px] lg:h-[93px] lg:p-4 dark:bg-black-300 sm:hover:shadow-lg ">
-              <div className=" self-center">
-                <Image className="" src={tsIcon} alt="javascript" />
-              </div>
-            </div>
+            {projectData.data[0]?.stack?.length > 0 &&
+              projectData.data[0].stack.map((tech: any) => {
+                return (
+                  <div
+                    key={tech}
+                    className="flex items-center justify-center group skills p-2 rounded-full bg-white-800 w-[50px] h-[50px] lg:w-[93px] lg:h-[93px] lg:p-4 dark:bg-black-300 sm:hover:shadow-lg "
+                  >
+                    <div className="flex relative w-[25px] h-[25px] lg:w-[50px] lg:h-[50px] items-center justify-center">
+                      <Image
+                        className=""
+                        src={urlFor(tech.asset._ref).url()}
+                        alt="javascript"
+                        fill
+                      />
+                    </div>
+                  </div>
+                );
+              })}
           </div>
         </section>
       </section>

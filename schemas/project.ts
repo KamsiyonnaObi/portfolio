@@ -82,6 +82,12 @@ export default {
       ],
     },
     {
+      title: "Tech Stack",
+      name: "stack",
+      type: "array",
+      of: [{ type: "image" }],
+    },
+    {
       title: "FrontEndTags",
       name: "frontEndtags",
       type: "array",
