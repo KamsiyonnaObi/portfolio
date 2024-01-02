@@ -13,7 +13,6 @@ import Error from "../error";
 const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
   const projectData = await loadQuery<SanityDocument[]>(POST_QUERY, params);
 
-  // console.log(projectData.data[0]);
   if (!projectData.data[0]) {
     return <Error />;
   }
@@ -130,7 +129,7 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
                       <Image
                         className=""
                         src={urlFor(tech.asset._ref).url()}
-                        alt="javascript"
+                        alt={tech.caption}
                         fill
                       />
                     </div>

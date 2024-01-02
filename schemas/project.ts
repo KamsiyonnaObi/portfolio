@@ -85,7 +85,18 @@ export default {
       title: "Tech Stack",
       name: "stack",
       type: "array",
-      of: [{ type: "image" }],
+      of: [
+        {
+          type: "image",
+          fields: [
+            {
+              name: "caption",
+              type: "string",
+              title: "Caption",
+            },
+          ],
+        },
+      ],
     },
     {
       title: "FrontEndTags",
