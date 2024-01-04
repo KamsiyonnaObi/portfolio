@@ -13,7 +13,7 @@ type Props = {
   demoLink: string;
   repo: string;
 };
-const Header = ({
+export const Header = ({
   title,
   desc,
   laptopUrl,
@@ -75,5 +75,3 @@ const Header = ({
     </>
   );
 };
-
-export default Header;

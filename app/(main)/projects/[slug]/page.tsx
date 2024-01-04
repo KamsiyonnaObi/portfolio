@@ -1,13 +1,10 @@
 import React from "react";
-import Image from "next/image";
-import moment from "moment";
 import { SanityDocument } from "next-sanity";
 
 import { loadQuery } from "@/.sanity/lib/store";
 import { POST_QUERY } from "@/.sanity/lib/queries";
 import { urlFor } from "@/utils/utils";
-import Header from "@/components/ProjectDetails/Header";
-import InfoSection from "@/components/ProjectDetails/InfoSection";
+import { InfoSection, Header } from "@/components/ProjectDetails";
 
 import Error from "../error";
 

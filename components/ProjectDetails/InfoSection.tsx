@@ -10,7 +10,7 @@ type Props = {
   endDate: string;
   techStack: [];
 };
-const InfoSection = ({ role, startDate, endDate, techStack }: Props) => {
+export const InfoSection = ({ role, startDate, endDate, techStack }: Props) => {
   return (
     <>
       <section className="flex flex-col gap-9 mb-10 w-fit lg:flex-row lg:justify-between lg:w-full lg:max-w-[880px] lg:mx-auto">
@@ -72,5 +72,3 @@ const InfoSection = ({ role, startDate, endDate, techStack }: Props) => {
     </>
   );
 };
-
-export default InfoSection;
