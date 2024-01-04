@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { SanityDocument } from "next-sanity";
+import Link from "next/link";
 
 import { urlFor } from "@/utils/utils";
 import { loadQuery } from "@/.sanity/lib/store";
@@ -41,34 +42,38 @@ const CaseStudies = async () => {
             const pcolor = {
               backgroundColor: project.color,
             };
-            // console.log(initial.data[0].laptopImg.asset._ref);
+
             return (
-              <div
-                className="flex flex-col gap-6 max-w-[345px] lg:max-w-[550px]"
-                key={project.title}
-              >
-                <div
-                  className="rounded-[10px] pt-[43.66px] px-[30.74px]"
-                  style={pcolor}
-                >
-                  <div className="relative w-[270px] h-[155px] lg:w-[460px] lg:h-[264px] overflow-hidden">
-                    <Image
-                      src={urlFor(project.laptopImg.asset._ref).url()}
-                      className="object-contain"
-                      fill
-                      alt={project.laptopImg.caption}
-                    />
+              <>
+                <Link href={`/projects/${project.slug.current}`}>
+                  <div
+                    className="flex flex-col gap-6 max-w-[345px] lg:max-w-[550px]"
+                    key={project.title}
+                  >
+                    <div
+                      className="rounded-[10px] pt-[43.66px] px-[30.74px]"
+                      style={pcolor}
+                    >
+                      <div className="relative w-[270px] h-[155px] lg:w-[460px] lg:h-[264px] overflow-hidden">
+                        <Image
+                          src={urlFor(project.laptopImg.asset._ref).url()}
+                          className="object-contain"
+                          fill
+                          alt={project.laptopImg.caption}
+                        />
+                      </div>
+                    </div>
+                    <div className="flex flex-col gap-[6.27px] px-[30.74px]">
+                      <h2 className="paragraph-bold text-black-200 dark:text-white-900 lg:header3">
+                        {project.title}
+                      </h2>
+                      <p className="sm-reg text-white-500 lg:paragraph">
+                        {project.desc}
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex flex-col gap-[6.27px] px-[30.74px]">
-                  <h2 className="paragraph-bold text-black-200 dark:text-white-900 lg:header3">
-                    {project.title}
-                  </h2>
-                  <p className="sm-reg text-white-500 lg:paragraph">
-                    {project.desc}
-                  </p>
-                </div>
-              </div>
+                </Link>
+              </>
             );
           })}
         </div>
