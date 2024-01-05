@@ -1,5 +1,6 @@
 import React from "react";
 import { SanityDocument } from "next-sanity";
+import Link from "next/link";
 
 import { loadQuery } from "@/.sanity/lib/store";
 import { POST_QUERY } from "@/.sanity/lib/queries";
@@ -65,7 +66,16 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
         <Process process={projectData.data[0]?.process} />
       </section>
       {/* Projects */}
-      <section className="px-6 py-12 bg-white-900 sm:px-[85px] sm:py-[72px] dark:bg-black-200"></section>
+      <section className="px-6 py-12 bg-white-900 sm:px-[85px] sm:py-[72px] dark:bg-black-200 w-full">
+        <div className="flex items-center justify-center ">
+          <Link
+            href={"/projects"}
+            className="body-bold py-5 px-[45.5px] rounded-full self-center bg-Accent-light dark:bg-Accent-dark"
+          >
+            See more case studies
+          </Link>
+        </div>
+      </section>
 
       {/* Testimonials */}
       <section className="hidden bg-white-800 sm:pb-12 dark:bg-black-300">

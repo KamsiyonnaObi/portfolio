@@ -57,6 +57,12 @@ export const InfoSection = ({ role, startDate, endDate, techStack }: Props) => {
                   key={`${tech.caption}-${idx}`}
                   placement="bottom"
                   content={tech.caption}
+                  classNames={{
+                    content: [
+                      "py-2 px-4 shadow-xl",
+                      "text-black-200 dark:text-white-900",
+                    ],
+                  }}
                 >
                   <div className="flex items-center justify-center group skills p-2 rounded-full bg-white-800 w-[50px] h-[50px] cursor-pointer lg:w-[93px] lg:h-[93px] lg:p-4 dark:bg-black-300 sm:hover:shadow-lg ">
                     <div className="flex relative w-[25px] h-[25px] lg:w-[50px] lg:h-[50px] items-center justify-center">
