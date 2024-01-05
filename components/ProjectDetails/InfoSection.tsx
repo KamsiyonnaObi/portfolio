@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import moment from "moment";
+import { Tooltip } from "@nextui-org/react";
 
 import { urlFor } from "@/utils/utils";
 
@@ -50,21 +51,24 @@ export const InfoSection = ({ role, startDate, endDate, techStack }: Props) => {
         </div>
         <div className="flex flex-wrap gap-x-5 gap-y-[33px] lg:gap-x-9">
           {techStack.length > 0 &&
-            techStack.map((tech: any) => {
+            techStack.map((tech: any, idx) => {
               return (
-                <div
-                  key={tech.caption}
-                  className="flex items-center justify-center group skills p-2 rounded-full bg-white-800 w-[50px] h-[50px] lg:w-[93px] lg:h-[93px] lg:p-4 dark:bg-black-300 sm:hover:shadow-lg "
+                <Tooltip
+                  key={`${tech.caption}-${idx}`}
+                  placement="bottom"
+                  content={tech.caption}
                 >
-                  <div className="flex relative w-[25px] h-[25px] lg:w-[50px] lg:h-[50px] items-center justify-center">
-                    <Image
-                      className=""
-                      src={urlFor(tech.asset._ref).url()}
-                      alt={tech.caption}
-                      fill
-                    />
+                  <div className="flex items-center justify-center group skills p-2 rounded-full bg-white-800 w-[50px] h-[50px] cursor-pointer lg:w-[93px] lg:h-[93px] lg:p-4 dark:bg-black-300 sm:hover:shadow-lg ">
+                    <div className="flex relative w-[25px] h-[25px] lg:w-[50px] lg:h-[50px] items-center justify-center">
+                      <Image
+                        className=""
+                        src={urlFor(tech.asset._ref).url()}
+                        alt={tech.caption}
+                        fill
+                      />
+                    </div>
                   </div>
-                </div>
+                </Tooltip>
               );
             })}
         </div>
