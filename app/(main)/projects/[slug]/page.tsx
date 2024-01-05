@@ -4,7 +4,11 @@ import { SanityDocument } from "next-sanity";
 import { loadQuery } from "@/.sanity/lib/store";
 import { POST_QUERY } from "@/.sanity/lib/queries";
 import { urlFor } from "@/utils/utils";
-import { InfoSection, Header } from "@/components/ProjectDetails";
+import {
+  InfoSection,
+  Header,
+  ProblemStatement,
+} from "@/components/ProjectDetails";
 
 import Error from "../error";
 
@@ -42,8 +46,10 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
           techStack={projectData.data[0]?.stack}
         />
       </section>
-      {/* Services Section */}
-      <section className="px-6 py-12 bg-white-900 sm:bg-white-800 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-300"></section>
+      {/* Problem Statement */}
+      <section className="px-6 py-12 bg-white-900 sm:bg-white-800 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-300 w-full">
+        <ProblemStatement problemDesc="I am a Problem" />
+      </section>
       {/* Work Experience */}
       <section className="px-6 py-12 bg-white-900 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-200"></section>
       {/* Projects */}
