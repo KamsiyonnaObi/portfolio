@@ -10,6 +10,7 @@ import {
   Header,
   ProblemStatement,
   Process,
+  ChallengeAndLearnings,
 } from "@/components/ProjectDetails";
 
 import Error from "../error";
@@ -64,6 +65,11 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
       {/* Work Experience */}
       <section className="px-6 py-12 bg-white-900 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-200 w-full">
         <Process process={projectData.data[0]?.process} />
+        <ChallengeAndLearnings
+          JSONChallengeObj={JSON.stringify(
+            projectData.data[0]?.challengesAndLearnings
+          )}
+        />
       </section>
       {/* Projects */}
       <section className="px-6 py-12 bg-white-900 sm:px-[85px] sm:py-[72px] dark:bg-black-200 w-full">
