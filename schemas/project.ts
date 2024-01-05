@@ -82,6 +82,30 @@ export default {
       ],
     },
     {
+      name: "problemStatement",
+      type: "object",
+      title: "Problem Statement",
+      fields: [
+        {
+          name: "desc",
+          type: "string",
+          title: "Statement",
+        },
+        {
+          name: "image",
+          type: "image",
+          title: "Problem Image",
+          fields: [
+            {
+              name: "caption",
+              type: "string",
+              title: "Caption",
+            },
+          ],
+        },
+      ],
+    },
+    {
       title: "Tech Stack",
       name: "stack",
       type: "array",
