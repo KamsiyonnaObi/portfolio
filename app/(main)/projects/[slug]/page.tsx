@@ -8,6 +8,7 @@ import {
   InfoSection,
   Header,
   ProblemStatement,
+  Process,
 } from "@/components/ProjectDetails";
 
 import Error from "../error";
@@ -47,18 +48,22 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
         />
       </section>
       {/* Problem Statement */}
-      <section className="px-6 py-12 bg-white-900 sm:bg-white-800 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-300 w-full">
-        <ProblemStatement
-          problemDesc={projectData.data[0].problemStatement?.desc}
-          // imgUrl={
-          //   urlFor(
-          //     projectData.data[0]?.problemStatement?.image?.asset?._ref
-          //   )?.url() || undefined
-          // }
-        />
-      </section>
+      {projectData.data[0].problemStatement && (
+        <section className="px-6 py-12 bg-white-900 sm:bg-white-800 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-300 w-full">
+          <ProblemStatement
+            problemDesc={projectData.data[0].problemStatement?.desc}
+            // imgUrl={
+            //   urlFor(
+            //     projectData.data[0]?.problemStatement?.image?.asset?._ref
+            //   )?.url() || undefined
+            // }
+          />
+        </section>
+      )}
       {/* Work Experience */}
-      <section className="px-6 py-12 bg-white-900 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-200"></section>
+      <section className="px-6 py-12 bg-white-900 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-200 w-full">
+        <Process process={projectData.data[0]?.process} />
+      </section>
       {/* Projects */}
       <section className="px-6 py-12 bg-white-900 sm:px-[85px] sm:py-[72px] dark:bg-black-200"></section>
 

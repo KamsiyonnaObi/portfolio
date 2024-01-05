@@ -123,6 +123,23 @@ export default {
       ],
     },
     {
+      title: "Process",
+      name: "process",
+      type: "array",
+      of: [
+        {
+          type: "image",
+          fields: [
+            {
+              name: "caption",
+              type: "string",
+              title: "Caption",
+            },
+          ],
+        },
+      ],
+    },
+    {
       title: "FrontEndTags",
       name: "frontEndtags",
       type: "array",
