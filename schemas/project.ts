@@ -140,6 +140,25 @@ export default {
       ],
     },
     {
+      title: "Challenges & Learnings",
+      name: "challengesAndLearnings",
+      type: "object",
+      fields: [
+        {
+          title: "Challenges",
+          name: "challenges",
+          type: "array",
+          of: [{ type: "string" }],
+        },
+        {
+          title: "Learnings",
+          name: "learnings",
+          type: "array",
+          of: [{ type: "string" }],
+        },
+      ],
+    },
+    {
       title: "FrontEndTags",
       name: "frontEndtags",
       type: "array",
