@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "kamsiyonna.site/meta.png",
+        url: "https://portfolio-git-feature-metadata-kamsiyonnaobi.vercel.app/meta.png",
         width: 1200,
         height: 630,
         alt: "portfolio",
