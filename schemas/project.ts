@@ -25,6 +25,33 @@ export default {
       title: "Description",
     },
     {
+      name: "demo",
+      type: "url",
+      title: "Demo",
+    },
+    {
+      name: "github",
+      type: "url",
+      title: "GitHub",
+    },
+    {
+      name: "role",
+      type: "string",
+      title: "Role",
+    },
+    {
+      name: "startDate",
+      type: "date",
+      title: "Start Date",
+      options: { dateFormat: "DD/MM/YYYY" },
+    },
+    {
+      name: "endDate",
+      type: "date",
+      title: "End Date",
+      options: { dateFormat: "DD/MM/YYYY" },
+    },
+    {
       title: "MobileImg",
       name: "mobileImg",
       type: "image",
@@ -51,6 +78,83 @@ export default {
           name: "caption",
           type: "string",
           title: "Caption",
+        },
+      ],
+    },
+    {
+      name: "problemStatement",
+      type: "object",
+      title: "Problem Statement",
+      fields: [
+        {
+          name: "desc",
+          type: "string",
+          title: "Statement",
+        },
+        {
+          name: "image",
+          type: "image",
+          title: "Problem Image",
+          fields: [
+            {
+              name: "caption",
+              type: "string",
+              title: "Caption",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      title: "Tech Stack",
+      name: "stack",
+      type: "array",
+      of: [
+        {
+          type: "image",
+          fields: [
+            {
+              name: "caption",
+              type: "string",
+              title: "Caption",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      title: "Process",
+      name: "process",
+      type: "array",
+      of: [
+        {
+          type: "image",
+          fields: [
+            {
+              name: "caption",
+              type: "string",
+              title: "Caption",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      title: "Challenges & Learnings",
+      name: "challengesAndLearnings",
+      type: "object",
+      fields: [
+        {
+          title: "Challenges",
+          name: "challenges",
+          type: "array",
+          of: [{ type: "string" }],
+        },
+        {
+          title: "Learnings",
+          name: "learnings",
+          type: "array",
+          of: [{ type: "string" }],
         },
       ],
     },

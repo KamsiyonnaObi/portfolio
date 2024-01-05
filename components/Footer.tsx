@@ -29,7 +29,7 @@ const Footer = (props: Props) => {
       <section className="flex flex-col items-center px-[23.5px] w-full gap-4 sm:flex-row sm:justify-between">
         <div className="flex">
           <p className="text-black-400 items-center body-reg dark:text-white-800">
-            &copy; 2023 Kamsiyonna. All rights reserved.
+            &copy; 2024 Kamsiyonna. All rights reserved.
           </p>
         </div>
         <div className="flex gap-6 justify-center">

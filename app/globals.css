@@ -17,6 +17,27 @@
     left: 0;
     z-index: -1;
   }
+  .heading1 {
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%; /* 83.2px */
+    letter-spacing: -0.64px;
+  }
+  .heading2 {
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 115%; /* 55.2px */
+    letter-spacing: -0.48px;
+  }
+  .heading3 {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 105%; /* 29.4px */
+    letter-spacing: -0.14px;
+  }
   .header1 {
     font-size: 56px;
     font-weight: 700;
@@ -75,6 +96,18 @@
     font-size: 14px;
     font-weight: 600;
     line-height: 20.3px;
+  }
+  .caption {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 145%; /* 17.4px */
+  }
+  .caption-bold {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 145%; /* 17.4px */
   }
 }
 @layer utilities {

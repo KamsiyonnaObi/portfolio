@@ -31,7 +31,7 @@ export default function App() {
 
   return (
     <Navbar
-      className="flex px-6  xl:px-[61px] mx-auto lg:justify-center justify-between bg-white-800 dark:bg-black-300 max-w-full"
+      className="flex sm:px-6  xl:px-[61px] mx-auto lg:justify-center justify-between bg-white-800 dark:bg-black-300 max-w-full"
       classNames={{
         item: [
           "flex",
