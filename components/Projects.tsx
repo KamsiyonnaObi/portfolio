@@ -1,11 +1,28 @@
 import React from "react";
 import Link from "next/link";
+import { SanityDocument } from "next-sanity";
 
-import projects from "../constants/projects.json";
+import { urlFor } from "@/utils/utils";
+import { loadQuery } from "@/.sanity/lib/store";
+import { FEATURED_QUERY } from "@/.sanity/lib/queries";
 
 import ProjectCard from "./ProjectCard";
 
-const Projects = () => {
+const Projects = async () => {
+  const featuredProjects = await loadQuery<SanityDocument[]>(FEATURED_QUERY);
+
+  if (featuredProjects.data.length == 0) {
+    return (
+      <div className="flex justify-center items-center">
+        <Link
+          href={"/projects"}
+          className="body-bold py-5 px-[45.5px] w-fit rounded-full self-center bg-Accent-light dark:bg-Accent-dark sm:flex"
+        >
+          View case studies
+        </Link>
+      </div>
+    );
+  }
   return (
     <article className="flex flex-col justify-center gap-9 lg:gap-12">
       {/* Heading */}
@@ -16,15 +33,23 @@ const Projects = () => {
       </div>
       {/* Project Cards */}
       <div className="flex gap-9 flex-wrap sm:justify-center lg:gap-12">
-        {projects.data.map((project, idx) => {
+        {featuredProjects.data.map((project, idx) => {
           const swap = idx % 2;
           const pcolor = {
             backgroundColor: project.color,
           };
+
           return (
             <ProjectCard
-              project={project}
+              desc={project.desc}
               key={project.title}
+              title={project.title}
+              slug={project.slug.current}
+              frontEnd={project.frontEndtags}
+              backEnd={project.backEndtags}
+              laptopImg={urlFor(project.laptopImg.asset._ref).url()}
+              mobileImg={urlFor(project.mobileImg.asset._ref).url()}
+              caption={project.laptopImg?.caption || "project-image"}
               swap={swap}
               pcolor={pcolor}
             />
