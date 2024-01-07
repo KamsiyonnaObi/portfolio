@@ -15,6 +15,13 @@ export default {
       title: "Slug",
     },
     {
+      title: "Featured Project",
+      description: "Display this project on the home page",
+      name: "isFeatured",
+      type: "boolean",
+      default: false,
+    },
+    {
       name: "color",
       type: "string",
       title: "Color",
