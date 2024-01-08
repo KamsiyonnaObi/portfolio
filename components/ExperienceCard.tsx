@@ -1,28 +1,23 @@
 "use client";
-import React, { MouseEvent } from "react";
+import React from "react";
 import { Card, CardHeader, CardBody } from "@nextui-org/react";
+import Image from "next/image";
 
+import { urlFor } from "@/utils/utils";
 import { useSliderState } from "@/store/sliderStore";
 
-import {
-  DigitalIcon,
-  SlackIcon,
-  FirefoxIcon,
-  MailchimpIcon,
-} from "./svg/workIcons";
+interface workData {
+  logo: string;
+  caption: string;
+  employer: string;
+  role: string;
+  years: number;
+  desc: string;
+  descCont: string;
+}
+type Props = workData[];
 
-type Props = {
-  experiences: {
-    data: {
-      img: string;
-      employer: string;
-      job_title: string;
-      years_worked: string;
-    }[];
-  };
-};
-
-const ExperienceCard = (props: Props) => {
+const ExperienceCard: React.FC<{ data: Props }> = ({ data }) => {
   const { sliderValue, setSliderValue } = useSliderState();
   // divide into five stages
   const stage = Math.floor(sliderValue / 20);
@@ -30,11 +25,10 @@ const ExperienceCard = (props: Props) => {
   const handleClick = (index: number) => {
     setSliderValue(Math.floor((index + 1) * 20));
   };
-  const svgComponent = [SlackIcon, FirefoxIcon, DigitalIcon, MailchimpIcon];
+
   return (
     <>
-      {props.experiences.data.map((exp, idx) => {
-        const IconComponent = svgComponent[idx];
+      {data.map((exp, idx) => {
         return (
           <Card
             key={idx}
@@ -48,8 +42,8 @@ const ExperienceCard = (props: Props) => {
           >
             <div className="sm:flex sm:gap-9">
               <CardHeader className="flex p-0 w-auto">
-                <div className="flex h-[58px] w-[58px] rounded-[10px]">
-                  <IconComponent />
+                <div className="flex relative h-[58px] w-[58px] rounded-[10px]">
+                  <Image src={urlFor(exp.logo).url()} alt={exp.caption} fill />
                 </div>
               </CardHeader>
 
@@ -59,7 +53,7 @@ const ExperienceCard = (props: Props) => {
                     {exp.employer}
                   </h3>
                   <p className="sm-reg text-white-500 dark:text-white-800">
-                    {`${exp.job_title} - ${exp.years_worked} Years Experience`}
+                    {`${exp.role} - ${exp.years} Years Experience`}
                   </p>
                 </div>
               </CardBody>
