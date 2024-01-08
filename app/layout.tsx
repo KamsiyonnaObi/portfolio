@@ -23,10 +23,14 @@ export const metadata: Metadata = {
     "Winnipeg",
     "Manitoba",
   ],
+  metadataBase: new URL("https://kamsiyonna.site"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     images: [
       {
-        url: "kamsiyonna.site/meta.png",
+        url: "/meta.png",
         width: 1200,
         height: 630,
         alt: "portfolio",

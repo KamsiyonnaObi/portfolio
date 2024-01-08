@@ -2,24 +2,25 @@
 import React from "react";
 
 import { useSliderState } from "@/store/sliderStore";
-type Props = {
-  data: {
-    img: string;
-    employer: string;
-    job_title: string;
-    years_worked: string;
-    job_desc: string;
-    job_desc_cont: string;
-  }[];
-};
-const WorkExpDesc = (props: Props) => {
+
+interface workData {
+  logo: string;
+  caption: string;
+  employer: string;
+  role: string;
+  years: number;
+  desc: string;
+  descCont: string;
+}
+type Props = workData[];
+const WorkExpDesc: React.FC<{ data: Props }> = ({ data }) => {
   const { sliderValue } = useSliderState();
   const stage = Math.floor(sliderValue / 20);
 
   const workStage = {
-    employer: props.data[stage - 1]?.employer || "",
-    jobDesc: props.data[stage - 1]?.job_desc || "",
-    jobDescCont: props.data[stage - 1]?.job_desc_cont || "",
+    employer: data[stage - 1]?.employer || "",
+    jobDesc: data[stage - 1]?.desc || "",
+    jobDescCont: data[stage - 1]?.descCont || "",
   };
 
   return (

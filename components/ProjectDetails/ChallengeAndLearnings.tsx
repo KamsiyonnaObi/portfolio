@@ -7,7 +7,7 @@ export const ChallengeAndLearnings = ({
   JSONChallengeObj: string;
 }) => {
   const { challenges, learnings } = JSON.parse(JSONChallengeObj);
-  //   console.log(challengeObj);
+
   return (
     <>
       <section className="flex flex-col gap-6 mt-[42px] lg:w-full lg:gap-11 lg:max-w-[880px] lg:mx-auto lg:mt-[72px]">
