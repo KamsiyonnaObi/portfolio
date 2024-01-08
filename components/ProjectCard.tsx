@@ -27,7 +27,6 @@ const ProjectCard = ({
   slug,
   swap,
 }: Props) => {
-  console.log("caption: ", caption);
   return (
     <div
       style={pcolor}
