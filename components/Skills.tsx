@@ -1,17 +1,23 @@
-"use client";
 import React from "react";
 import Image from "next/image";
+import { SanityDocument } from "next-sanity";
+import { Tooltip } from "@nextui-org/react";
 
-import gitIcon from "../public/skill-icons/git.png";
-import jsIcon from "../public/skill-icons/javascript.png";
-import tsIcon from "../public/skill-icons/typescript.png";
-import reduxIcon from "../public/skill-icons/redux.png";
+import { urlFor } from "@/utils/utils";
+import { loadQuery } from "@/.sanity/lib/store";
+import { SKILLS_QUERY } from "@/.sanity/lib/queries";
 
-type Props = {};
+interface skillData {
+  _key: string;
+  asset: { _ref: string; _type: string };
+  _type: string;
+  caption: string;
+}
+const Skills = async () => {
+  const skills = await loadQuery<SanityDocument[]>(SKILLS_QUERY);
 
-const Skills = (props: Props) => {
   return (
-    <article className="flex min-h-[250px] flex-col justify-center gap-10">
+    <article className="flex min-h-[250px] flex-col justify-center gap-10 lg:mx-auto lg:max-w-[964px] xl:max-w-[1270px]">
       {/* Heading */}
       <section className="flex flex-col mx-auto justify-start gap-y-10">
         <div className="flex mx-auto ">
@@ -20,44 +26,33 @@ const Skills = (props: Props) => {
           </h1>
         </div>
         {/* Skill Icons */}
-        <div className="flex flex-wrap w-[348px] min-h-[120px] gap-10 justify-center sm:gap-[43.74px] sm:w-fit sm:h-fit">
-          <div className="flex group skills p-2 rounded-full bg-white-800 w-[52.77px] h-[52.77px] sm:w-[100px] sm:h-[100px] sm:p-4 dark:bg-black-300 sm:hover:shadow-lg ">
-            <div className=" self-center">
-              <Image
-                className="grayscale group-hover:grayscale-0"
-                src={jsIcon}
-                alt="javascript"
-              />
-            </div>
-          </div>
-          <div className="flex group skills p-2 rounded-full bg-white-800 w-[52.77px] h-[52.77px] sm:w-[100px] sm:h-[100px] sm:p-4 dark:bg-black-300 sm:hover:shadow-lg">
-            <div className=" self-center">
-              <Image
-                className="grayscale group-hover:grayscale-0"
-                src={reduxIcon}
-                alt="redux"
-              />
-            </div>
-          </div>
-          <div className="flex group skills p-2 rounded-full justify-center bg-white-800 w-[52.77px] h-[52.77px] sm:w-[100px] sm:h-[100px] sm:p-4 dark:bg-black-300 sm:hover:shadow-lg">
-            <div className=" self-center">
-              <Image
-                className="grayscale group-hover:grayscale-0"
-                src={tsIcon}
-                alt="typescript"
-              />
-            </div>
-          </div>
-
-          <div className="flex group skills p-2 rounded-full bg-white-800 w-[52.77px] h-[52.77px] sm:w-[100px] sm:h-[100px] sm:p-4 dark:bg-black-300 sm:hover:shadow-lg">
-            <div className=" self-center">
-              <Image
-                className="grayscale group-hover:grayscale-0"
-                src={gitIcon}
-                alt="git"
-              />
-            </div>
-          </div>
+        <div className="flex flex-wrap w-[348px] min-h-[120px] gap-10 justify-center sm:gap-[43.74px] sm:w-fit sm:h-fit ">
+          {skills.data[0].stack.map((tech: skillData) => {
+            return (
+              <Tooltip
+                key={tech._key}
+                placement="bottom"
+                content={tech.caption}
+                classNames={{
+                  content: [
+                    "py-2 px-4 shadow-xl",
+                    "text-black-200 dark:text-white-900",
+                  ],
+                }}
+              >
+                <div className="flex items-center justify-center group skills p-2 rounded-full bg-white-800 w-[50px] h-[50px] cursor-pointer lg:w-[93px] lg:h-[93px] lg:p-4 dark:bg-black-300 sm:hover:shadow-lg ">
+                  <div className="flex relative w-[25px] h-[25px] lg:w-[50px] lg:h-[50px] items-center justify-center">
+                    <Image
+                      className="grayscale group-hover:grayscale-0"
+                      src={urlFor(tech.asset._ref).url()}
+                      alt={tech.caption}
+                      fill
+                    />
+                  </div>
+                </div>
+              </Tooltip>
+            );
+          })}
         </div>
       </section>
     </article>
