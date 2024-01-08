@@ -41,9 +41,16 @@ const ExperienceCard: React.FC<{ data: Props }> = ({ data }) => {
             }}
           >
             <div className="sm:flex sm:gap-9">
-              <CardHeader className="flex p-0 w-auto">
+              <CardHeader className="flex  p-0 w-auto">
                 <div className="flex relative h-[58px] w-[58px] rounded-[10px]">
-                  <Image src={urlFor(exp.logo).url()} alt={exp.caption} fill />
+                  <Image
+                    className={`${
+                      stage === idx + 1 ? "" : "grayscale"
+                    } group-hover:grayscale-0`}
+                    src={urlFor(exp.logo).url()}
+                    alt={exp.caption}
+                    fill
+                  />
                 </div>
               </CardHeader>
 
