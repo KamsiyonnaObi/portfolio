@@ -82,6 +82,7 @@ export default function App() {
             Home
           </Link>
         </NavbarItem>
+
         <NavbarItem>
           <Link href="/projects" aria-current="page">
             <p className="sm-reg text-white-500 dark:text-white-800">
@@ -97,7 +98,12 @@ export default function App() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <a
+            href="/files/resume.pdf"
+            className="sm-reg text-white-500 dark:text-white-800"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className="flex items-center gap-1.5">
               <div>
                 <DownloadIcon />
@@ -106,7 +112,7 @@ export default function App() {
                 Resume
               </p>
             </div>
-          </Link>
+          </a>
         </NavbarItem>
         <NavbarItem className="py-5">
           <Divider orientation="vertical" />
@@ -145,13 +151,15 @@ export default function App() {
             Contact
           </Link>
         </NavbarMenuItem>
-        <NavbarMenuItem className="pt-5">
-          <Button
-            size="lg"
-            className="text-Accent-light dark:text-Accent-dark bg-white-800 dark:bg-black-300 w-full"
+        <NavbarMenuItem className="flex items-center justify-center rounded-lg pt-5">
+          <a
+            href="/files/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-Accent-light dark:text-Accent-dark bg-white-800 dark:bg-black-300 flex items-center justify-center rounded-[100px] py-[15px] w-full"
           >
             <p className="body-reg">Resume</p>
-          </Button>
+          </a>
         </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>
