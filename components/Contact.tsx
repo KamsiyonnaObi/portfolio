@@ -9,6 +9,22 @@ import github from "../public/github.svg";
 import { EmailIcon, PhoneIcon } from "./svg";
 
 const Contact = () => {
+  const [contactForm, setContactForm] = React.useState({
+    firstName: "",
+    email: "",
+    message: "",
+    bestContact: "",
+  });
+
+  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    console.log(value);
+    setContactForm((prevData) => ({ ...prevData, [name]: value }));
+  };
+  const handleTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const { value } = e.target;
+    setContactForm((prevData) => ({ ...prevData, message: value }));
+  };
   const onSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     try {
@@ -45,8 +61,10 @@ const Contact = () => {
                           minLength={2}
                           maxLength={20}
                           type="text"
-                          name="name"
-                          id="name"
+                          name="firstName"
+                          onChange={handleFormChange}
+                          value={contactForm.firstName}
+                          id="firstName"
                           autoComplete="name"
                           className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-black-200 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 dark:text-white-900"
                         />
@@ -66,6 +84,8 @@ const Contact = () => {
                         required
                         id="email"
                         name="email"
+                        onChange={handleFormChange}
+                        value={contactForm.email}
                         type="email"
                         autoComplete="email"
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-black-200 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 dark:text-white-900"
@@ -87,6 +107,8 @@ const Contact = () => {
                         maxLength={300}
                         id="about"
                         name="about"
+                        onChange={handleTextAreaChange}
+                        value={contactForm.message}
                         rows={3}
                         className="resize-none block w-full bg-white-800 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-inset  placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-Accent-light sm:text-sm sm:leading-6 dark:bg-black-300 dark:border-[#2C3C56] dark:text-white-900"
                         defaultValue={""}
@@ -108,8 +130,10 @@ const Contact = () => {
                       <div className="flex rounded-[10px] bg-white-800 border border-[#CCE1FF] min-h-[60px] focus-within:ring-2 focus-within:ring-inset focus-within:ring-Accent-light dark:bg-black-300 dark:border-[#2C3C56]">
                         <input
                           type="text"
-                          name="contact"
-                          id="contact"
+                          name="bestContact"
+                          onChange={handleFormChange}
+                          value={contactForm.bestContact}
+                          id="bestContact"
                           className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-black-200 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 dark:text-white-900"
                         />
                       </div>
