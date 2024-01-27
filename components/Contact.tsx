@@ -23,6 +23,7 @@ const Contact = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<ContactSchema>({
     resolver: zodResolver(contactSchema),
@@ -40,6 +41,7 @@ const Contact = () => {
         throw new Error(`Request failed with status: ${res.status}`);
       }
       toast.success("Contact sent successfully!");
+      reset();
     } catch (error: any) {
       console.error("Error sending data:", error.message);
       // Handle the error, e.g., show an error message to the user
