@@ -31,7 +31,7 @@ export default function App() {
 
   return (
     <Navbar
-      className="flex sm:px-6  xl:px-[61px] mx-auto lg:justify-center justify-between bg-white-800 dark:bg-black-300 max-w-full"
+      className="flex xl:px-[85px] mx-auto lg:justify-center justify-between bg-white-800 dark:bg-black-300 max-w-full"
       classNames={{
         item: [
           "flex",
@@ -43,7 +43,7 @@ export default function App() {
           "data-[active=true]:dark:bg-Accent-dark",
         ],
       }}
-      maxWidth="xl"
+      maxWidth="full"
       isBlurred={true}
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}

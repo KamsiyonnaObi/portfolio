@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { Toaster } from "sonner";
 import { Poppins } from "next/font/google";
 
 import { Providers } from "./providers";
@@ -64,6 +65,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.className}>
         <Providers>{children}</Providers>
+        <Toaster richColors />
       </body>
     </html>
   );
