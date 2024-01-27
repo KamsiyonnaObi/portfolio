@@ -19,7 +19,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
     <p>Here&apos;s their message</p>
     <i>{message}</i>
     <p>Here is their email: {email}</p>
-    {firstName && (
+    {bestContact && (
       <p>However, they would prefer if you reach out via {bestContact}</p>
     )}
   </div>

@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { toast } from "sonner";
 
 import linkedIn from "../public/linkedIn.svg";
 import github from "../public/github.svg";
@@ -18,7 +19,6 @@ const Contact = () => {
 
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    console.log(value);
     setContactForm((prevData) => ({ ...prevData, [name]: value }));
   };
   const handleTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -28,11 +28,13 @@ const Contact = () => {
   const onSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     try {
-      const res = await fetch("api/send", { method: "POST" });
+      const res = await fetch("api/send", {
+        method: "POST",
+        body: JSON.stringify(contactForm),
+      });
       if (!res.ok) {
         throw new Error(`Request failed with status: ${res.status}`);
       }
-      console.log(res);
     } catch (error: any) {
       console.error("Error sending data:", error.message);
       // Handle the error, e.g., show an error message to the user
@@ -146,7 +148,7 @@ const Contact = () => {
 
           <div className="flex w-full xl:justify-end">
             <button
-              onClick={onSubmit}
+              onClick={() => toast.success("Form successfully submitted!")}
               className="w-full rounded-full bg-Accent-light px-[69.5px] py-5 sm-bold font-semibold text-white dark:bg-Accent-dark hover:bg-Accent-dark dark:hover:bg-Accent-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 md:body-bold xl:w-fit"
             >
               Send
