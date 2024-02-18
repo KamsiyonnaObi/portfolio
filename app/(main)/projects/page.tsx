@@ -37,7 +37,7 @@ const CaseStudies = async () => {
       </section>
       {/* Case Studies */}
       <section className="px-6 py-12 bg-white-900 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-200">
-        <div className="flex flex-col gap-5 items-center md:flex-row md:justify-center md:flex-wrap lg:gap-9">
+        <div className="flex flex-col mx-auto gap-5 items-center max-w-[1136px] md:flex-row md:justify-center md:flex-wrap lg:gap-9">
           {initial.data.map((project: SanityDocument) => {
             const pcolor = {
               backgroundColor: project.color,
@@ -45,7 +45,10 @@ const CaseStudies = async () => {
 
             return (
               <>
-                <Link href={`/projects/${project.slug.current}`}>
+                <Link
+                  href={`/projects/${project.slug.current}`}
+                  key={project.slug.current}
+                >
                   <div
                     className="flex flex-col gap-6 max-w-[345px] lg:max-w-[550px]"
                     key={project.title}
