@@ -89,6 +89,12 @@ export default {
       ],
     },
     {
+      name: "projectDescription",
+      title: "Complete description",
+      type: "array",
+      of: [{ type: "block" }],
+    },
+    {
       name: "problemStatement",
       type: "object",
       title: "Problem Statement",
@@ -97,6 +103,12 @@ export default {
           name: "desc",
           type: "string",
           title: "Statement",
+        },
+        {
+          name: "content",
+          title: "Content",
+          type: "array",
+          of: [{ type: "block" }],
         },
         {
           name: "image",
