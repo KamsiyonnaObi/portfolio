@@ -1,6 +1,7 @@
 import React from "react";
 import { SanityDocument } from "next-sanity";
 import Link from "next/link";
+import { PortableText } from "@portabletext/react";
 
 import { loadQuery } from "@/.sanity/lib/store";
 import { POST_QUERY } from "@/.sanity/lib/queries";
@@ -8,7 +9,6 @@ import { urlFor } from "@/utils/utils";
 import {
   InfoSection,
   Header,
-  ProblemStatement,
   Process,
   ChallengeAndLearnings,
 } from "@/components/ProjectDetails";
@@ -49,21 +49,39 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
           techStack={projectData.data[0]?.stack}
         />
       </section>
-      {/* Problem Statement */}
-      {projectData.data[0].problemStatement && (
-        <section className="px-6 py-12 bg-white-900 sm:bg-white-800 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-300 w-full">
-          <ProblemStatement
-            problemDesc={projectData.data[0].problemStatement?.desc}
-            // imgUrl={
-            //   urlFor(
-            //     projectData.data[0]?.problemStatement?.image?.asset?._ref
-            //   )?.url() || undefined
-            // }
-          />
+      {/* Project complete Description */}
+      {projectData.data[0].projectDescription && (
+        <section className="px-6 py-12 bg-white-800 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-300 w-full">
+          <article className="flex flex-col gap-6 lg:justify-between lg:w-full lg:max-w-[880px] lg:mx-auto">
+            <div className="sm-reg dark:text-white-800 sm:body-reg text-white-500 transition delay-150 duration-300 ease-in-out">
+              <PortableText value={projectData.data[0].projectDescription} />
+            </div>
+          </article>
         </section>
       )}
-      {/* Work Experience */}
-      <section className="px-6 py-12 bg-white-900 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-200 w-full">
+      {/* Problem Statement */}
+      {projectData.data[0].problemStatement && (
+        <section className="px-6 py-12 bg-white-800 sm:bg-white-800 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-200 w-full">
+          <article className="flex flex-col gap-6 lg:justify-between lg:w-full lg:max-w-[880px] lg:mx-auto">
+            <div className="flex flex-col gap-[9px]">
+              <p className="caption-bold text-Accent-light dark:text-Accent-dark lg:sm-bold">
+                Problem
+              </p>
+              <h1 className="heading3 text-black-200 dark:text-white-900 lg:header3">
+                Problem Statement
+              </h1>
+            </div>
+
+            <div className="sm-reg dark:text-white-800 sm:body-reg text-white-500 transition delay-150 duration-300 ease-in-out">
+              <PortableText
+                value={projectData.data[0].problemStatement.content}
+              />
+            </div>
+          </article>
+        </section>
+      )}
+      {/* Way Of Work */}
+      <section className="px-6 py-12 bg-white-800 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-300 w-full">
         <Process process={projectData.data[0]?.process} />
         <ChallengeAndLearnings
           JSONChallengeObj={JSON.stringify(
