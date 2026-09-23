@@ -15,8 +15,15 @@ import {
 
 import Error from "../error";
 
-const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
-  const projectData = await loadQuery<SanityDocument[]>(POST_QUERY, params);
+const ProjectDetails = async ({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) => {
+  const projectData = await loadQuery<SanityDocument[]>(
+    POST_QUERY,
+    await params
+  );
 
   if (!projectData.data[0]) {
     return <Error />;

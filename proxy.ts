@@ -5,7 +5,7 @@ export const config = {
   matcher: ["/home", "/"],
 };
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const url = request.nextUrl.clone();
 
   if (url.pathname === "/") {

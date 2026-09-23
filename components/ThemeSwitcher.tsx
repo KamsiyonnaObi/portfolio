@@ -11,6 +11,8 @@ export const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
+    // hydration guard: the active theme is unknown until the client mounts
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
