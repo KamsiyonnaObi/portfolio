@@ -5,12 +5,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { ThemeSwitcher } from "./ThemeSwitcher";
-import { DownloadIcon } from "./svg/Download";
 import { Close, Hamburger } from "./svg/NavbarIcons";
+
+// Placeholder until the view-only Google Doc resume is published
+const RESUME_URL = "https://www.google.com";
 
 const links = [
   { label: "Work", href: "/projects" },
-  { label: "Experience", href: "/#experience" },
   { label: "About", href: "/#about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -72,12 +73,11 @@ export default function NavigationBar() {
           ))}
           <li>
             <a
-              href="/files/resume.pdf"
+              href={RESUME_URL}
               className="focus-ring flex items-center gap-1.5 rounded-sm"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <DownloadIcon />
               <span className="sm-reg text-black-200 dark:text-white-900">
                 Resume
               </span>
@@ -128,7 +128,7 @@ export default function NavigationBar() {
           ))}
           <li className="pt-5">
             <a
-              href="/files/resume.pdf"
+              href={RESUME_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="focus-ring flex w-full items-center justify-center rounded-[100px] bg-white-900 py-[15px] text-Accent-light dark:bg-black-200 dark:text-Accent-dark"
