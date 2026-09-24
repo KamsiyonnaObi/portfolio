@@ -22,19 +22,23 @@ export const ThemeSwitcher = () => {
 
   return (
     <button
-      className={`p-2 rounded-md hover:scale-110 duration-200 `}
+      type="button"
+      className={`focus-ring p-2 rounded-md hover:scale-110 duration-200 `}
+      aria-label={
+        theme === "dark" ? "Switch to light theme" : "Switch to dark theme"
+      }
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {theme === "light" ? (
         <div className="flex items-center w-6 h-6">
           <div>
-            <Image className="object-fit" src={darkIcon} alt="dark-icon" />
+            <Image className="object-fit" src={darkIcon} alt="" />
           </div>
         </div>
       ) : (
         <div className="flex items-center w-6 h-6">
           <div>
-            <Image className="object-fit" src={lightIcon} alt="light-icon" />
+            <Image className="object-fit" src={lightIcon} alt="" />
           </div>
         </div>
       )}

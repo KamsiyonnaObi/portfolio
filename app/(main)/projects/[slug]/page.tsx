@@ -1,118 +1,139 @@
 import React from "react";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { SanityDocument } from "next-sanity";
 import Link from "next/link";
 import { PortableText } from "@portabletext/react";
 
+import { client } from "@/.sanity/lib/client";
 import { loadQuery } from "@/.sanity/lib/store";
-import { POST_QUERY } from "@/.sanity/lib/queries";
+import { POST_QUERY, PROJECT_SLUGS_QUERY } from "@/.sanity/lib/queries";
 import { urlFor } from "@/utils/utils";
 import {
   InfoSection,
   Header,
-  Process,
   ChallengeAndLearnings,
 } from "@/components/ProjectDetails";
 
-import Error from "../error";
+export const revalidate = 60;
 
-const ProjectDetails = async ({
+type Params = Promise<{ slug: string }>;
+
+// Prebuild the known case studies; new ones are rendered on first request
+export async function generateStaticParams() {
+  const projects = await client.fetch<{ slug: string }[]>(PROJECT_SLUGS_QUERY);
+  return projects.map(({ slug }) => ({ slug }));
+}
+
+export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
-}) => {
-  const projectData = await loadQuery<SanityDocument[]>(
+  params: Params;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const { data: project } = await loadQuery<SanityDocument | null>(
     POST_QUERY,
-    await params
+    { slug }
+  );
+  if (!project) return {};
+
+  return {
+    title: project.title,
+    description: project.desc,
+    alternates: { canonical: `/projects/${slug}` },
+    openGraph: { title: project.title, description: project.desc },
+  };
+}
+
+const ProjectDetails = async ({ params }: { params: Params }) => {
+  const { slug } = await params;
+  const { data: project } = await loadQuery<SanityDocument | null>(
+    POST_QUERY,
+    { slug }
   );
 
-  if (!projectData.data[0]) {
-    return <Error />;
+  if (!project) {
+    notFound();
   }
+
+  const laptopRef = project.laptopImg?.asset?._ref;
+  const mobileRef = project.mobileImg?.asset?._ref;
+  const challenges = project.challengesAndLearnings?.challenges ?? [];
+  const learnings = project.challengesAndLearnings?.learnings ?? [];
+
   return (
-    <main className="flex flex-col w-full min-h-screen p-0 m-0 items-center justify-between">
+    <div className="flex flex-col w-full min-h-screen p-0 m-0 items-center justify-between">
       {/* Title Section */}
       <section className="px-6 py-12 bg-white-800 lg:py-[60px] lg:px-12 xl:px-[85px] dark:bg-black-300 w-full">
         <p className="sm-reg mb-2.5 text-center text-Accent-light dark:text-Accent-dark lg:paragraph-bold lg:mb-[30px]">
-          WEB DEV PROJECT
+          CASE STUDY
         </p>
         <Header
-          title={projectData.data[0].title}
-          desc={projectData.data[0].desc}
-          laptopUrl={urlFor(projectData.data[0].laptopImg.asset._ref).url()}
-          mobileUrl={urlFor(projectData.data[0].mobileImg.asset._ref).url()}
-          laptopCaption={projectData.data[0].laptopImg.caption}
-          mobileCaption={projectData.data[0].mobileImg.caption}
-          demoLink={projectData.data[0].demo}
-          repo={projectData.data[0].github}
+          title={project.title}
+          desc={project.desc}
+          laptopUrl={laptopRef ? urlFor(laptopRef).url() : undefined}
+          mobileUrl={mobileRef ? urlFor(mobileRef).url() : undefined}
+          demoLink={project.demo}
+          repo={project.github}
         />
       </section>
 
       {/* Role & Tech Stack Section */}
       <section className="px-6 py-10 bg-white-900 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-200 w-full">
         <InfoSection
-          role={projectData.data[0].role}
-          startDate={projectData.data[0].startDate}
-          endDate={projectData.data[0].endDate}
-          techStack={projectData.data[0]?.stack}
+          role={project.role}
+          startDate={project.startDate}
+          endDate={project.endDate}
+          techStack={project.stack ?? []}
         />
       </section>
       {/* Project complete Description */}
-      {projectData.data[0].projectDescription && (
+      {project.projectDescription && (
         <section className="px-6 py-12 bg-white-800 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-300 w-full">
           <article className="flex flex-col gap-6 lg:justify-between lg:w-full lg:max-w-[880px] lg:mx-auto">
             <div className="sm-reg dark:text-white-800 sm:body-reg text-white-500 transition delay-150 duration-300 ease-in-out">
-              <PortableText value={projectData.data[0].projectDescription} />
+              <PortableText value={project.projectDescription} />
             </div>
           </article>
         </section>
       )}
       {/* Problem Statement */}
-      {projectData.data[0].problemStatement && (
-        <section className="px-6 py-12 bg-white-800 sm:bg-white-800 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-200 w-full">
+      {project.problemStatement?.content && (
+        <section className="px-6 py-12 bg-white-900 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-200 w-full">
           <article className="flex flex-col gap-6 lg:justify-between lg:w-full lg:max-w-[880px] lg:mx-auto">
             <div className="flex flex-col gap-[9px]">
               <p className="caption-bold text-Accent-light dark:text-Accent-dark lg:sm-bold">
                 Problem
               </p>
-              <h1 className="heading3 text-black-200 dark:text-white-900 lg:header3">
+              <h2 className="heading3 text-black-200 dark:text-white-900 lg:header3">
                 Problem Statement
-              </h1>
+              </h2>
             </div>
 
             <div className="sm-reg dark:text-white-800 sm:body-reg text-white-500 transition delay-150 duration-300 ease-in-out">
-              <PortableText
-                value={projectData.data[0].problemStatement.content}
-              />
+              <PortableText value={project.problemStatement.content} />
             </div>
           </article>
         </section>
       )}
-      {/* Way Of Work */}
-      <section className="px-6 py-12 bg-white-800 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-300 w-full">
-        <Process process={projectData.data[0]?.process} />
-        <ChallengeAndLearnings
-          JSONChallengeObj={JSON.stringify(
-            projectData.data[0]?.challengesAndLearnings
-          )}
-        />
-      </section>
+      {/* Challenges & learnings */}
+      {(challenges.length > 0 || learnings.length > 0) && (
+        <section className="px-6 py-12 bg-white-800 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-300 w-full">
+          <ChallengeAndLearnings
+            challenges={challenges}
+            learnings={learnings}
+          />
+        </section>
+      )}
       {/* Projects */}
       <section className="px-6 py-12 bg-white-900 sm:px-[85px] sm:py-[72px] dark:bg-black-200 w-full">
         <div className="flex items-center justify-center ">
-          <Link
-            href={"/projects"}
-            className="body-bold py-5 px-[45.5px] rounded-full self-center bg-Accent-light dark:bg-Accent-dark"
-          >
+          <Link href={"/projects"} className="btn-primary">
             See more case studies
           </Link>
         </div>
       </section>
-
-      {/* Testimonials */}
-      <section className="hidden bg-white-800 sm:pb-12 dark:bg-black-300">
-        <div>What they say about me</div>
-      </section>
-    </main>
+    </div>
   );
 };
 

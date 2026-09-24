@@ -1,60 +1,56 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Toaster } from "sonner";
 import { Poppins } from "next/font/google";
 
 import { Providers } from "./providers";
 
+// Only the weights the design uses: 400 body, 600 semibold, 700 bold
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "600", "700"],
+  display: "swap",
 });
 
+const siteTitle = "Kamsiyonna Obi | Full-Stack Developer Building Fintech";
+const siteDescription =
+  "Full-stack developer in Winnipeg, Canada building financial technology that gives people clarity, confidence, and control. C#/.NET, TypeScript, Angular, React.";
+
 export const metadata: Metadata = {
-  title: "Kamsiyonna",
-  description: "Portfolio site of a Software Engineer",
+  metadataBase: new URL("https://kamsiyonna.site"),
+  title: {
+    default: siteTitle,
+    template: "%s | Kamsiyonna Obi",
+  },
+  description: siteDescription,
   keywords: [
+    "Full-Stack Developer",
     "Software Developer",
-    "Software Developer in Canada",
-    "NextJS",
+    "Fintech",
+    "Financial Technology",
+    "C#",
+    ".NET",
+    "TypeScript",
+    "Angular",
     "React",
-    "JavaScript",
-    "Developer",
-    "Canada",
+    "Next.js",
     "Winnipeg",
     "Manitoba",
+    "Canada",
   ],
-  metadataBase: new URL("https://kamsiyonna.site"),
-  alternates: {
-    canonical: "/",
-  },
+  authors: [{ name: "Kamsiyonna Obi", url: "https://kamsiyonna.site" }],
   openGraph: {
-    images: [
-      {
-        url: "/meta.png",
-        width: 1200,
-        height: 630,
-        alt: "portfolio",
-      },
-    ],
+    type: "website",
+    siteName: "Kamsiyonna Obi",
+    locale: "en_CA",
+    title: siteTitle,
+    description: siteDescription,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
   },
 };
-
-// export const metadata: Metadata = {
-//   title: "Hipnode",
-//   description: "Modern Social Media Forum Web App",
-//   keywords: ["Next.js", "React", "JavaScript", "Developer"],
-//   openGraph: {
-//     images: [
-//       {
-//         url: ${baseURL}/meta.png,
-//         width: 1200,
-//         height: 630,
-//         alt: "Hipnode",
-//       },
-//     ],
-//   },
-// };
 
 export default function RootLayout({
   children,
@@ -64,8 +60,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={poppins.className}>
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-Accent-light focus:px-5 focus:py-3 focus:text-white-900 dark:focus:bg-Accent-dark dark:focus:text-black-200"
+        >
+          Skip to content
+        </a>
         <Providers>{children}</Providers>
-        <Toaster richColors />
       </body>
     </html>
   );

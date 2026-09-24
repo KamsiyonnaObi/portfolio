@@ -1,11 +1,9 @@
 import type { Config } from "tailwindcss";
-import { nextui } from "@nextui-org/react";
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -26,12 +24,16 @@ const config: Config = {
         black: {
           200: "#151E2C",
           300: "#192333",
-          400: "#778295",
+          // darkened from #778295 to reach 4.5:1 (WCAG AA) on light backgrounds
+          400: "#5E6A7E",
         },
         white: {
           900: "#FFFFFF",
           800: "#F3F8FF",
-          500: "#6F74A7",
+          // muted text on dark backgrounds (8:1 on black-200)
+          700: "#AEB7D0",
+          // darkened from #6F74A7 to reach 4.5:1 (WCAG AA) on light backgrounds
+          500: "#666B9E",
         },
         backg: "#F3F8FF",
       },
@@ -57,6 +59,6 @@ const config: Config = {
     },
   },
   darkMode: "class",
-  plugins: [nextui(), require("@tailwindcss/forms")],
+  plugins: [require("@tailwindcss/forms")],
 };
 export default config;

@@ -1,45 +1,50 @@
 import React from "react";
 
 import MilestoneCard from "./MilestoneCard";
-export const ChallengeAndLearnings = ({
-  JSONChallengeObj,
-}: {
-  JSONChallengeObj: string;
-}) => {
-  const { challenges, learnings } = JSON.parse(JSONChallengeObj);
 
+export const ChallengeAndLearnings = ({
+  challenges,
+  learnings,
+}: {
+  challenges: string[];
+  learnings: string[];
+}) => {
   return (
     <>
-      <section className="flex flex-col gap-6 mt-[42px] lg:w-full lg:gap-11 lg:max-w-[880px] lg:mx-auto lg:mt-[72px]">
+      <section className="flex flex-col gap-6 lg:w-full lg:gap-11 lg:max-w-[880px] lg:mx-auto">
         <div className="flex flex-col gap-6 lg:gap-[30px]">
           <div className="flex flex-col gap-[9px]">
             <p className="caption-bold text-Accent-light dark:text-Accent-dark lg:sm-bold">
               Problem
             </p>
-            <h1 className="heading3 text-black-200 dark:text-white-900 lg:header3">
+            <h2 className="heading3 text-black-200 dark:text-white-900 lg:header3">
               Challenges & Learnings
-            </h1>
+            </h2>
           </div>
-          <article className="flex flex-col gap-6 lg:gap-11 py-6 px-[14px] rounded-[10px] bg-white-800 dark:bg-black-300 lg:py-9 lg:px-10">
-            <h1 className="text-[#E15A46] body-bold lg:paragraph-bold">
-              CHALLENGES
-            </h1>
-            <article className="flex flex-col gap-5 items-start ">
-              {challenges.map((challenge: string, idx: any) => {
-                return <MilestoneCard key={idx} point={challenge} />;
-              })}
+          {challenges.length > 0 && (
+            <article className="flex flex-col gap-6 lg:gap-11 py-6 px-[14px] rounded-[10px] bg-white-900 dark:bg-black-200 lg:py-9 lg:px-10">
+              <h3 className="text-[#B4382A] dark:text-[#FF8A7A] body-bold lg:paragraph-bold">
+                CHALLENGES
+              </h3>
+              <ul className="flex flex-col gap-5 items-start ">
+                {challenges.map((challenge, idx) => {
+                  return <MilestoneCard key={idx} point={challenge} />;
+                })}
+              </ul>
             </article>
-          </article>
-          <article className="flex flex-col gap-6 lg:gap-11 py-6 px-[14px] rounded-[10px] bg-white-800 dark:bg-black-300 lg:py-9 lg:px-10">
-            <h1 className="text-[#02BC7D] body-bold lg:paragraph-bold">
-              LEARNINGS
-            </h1>
-            <article className="flex flex-col gap-5 items-start ">
-              {learnings.map((point: string, idx: any) => {
-                return <MilestoneCard key={idx} point={point} isLearning />;
-              })}
+          )}
+          {learnings.length > 0 && (
+            <article className="flex flex-col gap-6 lg:gap-11 py-6 px-[14px] rounded-[10px] bg-white-900 dark:bg-black-200 lg:py-9 lg:px-10">
+              <h3 className="text-[#046C4E] dark:text-[#4ADE9F] body-bold lg:paragraph-bold">
+                LEARNINGS
+              </h3>
+              <ul className="flex flex-col gap-5 items-start ">
+                {learnings.map((point, idx) => {
+                  return <MilestoneCard key={idx} point={point} isLearning />;
+                })}
+              </ul>
             </article>
-          </article>
+          )}
         </div>
       </section>
     </>
