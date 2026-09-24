@@ -1,9 +1,8 @@
 import React from "react";
-import Image from "next/image";
 import moment from "moment";
-import { Tooltip } from "@nextui-org/react";
 
 import { urlFor } from "@/utils/utils";
+import { TechIcon } from "@/components/TechIcon";
 
 type Props = {
   role: string;
@@ -53,28 +52,11 @@ export const InfoSection = ({ role, startDate, endDate, techStack }: Props) => {
           {techStack.length > 0 &&
             techStack.map((tech: any, idx) => {
               return (
-                <Tooltip
+                <TechIcon
                   key={`${tech.caption}-${idx}`}
-                  placement="bottom"
-                  content={tech.caption}
-                  classNames={{
-                    content: [
-                      "py-2 px-4 shadow-xl",
-                      "text-black-200 dark:text-white-900",
-                    ],
-                  }}
-                >
-                  <div className="flex items-center justify-center group skills p-2 rounded-full bg-white-800 w-[50px] h-[50px] cursor-pointer lg:w-[93px] lg:h-[93px] lg:p-4 dark:bg-black-300 sm:hover:shadow-lg ">
-                    <div className="flex relative w-[25px] h-[25px] lg:w-[50px] lg:h-[50px] items-center justify-center">
-                      <Image
-                        className=""
-                        src={urlFor(tech.asset._ref).url()}
-                        alt={tech.caption}
-                        fill
-                      />
-                    </div>
-                  </div>
-                </Tooltip>
+                  src={urlFor(tech.asset._ref).url()}
+                  caption={tech.caption}
+                />
               );
             })}
         </div>
