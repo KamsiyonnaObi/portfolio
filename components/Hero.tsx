@@ -1,53 +1,63 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 
-import { HeroImage } from "./svg/HeroSVG";
+const facts = [
+  {
+    label: "Now",
+    value:
+      "Software Developer at Assiniboine Credit Union, building tools for financial advisors",
+  },
+  {
+    label: "Leading",
+    value: "Software Lead at Graceland eCommerce: +14% online sales revenue",
+  },
+  {
+    label: "Mentoring",
+    value: "Early-career developers through Itoju Mentoring",
+  },
+  { label: "Stack", value: "C#/.NET, TypeScript, Angular, React, Next.js" },
+];
 
-type Props = {};
-
-const Hero = (props: Props) => {
+const Hero = () => {
   return (
-    <div className="flex flex-col w-full gap-[27px] justify-center lg:flex-row xl:mx-auto xl:max-w-[1270px]">
-      <div className="flex flex-col max-w-[345px] mt-12 gap-5 mx-auto sm:max-w-[511px]">
-        <div className="">
-          <p className="text-Accent-light text-sm pb-5 leading-[18.2px] tracking-[4.2px] font-semibold sm:tracking-[6px] sm:leading-[26px] sm:text-[20px] dark:text-Accent-dark">
-            HI, I AM KAMSIYONNA
+    <div className="flex flex-col w-full gap-12 xl:flex-row xl:items-center xl:justify-between xl:gap-16 xl:mx-auto xl:max-w-[1270px]">
+      <div className="flex flex-col gap-8 max-w-[660px] xl:flex-1">
+        <div className="flex flex-col gap-5">
+          <p className="eyebrow">
+            Full-stack software developer · Winnipeg, Canada
           </p>
-          <div className="flex flex-col gap-3.5 font-bold text-[30px] text-black-200 dark:text-white-900">
-            <h1 className="sm:text-5xl sm:leading-[64px] lg:header1 lg:text-[48px] xl:header1">
-              Professional
-              <span className="highlight line-clamp-1 w-fit">
-                {" "}
-                Software Engineer{" "}
-              </span>
-              based in Canada
-            </h1>
-            <p className="text-white-500 text-xs font-normal pr-[7px] sm:body-reg lg:pr-0 dark:text-white-800">
-              Transforming the web one line of code at a time: Crafting
-              cutting-edge digital experiences with precision, passion, and a
-              profound commitment to excellence
-            </p>
+          <h1 className="text-[34px] font-bold leading-[1.15] tracking-[-0.02em] text-black-200 sm:text-[44px] lg:text-[52px] dark:text-white-900">
+            I build{" "}
+            <span className="highlight">financial technology</span>{" "}
+            that gives people clarity, confidence, and control.
+          </h1>
+          <p className="body-reg max-w-[580px] text-white-500 dark:text-white-800">
+            I translate complex problems into intuitive, reliable software, and
+            I&apos;m committed to making sound financial planning accessible
+            to everyone.
+          </p>
+        </div>
+        <div className="flex flex-col gap-3.5 sm:flex-row sm:gap-[18px]">
+          <Link href="/#work" className="btn-primary">
+            See selected work
+          </Link>
+          <Link href="/contact" className="btn-secondary">
+            Get in touch
+          </Link>
+        </div>
+      </div>
+      <dl className="flex w-full max-w-[520px] flex-col divide-y divide-[#CCE1FF] rounded-[20px] bg-white-900 px-7 py-3 shadow-serv sm:px-9 xl:w-[420px] dark:divide-[#2C3C56] dark:bg-black-200 dark:shadow-serv-dark">
+        {facts.map((fact) => (
+          <div key={fact.label} className="flex flex-col gap-1.5 py-5">
+            <dt className="caption-bold uppercase tracking-[1.5px] text-Accent-light dark:text-Accent-dark">
+              {fact.label}
+            </dt>
+            <dd className="text-base font-semibold leading-6 text-black-200 dark:text-white-900">
+              {fact.value}
+            </dd>
           </div>
-        </div>
-        <div className="flex flex-col gap-3.5 sm:flex-row md:gap-[18px]">
-          <Link
-            href={"/projects"}
-            className="flex w-full bg-Accent-light py-[12.5px] font-semibold text-sm text-white-900 justify-center rounded-full sm:body-bold sm:py-5 sm:px-3 dark:bg-Accent-dark"
-          >
-            My Work
-          </Link>
-          <Link
-            href={"/contact"}
-            className="flex w-full bg-white-900 py-[12.5px] font-semibold text-sm text-white-500 justify-center rounded-full sm:body-bold sm:py-5 dark:text-white-900 dark:bg-black-200"
-          >
-            Contact Me
-          </Link>
-        </div>
-      </div>
-      <div className="sm:flex sm:mx-auto w-full h-[262px] mb-6 sm:h-[335px] md:h-[518.85px] md:w-[628.07px]">
-        <HeroImage />
-      </div>
+        ))}
+      </dl>
     </div>
   );
 };

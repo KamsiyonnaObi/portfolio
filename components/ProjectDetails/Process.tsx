@@ -11,9 +11,9 @@ export const Process = ({ process }: { process: [] }) => {
           <p className="caption-bold text-Accent-light dark:text-Accent-dark lg:sm-bold">
             Way of Work
           </p>
-          <h1 className="heading3 text-black-200 dark:text-white-900 lg:header3">
+          <h2 className="heading3 text-black-200 dark:text-white-900 lg:header3">
             My Process
-          </h1>
+          </h2>
         </div>
         <div className="flex flex-wrap justify-center gap-x-[50px] gap-y-[30px] lg:justify-between">
           {process.length > 0 &&

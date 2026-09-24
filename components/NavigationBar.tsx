@@ -1,167 +1,143 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import {
-  Button,
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  NavbarMenu,
-  NavbarMenuItem,
-  NavbarMenuToggle,
-  Link,
-  Divider,
-} from "@nextui-org/react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { DownloadIcon } from "./svg/Download";
 import { Close, Hamburger } from "./svg/NavbarIcons";
 
-export default function App() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+const links = [
+  { label: "Work", href: "/projects" },
+  { label: "Experience", href: "/#experience" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/contact" },
+];
 
-  const renderIcon = (isOpen: boolean) => {
-    if (isOpen) {
-      return <Close />;
-    } else {
-      return <Hamburger />;
-    }
-  };
+const linkClass =
+  "focus-ring rounded-sm sm-reg text-white-500 hover:text-Accent-light dark:text-white-800 dark:hover:text-Accent-dark";
+
+export default function NavigationBar() {
+  const pathname = usePathname();
+  // The menu counts as open only on the page it was opened on, so it closes
+  // by itself once the route changes
+  const [openOn, setOpenOn] = React.useState<string | null>(null);
+  const isMenuOpen = openOn === pathname;
+
+  React.useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpenOn(null);
+    };
+    document.addEventListener("keydown", closeOnEscape);
+    return () => document.removeEventListener("keydown", closeOnEscape);
+  }, [isMenuOpen]);
+
+  const current = (href: string) => (pathname === href ? "page" : undefined);
 
   return (
-    <Navbar
-      className="flex xl:px-[85px] mx-auto lg:justify-center justify-between bg-white-800 dark:bg-black-300 max-w-full"
-      classNames={{
-        item: [
-          "flex",
-          "relative",
-          "h-full",
-
-          "items-center",
-          "data-[active=true]:bg-Accent-light",
-          "data-[active=true]:dark:bg-Accent-dark",
-        ],
-      }}
-      maxWidth="full"
-      isBlurred={true}
-      isMenuOpen={isMenuOpen}
-      onMenuOpenChange={setIsMenuOpen}
-    >
-      <NavbarBrand>
-        <Link color="foreground" href="/">
-          <div className=" w-[30px] h-[30px] sm:w-10 sm:h-10 rounded-full absolute">
-            <Image
-              className="rounded-full"
-              src="/kamsidev.png"
-              alt="logo"
-              fill
-            />
-          </div>
-        </Link>
-      </NavbarBrand>
-
-      <NavbarContent className="md:hidden " justify="end">
-        <ThemeSwitcher />
-        <NavbarMenuToggle
-          icon={renderIcon(isMenuOpen)}
-          className=""
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-        />
-      </NavbarContent>
-
-      <NavbarContent
-        className="hidden md:flex gap-9 items-center"
-        justify="end"
+    <header className="sticky top-0 z-40 w-full bg-white-800 dark:bg-black-300">
+      <nav
+        aria-label="Primary"
+        className="flex h-16 w-full items-center justify-between gap-6 px-6 lg:px-12 xl:px-[85px]"
       >
-        <NavbarItem>
-          <Link
-            className="sm-reg text-white-500 dark:text-white-800"
-            href="/home"
-          >
-            Home
-          </Link>
-        </NavbarItem>
+        <Link
+          href="/"
+          aria-label="Kamsiyonna Obi, home"
+          className="focus-ring relative block h-[30px] w-[30px] rounded-full sm:h-10 sm:w-10"
+        >
+          <Image
+            className="rounded-full"
+            src="/kamsidev.png"
+            alt=""
+            sizes="40px"
+            fill
+          />
+        </Link>
 
-        <NavbarItem>
-          <Link href="/projects" aria-current="page">
-            <p className="sm-reg text-white-500 dark:text-white-800">
-              Case Studies{" "}
-            </p>
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="/contact">
-            <p className="sm-reg text-white-500 dark:text-white-800">
-              Contact{" "}
-            </p>
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <a
-            href="/files/resume.pdf"
-            className="sm-reg text-white-500 dark:text-white-800"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className="flex items-center gap-1.5">
-              <div>
-                <DownloadIcon />
-              </div>
-              <p className="sm-reg text-black-200 dark:text-white-900">
+        {/* Desktop */}
+        <ul className="hidden items-center gap-9 md:flex">
+          {links.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className={linkClass}
+                aria-current={current(link.href)}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+          <li>
+            <a
+              href="/files/resume.pdf"
+              className="focus-ring flex items-center gap-1.5 rounded-sm"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <DownloadIcon />
+              <span className="sm-reg text-black-200 dark:text-white-900">
                 Resume
-              </p>
-            </div>
-          </a>
-        </NavbarItem>
-        <NavbarItem className="py-5">
-          <Divider orientation="vertical" />
-        </NavbarItem>
+              </span>
+            </a>
+          </li>
+          <li
+            aria-hidden="true"
+            className="h-6 w-px bg-[#CCE1FF] dark:bg-[#2C3C56]"
+          />
+          <li>
+            <ThemeSwitcher />
+          </li>
+        </ul>
 
-        <NavbarItem>
+        {/* Mobile */}
+        <div className="flex items-center gap-2 md:hidden">
           <ThemeSwitcher />
-        </NavbarItem>
-      </NavbarContent>
+          <button
+            type="button"
+            className="focus-ring rounded-md p-2"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
+            onClick={() => setOpenOn(isMenuOpen ? null : pathname)}
+          >
+            {isMenuOpen ? <Close /> : <Hamburger />}
+          </button>
+        </div>
+      </nav>
 
-      <NavbarMenu className="pt-[22px]">
-        <NavbarMenuItem className="py-3 px-6" isActive>
-          <Link
-            className="sm-reg text-white-500 dark:text-white-800"
-            href="/home"
-            size="lg"
-          >
-            Home
-          </Link>
-        </NavbarMenuItem>
-        <NavbarMenuItem className="py-3 px-6">
-          <Link
-            className="sm-reg text-white-500 dark:text-white-800"
-            href="/projects"
-            size="lg"
-          >
-            Case Studies
-          </Link>
-        </NavbarMenuItem>
-        <NavbarMenuItem className="py-3 px-6">
-          <Link
-            className="*:sm-reg text-white-500 dark:text-white-800"
-            href="/contact"
-            size="lg"
-          >
-            Contact
-          </Link>
-        </NavbarMenuItem>
-        <NavbarMenuItem className="flex items-center justify-center rounded-lg pt-5">
-          <a
-            href="/files/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-Accent-light dark:text-Accent-dark bg-white-800 dark:bg-black-300 flex items-center justify-center rounded-[100px] py-[15px] w-full"
-          >
-            <p className="body-reg">Resume</p>
-          </a>
-        </NavbarMenuItem>
-      </NavbarMenu>
-    </Navbar>
+      <div
+        id="mobile-menu"
+        hidden={!isMenuOpen}
+        className="fixed inset-x-0 bottom-0 top-16 z-30 overflow-y-auto bg-white-800 px-6 pt-[22px] md:hidden dark:bg-black-300"
+      >
+        <ul className="flex flex-col gap-2">
+          {links.map((link) => (
+            <li key={link.href} className="px-6 py-3">
+              <Link
+                href={link.href}
+                className="focus-ring rounded-sm text-lg font-semibold text-black-200 hover:text-Accent-light dark:text-white-900 dark:hover:text-Accent-dark"
+                aria-current={current(link.href)}
+                onClick={() => setOpenOn(null)}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+          <li className="pt-5">
+            <a
+              href="/files/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="focus-ring flex w-full items-center justify-center rounded-[100px] bg-white-900 py-[15px] text-Accent-light dark:bg-black-200 dark:text-Accent-dark"
+            >
+              <span className="body-reg">Resume</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
   );
 }

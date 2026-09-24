@@ -3,19 +3,17 @@
 @tailwind utilities;
 
 @layer base {
+  /* Marker underline that follows the text when it wraps onto several lines */
   .highlight {
-    position: relative;
-    z-index: 1;
-  }
-  .highlight::before {
-    content: ""; /* Ensure the pseudo-element has content */
-    position: absolute;
-    display: block;
-    border-bottom: 18px solid #ffbe62; /* Define the bottom border */
-    top: 58%;
-    right: 0;
-    left: 0;
-    z-index: -1;
+    background-image: linear-gradient(
+      to bottom,
+      transparent 60%,
+      #ffbe62 60%,
+      #ffbe62 92%,
+      transparent 92%
+    );
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
   }
   .heading1 {
     font-size: 64px;
@@ -132,6 +130,23 @@
 }
 
 @layer components {
+  /*********** Shared building blocks ***********/
+  .focus-ring {
+    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-Accent-light dark:focus-visible:outline-Accent-dark;
+  }
+  .btn-primary {
+    @apply focus-ring inline-flex items-center justify-center rounded-full bg-Accent-light px-8 py-4 text-base font-semibold text-white-900 transition-opacity hover:opacity-90 dark:bg-Accent-dark dark:text-black-200;
+  }
+  .btn-secondary {
+    @apply focus-ring inline-flex items-center justify-center rounded-full bg-white-900 px-8 py-4 text-base font-semibold text-black-200 ring-1 ring-inset ring-[#CCE1FF] transition-colors hover:ring-Accent-light dark:bg-black-200 dark:text-white-900 dark:ring-[#2C3C56] dark:hover:ring-Accent-dark;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[2.5px] text-Accent-light sm:text-sm sm:tracking-[3px] dark:text-Accent-dark;
+  }
+  .section-title {
+    @apply text-[32px] font-bold leading-[1.15] tracking-[-0.01em] text-black-200 sm:text-[40px] dark:text-white-900;
+  }
+
   /*********** Baseline, reset styles ***********/
   input[type="range"] {
     @apply appearance-none bg-transparent cursor-pointer w-full;
