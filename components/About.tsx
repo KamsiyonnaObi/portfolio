@@ -37,24 +37,18 @@ const About = () => {
       <div className="flex flex-col gap-6 lg:max-w-[600px] lg:flex-1">
         <div className="flex flex-col gap-3">
           <p className="eyebrow">About</p>
-          <h2 className="section-title">Why I build financial technology</h2>
+          <h2 className="section-title">How I work</h2>
         </div>
         <div className="body-reg flex flex-col gap-5 text-white-500 dark:text-white-800">
           <p>
-            I believe that a clear financial plan has the power to change a
-            person&apos;s life, and I have built my entire career around that
-            belief.
+            I take pride in translating complex problems into intuitive,
+            reliable software, and in working closely with the people who use
+            it.
           </p>
           <p>
-            As a full-stack software developer, I design and build financial
-            technology that gives real people clarity, confidence, and control
-            over their financial future. I take pride in translating complex
-            problems into intuitive, reliable software.
-          </p>
-          <p>
-            I am committed to continuing to build tools that make sound
-            financial planning accessible to everyone, not just the privileged
-            few.
+            I also mentor early-career developers through Itoju Mentoring, and
+            I am committed to building tools that make sound financial
+            planning accessible to everyone, not just the privileged few.
           </p>
         </div>
       </div>

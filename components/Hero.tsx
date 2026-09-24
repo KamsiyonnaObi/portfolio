@@ -11,11 +11,6 @@ const facts = [
     label: "Leading",
     value: "Software Lead at Graceland eCommerce: +14% online sales revenue",
   },
-  {
-    label: "Mentoring",
-    value: "Early-career developers through Itoju Mentoring",
-  },
-  { label: "Stack", value: "C#/.NET, TypeScript, Angular, React, Next.js" },
 ];
 
 const Hero = () => {
@@ -27,14 +22,13 @@ const Hero = () => {
             Full-stack software developer · Winnipeg, Canada
           </p>
           <h1 className="text-[34px] font-bold leading-[1.15] tracking-[-0.02em] text-black-200 sm:text-[44px] lg:text-[52px] dark:text-white-900">
-            I build{" "}
-            <span className="highlight">financial technology</span>{" "}
-            that gives people clarity, confidence, and control.
+            A clear <span className="highlight">financial plan</span> can
+            change someone&apos;s life. I build the software that makes it
+            possible.
           </h1>
           <p className="body-reg max-w-[580px] text-white-500 dark:text-white-800">
-            I translate complex problems into intuitive, reliable software, and
-            I&apos;m committed to making sound financial planning accessible
-            to everyone.
+            I turn complex financial problems into intuitive, reliable
+            software that gives people clarity, confidence, and control.
           </p>
         </div>
         <div className="flex flex-col gap-3.5 sm:flex-row sm:gap-[18px]">
