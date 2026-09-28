@@ -7,8 +7,9 @@ import { usePathname } from "next/navigation";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { Close, Hamburger } from "./svg/NavbarIcons";
 
+// Sharing is set to Viewer, so this opens read-only regardless of link params
 const RESUME_URL =
-  "https://docs.google.com/document/d/11k3L-xWWEbLXe2n9BIeTj2CDRaejufRO/edit?usp=sharing&ouid=103331962975105003297&rtpof=true&sd=true";
+  "https://docs.google.com/document/d/11k3L-xWWEbLXe2n9BIeTj2CDRaejufRO/preview";
 
 const links = [
   { label: "Work", href: "/projects" },
