@@ -1,12 +1,13 @@
 import React from "react";
 import Markdown from "react-markdown";
 
-const proseText =
-  "sm-reg dark:text-white-800 sm:body-reg text-white-500 transition delay-150 duration-300 ease-in-out";
+type Props = { content: string; className?: string };
 
-export const CaseStudyBody = ({ content }: { content: string }) => {
+export const Prose = ({ content, className }: Props) => {
+  const proseText = className ?? "sm-reg dark:text-white-800 sm:body-reg text-white-500";
+
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-4">
       <Markdown
         components={{
           h2: ({ children }) => (

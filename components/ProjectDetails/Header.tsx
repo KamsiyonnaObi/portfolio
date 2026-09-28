@@ -1,11 +1,15 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { Earth, GitHub, Arrow } from "@/components/svg";
+
+import { StatusPill } from "./StatusPill";
 
 type Props = {
   title: string;
   desc: string;
+  status?: string;
   laptopUrl?: string;
   mobileUrl?: string;
   demoLink?: string;
@@ -15,6 +19,7 @@ type Props = {
 export const Header = ({
   title,
   desc,
+  status,
   laptopUrl,
   mobileUrl,
   demoLink,
@@ -23,44 +28,21 @@ export const Header = ({
 }: Props) => {
   return (
     <>
-      <div className="flex flex-col mx-auto gap-6 w-fit items-center justify-center lg:gap-12">
-        <div className="flex flex-col items-center gap-3 text-center">
-          <h1 className="text-black-200 dark:text-white-900 text-[36px] leading-[1.1] tracking-[-0.02em] font-bold max-w-[345px] lg:max-w-[695px] lg:heading1 xl:max-w-[999px]">
-            <span className="highlight">{title}</span>
-          </h1>
-          <p className="paragraph max-w-[600px] text-white-500 dark:text-white-800">
+      <div className="flex flex-col w-full max-w-[1100px] mx-auto gap-8 items-start justify-center lg:gap-12">
+        <Link
+          href="/projects"
+          className="focus-ring sm-bold flex items-center gap-1.5 rounded-sm text-black-400 hover:text-black-200 dark:text-white-700 dark:hover:text-white-900 lg:body-bold"
+        >
+          &larr; All case studies
+        </Link>
+        <div className="flex flex-col items-start gap-5 text-left">
+          {status && <StatusPill status={status} />}
+          <h1 className="text-black-200 dark:text-white-900 text-[32px] leading-[1.15] tracking-[-0.02em] font-bold max-w-[700px] lg:text-[48px] lg:leading-[1.1] lg:max-w-[900px]">
             {desc}
-          </p>
+          </h1>
         </div>
-        {/* Image */}
-        {laptopUrl && (
-          <div className="flex relative w-[320px] lg:w-[742px]">
-            <div className="relative w-[270px] h-[155px] lg:w-[587.3px] lg:h-[347px] overflow-hidden">
-              <Image
-                src={laptopUrl}
-                fill
-                sizes="(min-width: 1024px) 588px, 270px"
-                className="object-contain"
-                loading="eager"
-                fetchPriority="high"
-                alt={`${title} desktop screenshot`}
-              />
-            </div>
-            {mobileUrl && (
-              <div className="relative w-[66.74px] lg:w-[142.4px]">
-                <Image
-                  src={mobileUrl}
-                  fill
-                  sizes="(min-width: 1024px) 143px, 67px"
-                  className="object-contain"
-                  alt={`${title} mobile screenshot`}
-                />
-              </div>
-            )}
-          </div>
-        )}
         {(demoLink || repo || repoPrivate) && (
-          <div className="flex justify-between gap-10">
+          <div className="flex flex-wrap items-center gap-x-10 gap-y-4">
             {demoLink && (
               <a
                 href={demoLink}
@@ -121,6 +103,33 @@ export const Header = ({
                   </div>
                 </a>
               )
+            )}
+          </div>
+        )}
+        {/* Image */}
+        {laptopUrl && (
+          <div className="flex relative w-full justify-center self-center lg:w-[742px]">
+            <div className="relative w-[320px] h-[184px] lg:w-[587.3px] lg:h-[347px] overflow-hidden">
+              <Image
+                src={laptopUrl}
+                fill
+                sizes="(min-width: 1024px) 588px, 320px"
+                className="object-contain"
+                loading="eager"
+                fetchPriority="high"
+                alt={`${title} desktop screenshot`}
+              />
+            </div>
+            {mobileUrl && (
+              <div className="relative w-[79.2px] lg:w-[142.4px]">
+                <Image
+                  src={mobileUrl}
+                  fill
+                  sizes="(min-width: 1024px) 143px, 79px"
+                  className="object-contain"
+                  alt={`${title} mobile screenshot`}
+                />
+              </div>
             )}
           </div>
         )}

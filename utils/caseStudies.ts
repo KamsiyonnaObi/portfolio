@@ -6,6 +6,60 @@ import matter from "gray-matter";
 
 const CASE_STUDIES_DIR = path.join(process.cwd(), "content/case-studies");
 
+export type Callout = { icon?: string; title: string; body: string };
+
+export type TextSection = {
+  type: "text";
+  eyebrow?: string;
+  heading?: string;
+  body?: string;
+  callouts?: Callout[];
+  image?: string;
+};
+
+export type GridItem = { title: string; body: string };
+
+export type CardGridSection = {
+  type: "cardGrid";
+  eyebrow?: string;
+  heading?: string;
+  subheading?: string;
+  items: GridItem[];
+  note?: string;
+};
+
+export type Stat = { value: string; body: string };
+
+export type StatGridSection = {
+  type: "statGrid";
+  eyebrow?: string;
+  heading?: string;
+  subheading?: string;
+  stats: Stat[];
+  note?: string;
+};
+
+export type SolutionSurface = {
+  title: string;
+  caption?: string;
+  body: string;
+  image?: string;
+};
+
+export type SolutionSection = {
+  type: "solution";
+  eyebrow?: string;
+  heading?: string;
+  subheading?: string;
+  surfaces: SolutionSurface[];
+};
+
+export type CaseStudySection =
+  | TextSection
+  | CardGridSection
+  | StatGridSection
+  | SolutionSection;
+
 export type CaseStudyMeta = {
   slug: string;
   title: string;
@@ -15,9 +69,11 @@ export type CaseStudyMeta = {
   demo?: string;
   github?: string;
   githubPrivate?: boolean;
+  status?: string;
+  product?: string;
+  skills?: string[];
   role?: string;
-  startDate?: string;
-  endDate?: string;
+  timeline?: string;
   laptopImg?: string;
   mobileImg?: string;
   frontEndtags?: string[];
@@ -25,7 +81,10 @@ export type CaseStudyMeta = {
   updatedAt: string;
 };
 
-export type CaseStudy = CaseStudyMeta & { content: string };
+export type CaseStudy = CaseStudyMeta & {
+  content: string;
+  sections: CaseStudySection[];
+};
 
 function slugFromFileName(fileName: string) {
   return fileName.replace(/\.md$/, "");
@@ -46,14 +105,17 @@ function readCaseStudyFile(fileName: string): CaseStudy {
     demo: data.demo,
     github: data.github,
     githubPrivate: Boolean(data.githubPrivate),
+    status: data.status,
+    product: data.product,
+    skills: data.skills,
     role: data.role,
-    startDate: data.startDate,
-    endDate: data.endDate,
+    timeline: data.timeline,
     laptopImg: data.laptopImg,
     mobileImg: data.mobileImg,
     frontEndtags: data.frontEndtags,
     backEndtags: data.backEndtags,
     content: content.trim(),
+    sections: data.sections ?? [],
     updatedAt: mtime.toISOString(),
   };
 }
