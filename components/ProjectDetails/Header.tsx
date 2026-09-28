@@ -10,6 +10,7 @@ type Props = {
   mobileUrl?: string;
   demoLink?: string;
   repo?: string;
+  repoPrivate?: boolean;
 };
 export const Header = ({
   title,
@@ -18,6 +19,7 @@ export const Header = ({
   mobileUrl,
   demoLink,
   repo,
+  repoPrivate,
 }: Props) => {
   return (
     <>
@@ -57,7 +59,7 @@ export const Header = ({
             )}
           </div>
         )}
-        {(demoLink || repo) && (
+        {(demoLink || repo || repoPrivate) && (
           <div className="flex justify-between gap-10">
             {demoLink && (
               <a
@@ -82,28 +84,43 @@ export const Header = ({
                 </div>
               </a>
             )}
-            {repo && (
-              <a
-                href={repo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="focus-ring rounded-sm"
-                aria-label="Source code (opens in a new tab)"
+            {repoPrivate ? (
+              <div
+                className="flex gap-[3px] h-6 items-center cursor-not-allowed"
+                aria-disabled="true"
+                title="Source code is private client work"
               >
-                <div className="flex gap-[3px] h-6 items-center">
-                  {/* GitHub icon */}
-                  <div className="flex justify-center items-center w-6 h-6">
-                    <GitHub />
-                  </div>
-                  <p className="sm-bold text-Accent-light dark:text-Accent-dark lg:paragraph-bold">
-                    Source Code
-                  </p>
-                  {/* arrow Icon */}
-                  <div className="flex justify-center items-center w-6 h-6">
-                    <Arrow />
-                  </div>
+                <div className="flex justify-center items-center w-6 h-6 opacity-50">
+                  <GitHub />
                 </div>
-              </a>
+                <p className="sm-bold text-black-400 dark:text-white-700 lg:paragraph-bold">
+                  Private &mdash; client project
+                </p>
+              </div>
+            ) : (
+              repo && (
+                <a
+                  href={repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="focus-ring rounded-sm"
+                  aria-label="Source code (opens in a new tab)"
+                >
+                  <div className="flex gap-[3px] h-6 items-center">
+                    {/* GitHub icon */}
+                    <div className="flex justify-center items-center w-6 h-6">
+                      <GitHub />
+                    </div>
+                    <p className="sm-bold text-Accent-light dark:text-Accent-dark lg:paragraph-bold">
+                      Source Code
+                    </p>
+                    {/* arrow Icon */}
+                    <div className="flex justify-center items-center w-6 h-6">
+                      <Arrow />
+                    </div>
+                  </div>
+                </a>
+              )
             )}
           </div>
         )}

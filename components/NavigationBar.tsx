@@ -7,8 +7,8 @@ import { usePathname } from "next/navigation";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { Close, Hamburger } from "./svg/NavbarIcons";
 
-// Placeholder until the view-only Google Doc resume is published
-const RESUME_URL = "https://www.google.com";
+const RESUME_URL =
+  "https://docs.google.com/document/d/11k3L-xWWEbLXe2n9BIeTj2CDRaejufRO/edit?usp=sharing&ouid=103331962975105003297&rtpof=true&sd=true";
 
 const links = [
   { label: "Work", href: "/projects" },

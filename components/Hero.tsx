@@ -9,7 +9,7 @@ const facts = [
   },
   {
     label: "Leading",
-    value: "Software Lead at Graceland eCommerce: +14% online sales revenue",
+    value: "Software Lead at Graceland eCommerce, leading a full-stack online store",
   },
 ];
 
