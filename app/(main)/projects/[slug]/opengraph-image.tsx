@@ -3,14 +3,11 @@ import { join } from "node:path";
 
 import { ImageResponse } from "next/og";
 
-import { client } from "@/.sanity/lib/client";
-import { PROJECT_OG_QUERY } from "@/.sanity/lib/queries";
+import { getCaseStudyBySlug } from "@/utils/caseStudies";
 
 export const alt = "Case study by Kamsiyonna Obi";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-
-type Project = { title?: string; desc?: string; color?: string } | null;
 
 export default async function Image({
   params,
@@ -18,8 +15,8 @@ export default async function Image({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const [project, poppinsSemiBold, poppinsBold] = await Promise.all([
-    client.fetch<Project>(PROJECT_OG_QUERY, { slug }),
+  const project = getCaseStudyBySlug(slug);
+  const [poppinsSemiBold, poppinsBold] = await Promise.all([
     readFile(join(process.cwd(), "assets/fonts/poppins-latin-600-normal.woff")),
     readFile(join(process.cwd(), "assets/fonts/poppins-latin-700-normal.woff")),
   ]);

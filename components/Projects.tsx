@@ -1,17 +1,14 @@
 import React from "react";
 import Link from "next/link";
-import { SanityDocument } from "next-sanity";
 
-import { urlFor } from "@/utils/utils";
-import { loadQuery } from "@/.sanity/lib/store";
-import { FEATURED_QUERY } from "@/.sanity/lib/queries";
+import { getFeaturedCaseStudies } from "@/utils/caseStudies";
 
 import ProjectCard from "./ProjectCard";
 
 const Projects = async () => {
-  const featuredProjects = await loadQuery<SanityDocument[]>(FEATURED_QUERY);
+  const featuredProjects = getFeaturedCaseStudies();
 
-  if (featuredProjects.data.length == 0) {
+  if (featuredProjects.length == 0) {
     return (
       <div className="flex justify-center items-center">
         <Link href={"/projects"} className="btn-primary">
@@ -29,20 +26,17 @@ const Projects = async () => {
       </div>
       {/* Project Cards */}
       <div className="flex gap-9 flex-wrap sm:justify-center lg:gap-12">
-        {featuredProjects.data.map((project, idx) => {
-          const laptopRef = project.laptopImg?.asset?._ref;
-          const mobileRef = project.mobileImg?.asset?._ref;
-
+        {featuredProjects.map((project, idx) => {
           return (
             <ProjectCard
               desc={project.desc}
-              key={project.slug.current}
+              key={project.slug}
               title={project.title}
-              slug={project.slug.current}
+              slug={project.slug}
               frontEnd={project.frontEndtags}
               backEnd={project.backEndtags}
-              laptopImg={laptopRef ? urlFor(laptopRef).url() : undefined}
-              mobileImg={mobileRef ? urlFor(mobileRef).url() : undefined}
+              laptopImg={project.laptopImg}
+              mobileImg={project.mobileImg}
               swap={idx % 2}
               color={project.color}
             />

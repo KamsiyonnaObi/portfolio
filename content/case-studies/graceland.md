@@ -1,57 +1,34 @@
-# Graceland eCommerce
-
-> Draft case study copy. Written from an interview transcript, not invented.
-> `TODO` marks anything still needing your input, a fact check, or a decision.
-
+---
+title: "Graceland eCommerce"
+isFeatured: true
+color: "#FFBE62"
+desc: "A custom storefront for a 20-year-old Lagos baby store, replacing ad hoc WhatsApp orders with online browsing, cart, and checkout."
+demo: "https://storefront-production-b9ad.up.railway.app/"
+githubPrivate: true
+role: "Software Lead (freelance)"
+startDate: "Dec 2024"
+endDate: "Ongoing"
+laptopImg: "/case-studies/graceland/laptop-home.png"
+mobileImg: "/case-studies/graceland/mobile-home.png"
+frontEndtags: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand"]
+backEndtags: ["Prisma", "Supabase", "NextAuth.js", "Paystack", "Medusa.js"]
 ---
 
-## 1. Hero
+## Timeline
 
-**Role:** Software Lead (freelance) — architecture, backend, and most of the
-build; directed one other developer's contribution.
-
-**Timeline:**
 - v1 — shipped Dec 2024 (MVP: browse, cart, checkout, order management)
 - v2 — shipped Nov 2025 (customer accounts, order dashboard, more email
   notifications, SEO-oriented product pages)
 - v3 — in progress, targeting Oct 2026 (currently on staging)
 
-**Demo:** staging (v3) —
-`https://storefront-production-b9ad.up.railway.app/`.
-
-**Source code:** GitHub link shown greyed out / disabled, labelled
-"Private — client project" instead of linking anywhere. This is paid client
-work, so the codebase isn't public.
-
-Implemented: `githubPrivate` is now a boolean field on the Project schema
-([schemas/project.ts](../../schemas/project.ts)), and
-[Header.tsx](../../components/ProjectDetails/Header.tsx) renders the disabled
-label whenever it's checked, instead of the working GitHub link. The
-`github` URL field can stay filled in for your own records — it just won't
-be linked. **Remaining step (yours):** in Sanity Studio, open the Graceland
-document and check "Source code is private" — I don't have write access to
-Studio content, only code.
-
-**Banner image:** the site already shows a laptop screenshot next to a phone
-screenshot on every case study (via the `laptopImg`/`mobileImg` fields) —
-that's the same "MacBook + iPhone" pairing this section asked for, rendered
-live and responsively rather than as a flattened graphic. A flattened
-composite would actually be worse: it loses dark-mode support and responsive
-sizing.
-
-Implemented: the two v3 staging screenshots are cropped-and-ready in
-[public/case-studies/graceland/](../../public/case-studies/graceland/)
-(`laptop-home.png`, `mobile-home.png`). **Remaining step (yours):** upload
-those two files into the Graceland document's `Laptop Img` / `Mobile Img`
-fields in Studio — another content write I can't make myself.
+Source code is private client work, so the GitHub link on this page is
+disabled rather than public.
 
 **Tech used:** Next.js, TypeScript, Prisma, Supabase (Postgres), NextAuth.js,
 Paystack (payments), Zustand + local storage (cart), Tailwind CSS. v3 adds
 Medusa.js as the commerce foundation (see Learnings).
 
----
-
-## 2. Project Goal & Objective
+## Project Goal & Objective
 
 Graceland is a brick-and-mortar baby store in Idumota, Lagos, that has sold
 strollers, car seats, cots, carriers, and walkers to Nigerian families for
@@ -76,9 +53,7 @@ justification. What is true: the client wanted full ownership of their brand
 and platform, with room to sell other brands under it later, rather than
 building on a third party's storefront.
 
----
-
-## 3. Challenges Faced
+## Challenges Faced
 
 **No server-side cart or session.** Speed to MVP mattered more than a fully
 durable cart. The known cost: carts don't persist across devices and there's
@@ -103,9 +78,7 @@ schema was unnecessary.
 shop floor and can be busy with in-person customers, so "how often do they
 check for online orders" was a real design input, not an assumption.
 
----
-
-## 4. Strategy, Trade-offs & Validation
+## Strategy, Trade-offs & Validation
 
 **Modular monolith.** The application is organized into four modules —
 payments, orders, products, and admin — with clear boundaries between them,
@@ -137,9 +110,7 @@ each payment is tied to one unique Paystack reference, and an order is only
 updated to paid once its webhook is confirmed — not optimistically at
 checkout.
 
----
-
-## 5. Outcome / Solution
+## Outcome / Solution
 
 - Replaced an ad hoc WhatsApp-Story ordering process with a single online
   storefront and a one-screen admin view for managing orders.
@@ -154,14 +125,11 @@ checkout.
   notable because the business, after 20+ years trading on local reputation,
   had never had a digital presence before this.
 
-`TODO` — no online-sales metric is confirmed yet (an earlier +14% figure was
-unverified and has been removed from the site and should also be removed
-from your resume). If you get real numbers later — order volume, repeat
-customers, time saved on order handling — replace this section.
+*No online-sales metric is confirmed yet. If real numbers come in later —
+order volume, repeat customers, time saved on order handling — this section
+should be replaced with those.*
 
----
-
-## 6. Learnings
+## Learnings
 
 **Modeling state is the real hard part of "just" building an order form.**
 The schema didn't fail because of a technology choice; it failed because the

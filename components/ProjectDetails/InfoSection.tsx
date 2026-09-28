@@ -1,32 +1,23 @@
 import React from "react";
-import moment from "moment";
-
-import { urlFor } from "@/utils/utils";
-import { TechIcon } from "@/components/TechIcon";
 
 type Props = {
   role?: string;
   startDate?: string;
   endDate?: string;
-  techStack: { asset: { _ref: string }; caption?: string }[];
+  frontEndtags?: string[];
+  backEndtags?: string[];
 };
 
 const details = (props: Props) =>
   [
     { label: "My Role", value: props.role },
-    {
-      label: "Start Date",
-      value: props.startDate && moment(props.startDate).format("DD/MM/YYYY"),
-    },
-    {
-      label: "End Date",
-      value: props.endDate && moment(props.endDate).format("DD/MM/YYYY"),
-    },
+    { label: "Start Date", value: props.startDate },
+    { label: "End Date", value: props.endDate },
   ].filter((item) => item.value);
 
 export const InfoSection = (props: Props) => {
   const items = details(props);
-  const { techStack } = props;
+  const tags = [...(props.frontEndtags ?? []), ...(props.backEndtags ?? [])];
 
   return (
     <>
@@ -44,7 +35,7 @@ export const InfoSection = (props: Props) => {
           ))}
         </dl>
       )}
-      {techStack.length > 0 && (
+      {tags.length > 0 && (
         <section className="flex flex-col gap-6 mt-[42px] lg:w-full lg:gap-11 lg:max-w-[880px] lg:mx-auto lg:mt-[72px]">
           <div className="flex flex-col gap-[9px]">
             <p className="caption-bold text-Accent-light dark:text-Accent-dark lg:sm-bold">
@@ -54,13 +45,14 @@ export const InfoSection = (props: Props) => {
               Tech Stack
             </h2>
           </div>
-          <div className="flex flex-wrap gap-x-5 gap-y-[33px] lg:gap-x-9">
-            {techStack.map((tech, idx) => (
-              <TechIcon
-                key={`${tech.caption}-${idx}`}
-                src={urlFor(tech.asset._ref).url()}
-                caption={tech.caption ?? ""}
-              />
+          <div className="flex flex-wrap gap-3">
+            {tags.map((tag) => (
+              <span
+                key={tag}
+                className="sm-bold rounded-md bg-white-800 px-3.5 py-2 text-black-200 dark:bg-black-300 dark:text-white-900 lg:body-bold"
+              >
+                {tag}
+              </span>
             ))}
           </div>
         </section>
