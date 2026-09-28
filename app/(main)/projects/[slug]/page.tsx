@@ -75,6 +75,7 @@ const ProjectDetails = async ({ params }: { params: Params }) => {
           mobileUrl={mobileRef ? urlFor(mobileRef).url() : undefined}
           demoLink={project.demo}
           repo={project.github}
+          repoPrivate={project.githubPrivate}
         />
       </section>
 

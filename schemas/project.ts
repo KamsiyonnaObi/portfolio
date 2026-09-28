@@ -42,6 +42,14 @@ export default {
       title: "GitHub",
     },
     {
+      name: "githubPrivate",
+      type: "boolean",
+      title: "Source code is private",
+      description:
+        'For client work you cannot make public. Shows a disabled "Private — client project" label instead of linking to GitHub; the GitHub field above can stay filled in for your own records.',
+      initialValue: false,
+    },
+    {
       name: "role",
       type: "string",
       title: "Role",

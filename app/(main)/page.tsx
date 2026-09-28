@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 
 export const revalidate = 60;
@@ -60,17 +59,10 @@ export default function Home() {
       >
         <Projects />
       </section>
-      {/* Experience */}
-      <section
-        id="experience"
-        className="scroll-mt-16 px-6 py-12 bg-white-800 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-300"
-      >
-        <Experience />
-      </section>
       {/* About */}
       <section
         id="about"
-        className="scroll-mt-16 px-6 py-12 bg-white-900 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-200"
+        className="scroll-mt-16 px-6 py-12 bg-white-800 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-300"
       >
         <About />
       </section>
