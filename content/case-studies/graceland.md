@@ -1,6 +1,6 @@
 ---
 title: "Graceland eCommerce"
-isFeatured: true
+isFeatured: false
 color: "#FFBE62"
 status: "Shipped"
 desc: "Led the rebuild of a 20-year-old Lagos baby store's ordering process, replacing ad hoc WhatsApp orders with a full online storefront: browsing, cart, checkout, and order management."
@@ -9,9 +9,9 @@ githubPrivate: true
 product: "Graceland Store"
 skills: ["Full-Stack Development", "Payment Systems", "Order Workflow Design"]
 role: "Software Lead (freelance)"
-timeline: "Dec 2024 – present (v1–v3)"
-laptopImg: "/case-studies/graceland/laptop-home.png"
-mobileImg: "/case-studies/graceland/mobile-home.png"
+timeline: "Jun 2024 – present (v1–v3)"
+laptopImg: "/case-studies/graceland/laptop-mockup.png"
+mobileImg: "/case-studies/graceland/mobile-mockup.png"
 frontEndtags: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand"]
 backEndtags: ["Prisma", "Supabase", "NextAuth.js", "Paystack", "Medusa.js"]
 sections:
@@ -21,13 +21,11 @@ sections:
     body: |
       - **v1** — shipped Dec 2024 (MVP: browse, cart, checkout, order management)
       - **v2** — shipped Nov 2025 (customer accounts, order dashboard, more email notifications, SEO-oriented product pages)
-      - **v3** — in progress, targeting Oct 2026 (currently on staging)
-
-      **Tech used:** Next.js, TypeScript, Prisma, Supabase (Postgres), NextAuth.js, Paystack (payments), Zustand + local storage (cart), Tailwind CSS. v3 adds Medusa.js as the commerce foundation.
+      - **v3** — in progress, targeting Oct 2026 (currently on staging), adding Medusa.js as the commerce foundation
     callouts:
       - icon: "🔒"
         title: "Private client work"
-        body: "This is paid client work, so the source code isn't public — the GitHub link on this page stays disabled."
+        body: "Source code is private because this is paid client work."
 
   - type: text
     eyebrow: "Goal"
@@ -37,7 +35,7 @@ sections:
 
       The goal was to give the store its own online presence and let customers browse and order directly, rather than depend on informal, one-off requests.
 
-      **Why build custom instead of using Shopify or BigCommerce:** honestly, mostly circumstance rather than a deliberate platform comparison. The project began as a small personal exercise integrating Stripe; once it had real functionality, the client's brand was attached to it and it became their storefront. What is true: the client wanted full ownership of their brand and platform, with room to sell other brands under it later, rather than building on a third party's storefront.
+      **Why build custom instead of using Shopify or BigCommerce:** the project began as a small personal exercise integrating Stripe. Once it had real functionality, the client's brand was attached to it and it became their storefront. The client also wanted full ownership of their brand and platform, with room to sell other brands under it later, rather than building on a third party's storefront.
     callouts:
       - icon: "🎯"
         title: "Objective"
@@ -63,8 +61,8 @@ sections:
         body: "Four modules — payments, orders, products, admin — with clear boundaries, shipped as one codebase. Clean separation without the operational cost of running multiple services, while leaving room to extract a module later if one ever needs to scale independently."
       - title: "Validating with the Client, Not Just the Code"
         body: "The order workflow was defined through a form of event storming — a call with the store admin walking through what they'd do for each order scenario — then confirmed by watching the admin use the system live."
-      - title: "Bringing in a Second Developer"
-        body: "A friend who saw the project wanted to contribute. Work was split by carving out a defined feature — email notifications for order events — designing the flow, then creating tickets in ClickUp for him to build against and review."
+      - title: "Bringing in Two Developers"
+        body: "I onboarded two developers. To split the work, I carved out a defined feature — email notifications for order events — designed the flow, then created tickets in ClickUp for them to build against and review."
       - title: "Payments: Webhook Correctness"
         body: "Paystack was chosen for feature fit (Nigerian payment methods, checkout sessions). Each payment is tied to one unique Paystack reference, and an order is only updated to paid once its webhook is confirmed — not optimistically at checkout."
 
@@ -75,11 +73,10 @@ sections:
     stats:
       - value: "20+"
         body: "Products currently listed and used as the store's day-to-day order channel."
-      - value: "3"
-        body: "Releases shipped — v1 (Dec 2024) through v3 (in progress) — each adding accounts, dashboards, and SEO."
-      - value: "20 yrs"
-        body: "Of local reputation the store had before this project — its first digital presence."
-    note: "No online-sales metric is confirmed yet. If real numbers come in later — order volume, repeat customers, time saved on order handling — this section should be replaced with those."
+      - value: "2"
+        body: "Releases shipped: v1 in Dec 2024 and v2 in Nov 2025, with v3 in progress."
+      - value: "4"
+        body: "Modules (payments, orders, products, admin) in one deployable codebase."
 
   - type: cardGrid
     eyebrow: "Learnings"

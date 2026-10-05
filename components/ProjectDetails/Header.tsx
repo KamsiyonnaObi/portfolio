@@ -108,7 +108,7 @@ export const Header = ({
         )}
         {/* Image */}
         {laptopUrl && (
-          <div className="flex relative w-full justify-center self-center lg:w-[742px]">
+          <div className="flex relative w-full items-end justify-center self-center lg:w-[742px]">
             <div className="relative w-[320px] h-[184px] lg:w-[587.3px] lg:h-[347px] overflow-hidden">
               <Image
                 src={laptopUrl}
@@ -121,7 +121,7 @@ export const Header = ({
               />
             </div>
             {mobileUrl && (
-              <div className="relative w-[79.2px] lg:w-[142.4px]">
+              <div className="relative h-[162px] w-[79.2px] lg:h-[290px] lg:w-[142.4px]">
                 <Image
                   src={mobileUrl}
                   fill

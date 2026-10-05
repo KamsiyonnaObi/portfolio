@@ -22,7 +22,11 @@ const Projects = async () => {
       {/* Heading */}
       <div className="flex flex-col items-center gap-3 text-center">
         <p className="eyebrow">Selected work</p>
-        <h2 className="section-title">Case studies</h2>
+        <h2 className="section-title">
+          {featuredProjects.length === 1
+            ? "Featured case study"
+            : "Featured case studies"}
+        </h2>
       </div>
       {/* Project Cards */}
       <div className="flex gap-9 flex-wrap sm:justify-center lg:gap-12">

@@ -12,7 +12,7 @@ const RESUME_URL =
   "https://docs.google.com/document/d/1MLilBfbhK_oy9pIrFH73wauA1cpM88IG0_znLZYWcmw/preview";
 
 const links = [
-  { label: "Work", href: "/projects" },
+  { label: "Case Studies", href: "/projects" },
   { label: "About", href: "/#about" },
   { label: "Contact", href: "/contact" },
 ];
