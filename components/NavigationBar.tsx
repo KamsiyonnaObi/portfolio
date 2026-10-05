@@ -9,10 +9,10 @@ import { Close, Hamburger } from "./svg/NavbarIcons";
 
 // Sharing is set to Viewer, so this opens read-only regardless of link params
 const RESUME_URL =
-  "https://docs.google.com/document/d/11k3L-xWWEbLXe2n9BIeTj2CDRaejufRO/preview";
+  "https://docs.google.com/document/d/1MLilBfbhK_oy9pIrFH73wauA1cpM88IG0_znLZYWcmw/preview";
 
 const links = [
-  { label: "Work", href: "/projects" },
+  { label: "Case Studies", href: "/projects" },
   { label: "About", href: "/#about" },
   { label: "Contact", href: "/contact" },
 ];

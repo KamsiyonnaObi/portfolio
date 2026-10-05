@@ -1,14 +1,9 @@
 import React from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { SanityDocument } from "next-sanity";
 import Link from "next/link";
 
-import { urlFor } from "@/utils/utils";
-import { loadQuery } from "@/.sanity/lib/store";
-import { POSTS_QUERY } from "@/.sanity/lib/queries";
-
-export const revalidate = 60;
+import { getAllCaseStudies } from "@/utils/caseStudies";
 
 export const metadata: Metadata = {
   title: "Case studies",
@@ -18,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 const CaseStudies = async () => {
-  const initial = await loadQuery<SanityDocument[]>(POSTS_QUERY);
+  const caseStudies = getAllCaseStudies();
 
   return (
     <>
@@ -44,13 +39,11 @@ const CaseStudies = async () => {
       {/* Case Studies */}
       <section className="px-6 py-12 bg-white-900 lg:px-12 xl:px-[85px] sm:py-[72px] dark:bg-black-200">
         <ul className="flex flex-col mx-auto gap-5 items-center max-w-[1136px] md:flex-row md:justify-center md:flex-wrap lg:gap-9">
-          {initial.data.map((project: SanityDocument) => {
-            const laptopRef = project.laptopImg?.asset?._ref;
-
+          {caseStudies.map((project) => {
             return (
-              <li key={project.slug.current}>
+              <li key={project.slug}>
                 <Link
-                  href={`/projects/${project.slug.current}`}
+                  href={`/projects/${project.slug}`}
                   className="focus-ring block rounded-[10px]"
                 >
                   <div className="flex flex-col gap-6 max-w-[345px] lg:max-w-[550px]">
@@ -59,13 +52,13 @@ const CaseStudies = async () => {
                       style={{ backgroundColor: project.color }}
                     >
                       <div className="relative w-[270px] h-[155px] lg:w-[460px] lg:h-[264px] overflow-hidden">
-                        {laptopRef && (
+                        {(project.cardImg ?? project.laptopImg) && (
                           <Image
-                            src={urlFor(laptopRef).url()}
+                            src={(project.cardImg ?? project.laptopImg) as string}
                             className="object-contain"
                             fill
                             sizes="(min-width: 1024px) 460px, 270px"
-                            alt={`${project.title} screenshot`}
+                            alt={`${project.title} preview`}
                           />
                         )}
                       </div>

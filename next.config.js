@@ -1,13 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "cdn.sanity.io",
-      },
-    ],
-  },
   experimental: {
     taint: true,
   },
@@ -33,11 +25,6 @@ const nextConfig = {
             value: "camera=(), microphone=(), geolocation=()",
           },
         ],
-      },
-      {
-        // The embedded Sanity Studio should never be indexed
-        source: "/admin/:path*",
-        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
       },
     ];
   },
