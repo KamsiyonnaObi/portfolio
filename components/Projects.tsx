@@ -35,7 +35,7 @@ const Projects = async () => {
               slug={project.slug}
               frontEnd={project.frontEndtags}
               backEnd={project.backEndtags}
-              laptopImg={project.laptopImg}
+              laptopImg={project.cardImg ?? project.laptopImg}
               mobileImg={project.mobileImg}
               swap={idx % 2}
               color={project.color}

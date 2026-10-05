@@ -52,13 +52,13 @@ const CaseStudies = async () => {
                       style={{ backgroundColor: project.color }}
                     >
                       <div className="relative w-[270px] h-[155px] lg:w-[460px] lg:h-[264px] overflow-hidden">
-                        {project.laptopImg && (
+                        {(project.cardImg ?? project.laptopImg) && (
                           <Image
-                            src={project.laptopImg}
+                            src={(project.cardImg ?? project.laptopImg) as string}
                             className="object-contain"
                             fill
                             sizes="(min-width: 1024px) 460px, 270px"
-                            alt={`${project.title} screenshot`}
+                            alt={`${project.title} preview`}
                           />
                         )}
                       </div>

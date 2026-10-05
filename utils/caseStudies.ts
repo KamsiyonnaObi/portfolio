@@ -76,6 +76,7 @@ export type CaseStudyMeta = {
   timeline?: string;
   laptopImg?: string;
   mobileImg?: string;
+  cardImg?: string;
   frontEndtags?: string[];
   backEndtags?: string[];
   updatedAt: string;
@@ -112,6 +113,7 @@ function readCaseStudyFile(fileName: string): CaseStudy {
     timeline: data.timeline,
     laptopImg: data.laptopImg,
     mobileImg: data.mobileImg,
+    cardImg: data.cardImg,
     frontEndtags: data.frontEndtags,
     backEndtags: data.backEndtags,
     content: content.trim(),
