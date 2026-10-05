@@ -2,17 +2,18 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+import { readableTextColor } from "@/utils/color";
+
 type Props = {
-  caption: string;
-  laptopImg: string;
-  mobileImg: string;
+  laptopImg?: string;
+  mobileImg?: string;
   title: string;
   desc: string;
-  frontEnd: string[];
-  backEnd: string[];
+  frontEnd?: string[];
+  backEnd?: string[];
   slug: string;
   swap: number;
-  pcolor: { backgroundColor: string };
+  color: string;
 };
 
 const ProjectCard = ({
@@ -22,14 +23,13 @@ const ProjectCard = ({
   backEnd,
   laptopImg,
   mobileImg,
-  caption,
-  pcolor,
+  color,
   slug,
   swap,
 }: Props) => {
   return (
     <div
-      style={pcolor}
+      style={{ backgroundColor: color, color: readableTextColor(color) }}
       className={`flex flex-col ${
         swap ? "lg:flex-row-reverse" : ""
       } w-[345px] h-fit mx-auto justify-center rounded-[20px] gap-6 py-[46px] lg:w-fit lg:flex-row lg:gap-[30.89px] xl:w-[1270px] overflow-hidden`}
@@ -39,48 +39,63 @@ const ProjectCard = ({
           swap ? "" : "lg:pl-[107.5px]"
         } lg:gap-6`}
       >
-        <div>
-          <h1 className="text-white-900 text-[32px] leading-[36.8px] tracking-[-0.36px] max-w-[500px] font-bold lg:header2">
-            {`${title} - `}
-            <span className="block lg:inline">{` ${desc} `}</span>
-          </h1>
+        <div className="flex flex-col gap-3">
+          <h3 className="text-[32px] font-bold leading-[1.15] tracking-[-0.01em] lg:text-[48px]">
+            {title}
+          </h3>
+          <p className="max-w-[500px] text-lg font-semibold leading-7 lg:text-2xl lg:leading-8">
+            {desc}
+          </p>
         </div>
-        <div className="flex gap-5">
-          <span className="sm-reg p-2.5 bg-white-900 bg-opacity-20 rounded-md">
-            {frontEnd?.join(", ")}
-          </span>
-          <span className="sm-reg p-2.5 bg-white-900 bg-opacity-20 rounded-md">
-            {backEnd?.join(", ")}
-          </span>
+        <div className="flex flex-wrap gap-5">
+          {frontEnd?.length ? (
+            <span className="sm-reg p-2.5 bg-white-900 bg-opacity-20 rounded-md">
+              {frontEnd.join(", ")}
+            </span>
+          ) : null}
+          {backEnd?.length ? (
+            <span className="sm-reg p-2.5 bg-white-900 bg-opacity-20 rounded-md">
+              {backEnd.join(", ")}
+            </span>
+          ) : null}
         </div>
         <div>
-          <Link href={`/projects/${slug}`}>
-            <p className="body-bold mt-[26px]">See Project Details</p>
+          <Link
+            href={`/projects/${slug}`}
+            className="focus-ring body-bold mt-[26px] inline-block underline underline-offset-4"
+          >
+            See project details
           </Link>
         </div>
       </div>
-      <div
-        className={`flex relative w-[320px] lg:w-[585px] ${
-          swap ? "lg:right-[120px]" : "lg:left-[20px]"
-        } lg:max-w-[50%]`}
-      >
-        <div className="relative w-[270px] h-[155px] lg:w-[575.3px] lg:h-[331px] overflow-hidden">
-          <Image
-            src={laptopImg}
-            className="object-contain"
-            fill
-            alt={caption}
-          />
+      {laptopImg && (
+        <div
+          className={`flex relative w-[320px] lg:w-[585px] ${
+            swap ? "lg:right-[120px]" : "lg:left-[20px]"
+          } lg:max-w-[50%]`}
+        >
+          <div className="relative w-[270px] h-[155px] lg:w-[575.3px] lg:h-[331px] overflow-hidden">
+            <Image
+              src={laptopImg}
+              className="object-contain"
+              fill
+              sizes="(min-width: 1024px) 576px, 270px"
+              alt={`${title} desktop screenshot`}
+            />
+          </div>
+          {mobileImg && (
+            <div className="relative w-[66.74px] lg:w-[142.4px]">
+              <Image
+                src={mobileImg}
+                className="object-contain"
+                fill
+                sizes="(min-width: 1024px) 143px, 67px"
+                alt={`${title} mobile screenshot`}
+              />
+            </div>
+          )}
         </div>
-        <div className="relative w-[66.74px] lg:w-[142.4px]">
-          <Image
-            src={mobileImg}
-            className="object-contain"
-            fill
-            alt={caption}
-          />
-        </div>
-      </div>
+      )}
     </div>
   );
 };

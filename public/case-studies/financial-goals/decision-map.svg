@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 490" font-family="Poppins, Helvetica, Arial, sans-serif" role="img" aria-label="Three options for where the Financial Goals feature should live, and the option recommended">
+  <rect width="1000" height="490" rx="16" fill="#F3F8FF"/>
+  <text x="40" y="50" font-size="22" font-weight="700" fill="#151E2C">Where should Financial Goals live?</text>
+  <text x="40" y="76" font-size="14" fill="#5E6A7E">Context: a team of five maintaining close to 30 services</text>
+
+  <rect x="40" y="100" width="280" height="370" rx="14" fill="#FFFFFF" stroke="#CCE1FF" stroke-width="2"/>
+  <text x="62" y="140" font-size="17" font-weight="700" fill="#151E2C">New dedicated service</text>
+  <text x="62" y="182" font-size="16" font-weight="700" fill="#046C4E">+</text>
+  <text x="82" y="182" font-size="14" fill="#151E2C"><tspan x="82" dy="0">Clear ownership boundary</tspan></text>
+  <text x="62" y="212" font-size="16" font-weight="700" fill="#046C4E">+</text>
+  <text x="82" y="212" font-size="14" fill="#151E2C"><tspan x="82" dy="0">Matches the established</tspan><tspan x="82" dy="20">service-per-entity pattern</tspan></text>
+  <text x="62" y="272" font-size="16" font-weight="700" fill="#B4382A">&#8722;</text>
+  <text x="82" y="272" font-size="14" fill="#151E2C">Another service to maintain</text>
+  <text x="62" y="302" font-size="16" font-weight="700" fill="#B4382A">&#8722;</text>
+  <text x="82" y="302" font-size="14" fill="#151E2C"><tspan x="82" dy="0">One goal entity may not</tspan><tspan x="82" dy="20">justify a standalone service</tspan></text>
+  <text x="62" y="352" font-size="16" font-weight="700" fill="#B4382A">&#8722;</text>
+  <text x="82" y="352" font-size="14" fill="#151E2C"><tspan x="82" dy="0">Leaves open whether</tspan><tspan x="82" dy="20">service-per-entity scales</tspan><tspan x="82" dy="20">for a team our size</tspan></text>
+
+  <rect x="360" y="100" width="280" height="370" rx="14" fill="#FFFFFF" stroke="#CCE1FF" stroke-width="2"/>
+  <text x="382" y="140" font-size="17" font-weight="700" fill="#151E2C">Notes on the services tab</text>
+  <text x="382" y="182" font-size="16" font-weight="700" fill="#046C4E">+</text>
+  <text x="402" y="182" font-size="14" fill="#151E2C">Almost no dev time</text>
+  <text x="382" y="222" font-size="16" font-weight="700" fill="#046C4E">+</text>
+  <text x="402" y="222" font-size="14" fill="#151E2C"><tspan x="402" dy="0">Review notes findable</tspan><tspan x="402" dy="20">under one service</tspan></text>
+  <text x="382" y="292" font-size="16" font-weight="700" fill="#B4382A">&#8722;</text>
+  <text x="402" y="292" font-size="14" fill="#151E2C"><tspan x="402" dy="0">Still free text:</tspan><tspan x="402" dy="20">"review done" is still</tspan><tspan x="402" dy="20">possible</tspan></text>
+
+  <rect x="680" y="100" width="280" height="370" rx="14" fill="#EAF2FF" stroke="#0252CD" stroke-width="3"/>
+  <rect x="842" y="114" width="102" height="22" rx="11" fill="#0252CD"/>
+  <text x="893" y="129" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">RECOMMENDED</text>
+  <text x="702" y="160" font-size="17" font-weight="700" fill="#151E2C"><tspan x="702" dy="0">Extend the net worth</tspan><tspan x="702" dy="22">service, rename it</tspan></text>
+  <text x="702" y="226" font-size="16" font-weight="700" fill="#046C4E">+</text>
+  <text x="722" y="226" font-size="14" fill="#151E2C"><tspan x="722" dy="0">Net worth and goals share</tspan><tspan x="722" dy="20">one "financial planning"</tspan><tspan x="722" dy="20">business domain</tspan></text>
+  <text x="702" y="296" font-size="16" font-weight="700" fill="#046C4E">+</text>
+  <text x="722" y="296" font-size="14" fill="#151E2C"><tspan x="722" dy="0">Deployment foundation</tspan><tspan x="722" dy="20">already in place</tspan></text>
+  <text x="702" y="346" font-size="16" font-weight="700" fill="#046C4E">+</text>
+  <text x="722" y="346" font-size="14" fill="#151E2C">No new service to maintain</text>
+  <text x="702" y="386" font-size="16" font-weight="700" fill="#B4382A">&#8722;</text>
+  <text x="722" y="386" font-size="14" fill="#151E2C"><tspan x="722" dy="0">Breaks the established</tspan><tspan x="722" dy="20">pattern (the biggest risk)</tspan></text>
+  <text x="702" y="436" font-size="16" font-weight="700" fill="#B4382A">&#8722;</text>
+  <text x="722" y="436" font-size="14" fill="#151E2C">The service must be renamed</text>
+</svg>

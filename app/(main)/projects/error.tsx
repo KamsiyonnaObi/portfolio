@@ -1,25 +1,32 @@
 "use client";
-import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useEffect } from "react";
+import Link from "next/link";
 
-export default function Error() {
-  const router = useRouter();
+export default function ErrorPage({
+  error,
+  reset,
+}: {
+  error: Error & { digest?: string };
+  reset: () => void;
+}) {
+  useEffect(() => {
+    console.error(error);
+  }, [error]);
 
-  const goBack = () => {
-    router.back();
-  };
   return (
-    <div className="flex flex-col text-black-300 dark:text-white-900 items-center justify-center h-screen bg-white-800 dark:bg-black-300">
-      <h1 className="text-4xl font-bold mb-4">Page Not Found</h1>
-      <p className="text-lg mb-8">
-        The page you are looking for does not exist.
+    <div className="flex min-h-[60vh] flex-col items-center justify-center gap-5 bg-white-800 px-6 py-24 text-center dark:bg-black-300">
+      <h1 className="section-title">Something went wrong</h1>
+      <p className="body-reg max-w-[480px] text-white-500 dark:text-white-800">
+        This page could not be loaded. Please try again.
       </p>
-      <button
-        className="bg-Accent-light dark:bg-Accent-dark text-white-900 px-4 py-2 rounded hover:bg-blue-600"
-        onClick={goBack}
-      >
-        Go Back
-      </button>
+      <div className="flex flex-col gap-3.5 sm:flex-row">
+        <button type="button" className="btn-primary" onClick={reset}>
+          Try again
+        </button>
+        <Link href="/projects" className="btn-secondary">
+          All case studies
+        </Link>
+      </div>
     </div>
   );
 }

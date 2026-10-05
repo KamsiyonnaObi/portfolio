@@ -2,8 +2,7 @@ import React from "react";
 
 import NavigationBar from "@/components/NavigationBar";
 
-export const dynamic = "force-dynamic";
-export default async function RootLayout({
+export default function ContactLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -11,7 +10,7 @@ export default async function RootLayout({
   return (
     <>
       <NavigationBar />
-      {children}
+      <main id="main">{children}</main>
     </>
   );
 }

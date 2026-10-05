@@ -3,8 +3,7 @@ import React from "react";
 import NavigationBar from "@/components/NavigationBar";
 import Footer from "@/components/Footer";
 
-export const dynamic = "force-dynamic";
-export default async function RootLayout({
+export default function MainLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -12,8 +11,7 @@ export default async function RootLayout({
   return (
     <>
       <NavigationBar />
-      {children}
-
+      <main id="main">{children}</main>
       <Footer />
     </>
   );
