@@ -49,7 +49,7 @@ export const Header = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 className="focus-ring rounded-sm"
-                aria-label="Demo site (opens in a new tab)"
+                aria-label="Live site (opens in a new tab)"
               >
                 <div className="flex gap-[3px] h-6 items-center">
                   {/* earth icon */}
@@ -57,7 +57,7 @@ export const Header = ({
                     <Earth />
                   </div>
                   <p className="sm-bold text-Accent-light dark:text-Accent-dark lg:paragraph-bold">
-                    Demo Site
+                    Live Site
                   </p>
                   {/* arrow Icon */}
                   <div className=" flex items-center w-6 h-6">

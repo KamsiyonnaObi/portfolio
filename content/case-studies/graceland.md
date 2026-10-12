@@ -4,7 +4,7 @@ isFeatured: false
 color: "#FFBE62"
 status: "Shipped"
 desc: "Led the rebuild of a 20-year-old Lagos baby store's ordering process, replacing ad hoc WhatsApp orders with a full online storefront: browsing, cart, checkout, and order management."
-demo: "https://storefront-production-b9ad.up.railway.app/"
+demo: "https://www.gracelandng.com"
 githubPrivate: true
 product: "Graceland Store"
 skills: ["Full-Stack Development", "Payment Systems", "Order Workflow Design"]
