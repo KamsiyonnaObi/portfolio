@@ -12,6 +12,14 @@ backEndtags: ["C#", ".NET REST API", "Azure DevOps"]
 cardImg: "/case-studies/financial-goals/review-lifecycle.svg"
 sections:
   - type: text
+    eyebrow: "In brief"
+    heading: "The short version"
+    body: |
+      - **Problem:** Advisors tracked members' financial goals in free-text notes, often just "review done", and leadership couldn't see how many reviews were happening.
+      - **What I did:** Designed the feature and built its .NET API: structured goals plus review history. I recommended extending an existing service rather than adding a new one, for a team of five already running close to 30.
+      - **Result:** In the first month, 948 goals were created by 66 of 320 advisors, covering 560 members.
+
+  - type: text
     eyebrow: "Problem"
     heading: "Notes were doing a job they weren't built for"
     body: |
@@ -46,17 +54,15 @@ sections:
     eyebrow: "The decision"
     heading: "Extend an existing service, or build a new one?"
     body: |
-      At sprint planning, with the product manager, my manager, the senior software developer, and teammates, we went through the requirements and the limits of the current system. The first recommendation from some teammates was to build another service for this feature to live in, which is how the team had built every feature so far.
+      **The situation.** At sprint planning, some teammates recommended a new service for this feature, which is how the team had built every feature so far.
 
-      I pushed back, because of where the team already stood: five of us were running and maintaining close to 30 services, and the maintenance burden was already being felt. I raised the nanoservices anti-pattern and wrote a decision document laying out two options and a recommendation. A financial goal on its own wasn't big enough to justify a standalone service, and it's easier to start with a well-scoped service and split it later than to justify a new one up front. That follows Sam Newman's warning about premature decomposition in *Building Microservices*.
+      **My pushback.** Five of us were already maintaining close to 30 services, and the burden was showing. I raised the nanoservices anti-pattern and wrote a decision document with two options and a recommendation. A financial goal alone wasn't big enough to justify its own service, and it's easier to start well-scoped and split later than to justify a new one up front (Sam Newman's premature-decomposition warning in *Building Microservices*).
 
-      **The option I recommended:** add the goals to the existing net worth statement service, and rename it the Financial Planning Service, since net worth and financial review goals belong to the same business domain. The goals shipped in that service; the rename is planned but not done yet. Extending it also gave us deployment, and a financial review starts with the member's net worth statement, which the advisor may want to update.
+      **My recommendation.** Add the goals to the existing net worth statement service, and rename it the Financial Planning Service (planned, not done yet), since both belong to the same business domain. It also gave us deployment, and a review starts from the member's net worth statement.
 
-      **The risk I named:** this breaks an established pattern the team had agreed on, and a pattern break shouldn't be one person's call. The document said so directly and asked the team to decide together, and the team agreed. It also covered the other outcome: if the team kept the pattern, we'd open a separate story to investigate how service-per-entity scales for a team our size.
+      **The risk I named.** This breaks a pattern the team had agreed on, so I asked the team to decide together. The document also covered the other outcome: if the team kept the pattern, we'd open a story on how service-per-entity scales. The team agreed.
 
-      A third idea also came up: let advisors tick a box on the services tab and write a note on the service they performed (here, a financial review), so all the notes live in one place. It would have cost very little development time, but advisors could still write anything in that box, including "review done". Free text was the original problem.
-
-      I demoed the work to the wider software team, including DBAs, QA, the software development manager, the Product Owner, and other developers.
+      **Why not a note box.** A tick-box note on the services tab would have cost almost nothing, but advisors could still write "review done". Free text was the original problem.
     callouts:
       - icon: "⚖️"
         title: "The trade-off I accepted"

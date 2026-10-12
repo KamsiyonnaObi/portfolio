@@ -16,6 +16,14 @@ frontEndtags: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand"]
 backEndtags: ["Prisma", "Supabase", "NextAuth.js", "Paystack", "Medusa.js"]
 sections:
   - type: text
+    eyebrow: "In brief"
+    heading: "The short version"
+    body: |
+      - **What:** Replaced ad hoc WhatsApp-Story ordering for a 20-year-old Lagos baby store with an online storefront: browsing, cart, checkout, and order management. v1 shipped in Dec 2024 and v2 in Nov 2025.
+      - **How I designed it:** Researched IKEA, Best Buy, and Babylist before building. The account and order dashboard and the order emails are modeled on Best Buy's.
+      - **How I built it:** A modular monolith, Paystack payments confirmed by webhook (never optimistically), and an order event log after the first schema let an admin move a delivered order back to draft.
+
+  - type: text
     eyebrow: "Overview"
     heading: "Three releases, one storefront"
     body: |
@@ -40,6 +48,37 @@ sections:
       - icon: "🎯"
         title: "Objective"
         body: "Consolidate baby product sales the way Babylist.com or BestBuy.com does, and own that positioning locally before expanding into other brands — the client's own framing."
+
+  - type: text
+    eyebrow: "Design process"
+    heading: "I studied how the best do it before I built anything"
+    body: |
+      Before designing a single screen, I spent hours researching how leading eCommerce sites handle the pieces that matter most: product pages, cart and checkout, account and order tracking, and content that helps people decide. I studied IKEA.com, BestBuy.com, and Babylist.com, then built Graceland's experience from patterns that already work at scale, not from guesses.
+    callouts:
+      - icon: "🔎"
+        title: "Why these three"
+        body: "BestBuy.com and Babylist.com were the benchmarks the client named. I added IKEA for how it handles product pages and recommendations."
+
+  - type: cardGrid
+    eyebrow: "Research"
+    heading: "What I took from each"
+    items:
+      - title: "IKEA"
+        body: "Product pages, product recommendations, and grouped products (\"get the look\"). Grouped product suggestions are the next piece to build."
+      - title: "Best Buy"
+        body: "The cart and checkout flow, the account dashboard and order tracking, the order email flow, and product pages."
+      - title: "Babylist"
+        body: "Look and feel, tone, typography, and language, plus product pages, buying guides, collections, and SEO strategy."
+
+  - type: text
+    eyebrow: "Applied"
+    heading: "How it shaped Graceland"
+    body: |
+      - **Product pages** follow Babylist's structure.
+      - **The customer account and order dashboard** (added in v2) are modeled on Best Buy's account dashboard and order tracking.
+      - **Order emails** follow Best Buy's order email flow.
+      - **SEO-oriented product pages** (also v2) draw on Babylist's SEO strategy.
+      - **Tone, typography, and wording** take their cues from Babylist.
 
   - type: text
     eyebrow: "Challenges"
