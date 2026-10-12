@@ -28,7 +28,7 @@ sections:
         body: "Give any advisor a member's goals and last review in one place, and give leadership a way to see reviews happening."
       - icon: "👥"
         title: "Who it's for"
-        body: "Roughly 200–300 financial advisors, plus the executive and service delivery teams who wanted visibility."
+        body: "320 financial advisors, plus the executive and service delivery teams who wanted visibility."
 
   - type: text
     eyebrow: "My role"
@@ -97,16 +97,16 @@ sections:
 
   - type: statGrid
     eyebrow: "Outcome"
-    heading: "Shipped and tested end to end"
-    subheading: "Started in May 2026 and delivered in August 2026."
+    heading: "First month in production"
+    subheading: "Delivered in August 2026, tested end to end by QA, with no new service added."
     stats:
-      - value: "May–Aug"
-        body: "From kickoff to delivery in 2026, with QA testing the feature end to end."
-      - value: "0"
-        body: "New services added. The feature extends an existing one."
-      - value: "200–300"
-        body: "Roughly how many financial advisors the feature is built for."
-    note: "Official adoption numbers aren't in yet. Informally, usage was high in the first week and advisors and their managers were excited about it."
+      - value: "948"
+        body: "Financial goals created by advisors in the first month."
+      - value: "66"
+        body: "Advisors created goals, out of 320 financial advisors, about one in five in the first month."
+      - value: "560"
+        body: "Members with an active goal, each one a conversation the next advisor can pick up."
+    note: "From a usage query covering the first month after release. In that time 82 goals were completed and 3 were cancelled; the rest were still open or in progress."
 
   - type: cardGrid
     eyebrow: "Learnings"
