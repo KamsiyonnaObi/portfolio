@@ -106,7 +106,7 @@ sections:
         body: "Advisors created goals, out of 320 financial advisors, about one in five in the first month."
       - value: "560"
         body: "Members with an active goal, each one a conversation the next advisor can pick up."
-    note: "From a usage query covering the first month after release. In that time 82 goals were completed and 3 were cancelled. Goals have follow-up dates, so many were still open."
+    note: "From a usage query covering the first month after release. In that time 82 goals were completed and 3 were cancelled; the rest were still open or in progress."
 
   - type: cardGrid
     eyebrow: "Learnings"
