@@ -6,10 +6,10 @@ status: "Shipped"
 desc: "Led the rebuild of a 20-year-old Lagos baby store's ordering process, replacing ad hoc WhatsApp orders with a full online storefront: browsing, cart, checkout, and order management."
 demo: "https://www.gracelandng.com"
 githubPrivate: true
-product: "Graceland Store"
+product: "Graceland Baby Products"
 skills: ["Full-Stack Development", "Payment Systems", "Order Workflow Design"]
-role: "Software Lead (freelance)"
-timeline: "Jun 2024 – present (v1–v3)"
+role: "Lead Software Engineer (freelance)"
+timeline: "Feb 2024 – present (v1–v3)"
 laptopImg: "/case-studies/graceland/laptop-mockup.png"
 mobileImg: "/case-studies/graceland/mobile-mockup.png"
 frontEndtags: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand"]
@@ -19,7 +19,7 @@ sections:
     eyebrow: "In brief"
     heading: "The short version"
     body: |
-      - **What:** Replaced ad hoc WhatsApp-Story ordering for a 20-year-old Lagos baby store with an online storefront: browsing, cart, checkout, and order management. v1 shipped in Dec 2024 and v2 in Nov 2025.
+      - **What:** Replaced ad hoc WhatsApp-Story ordering for a 20-year-old Lagos baby store with an online storefront: browsing, cart, checkout, and order management. v1 shipped in Dec 2024, v2 in Nov 2025, and v3 in Oct 2026.
       - **How I designed it:** Researched IKEA, Best Buy, and Babylist before building. The account and order dashboard and the order emails are modeled on Best Buy's.
       - **How I built it:** A modular monolith, Paystack payments confirmed by webhook (never optimistically), and an order event log after the first schema let an admin move a delivered order back to draft.
 
@@ -28,8 +28,8 @@ sections:
     heading: "Three releases, one storefront"
     body: |
       - **v1** — shipped Dec 2024 (MVP: browse, cart, checkout, order management)
-      - **v2** — shipped Nov 2025 (customer accounts, order dashboard, more email notifications, SEO-oriented product pages)
-      - **v3** — in progress, targeting Oct 2026 (currently on staging), adding Medusa.js as the commerce foundation
+      - **v2** — shipped Nov 2025 (customer accounts, order dashboard, email notifications, SEO-oriented product pages)
+      - **v3** — shipped Oct 2026 (Medusa.js as the commerce foundation, built with Claude Code assistance)
     callouts:
       - icon: "🔒"
         title: "Private client work"
@@ -112,8 +112,8 @@ sections:
     stats:
       - value: "20+"
         body: "Products currently listed and used as the store's day-to-day order channel."
-      - value: "2"
-        body: "Releases shipped: v1 in Dec 2024 and v2 in Nov 2025, with v3 in progress."
+      - value: "3"
+        body: "Releases shipped: v1 in Dec 2024, v2 in Nov 2025, and v3 in Oct 2026."
       - value: "4"
         body: "Modules (payments, orders, products, admin) in one deployable codebase."
 
@@ -126,7 +126,7 @@ sections:
       - title: "Talk to the Person Who'll Use the Software"
         body: "The order workflow got right the first real iteration because it was modeled on the admin's actual routine — including that they're not always at a screen — not on an assumption of how an online store \"should\" work."
       - title: "Know When Not to Build From Scratch"
-        body: "A foundation like Medusa.js would have provided commerce features — inventory, returns, an admin API — that were instead hand-built. Build custom when the client needs control a platform doesn't give you; reach for existing infrastructure when the commerce logic itself isn't the differentiator."
+        body: "A foundation like Medusa.js would have provided commerce features — inventory, returns, an admin API — that were instead hand-built in v1 and v2, which is why v3 moved onto it. Build custom when the client needs control a platform doesn't give you; reach for existing infrastructure when the commerce logic itself isn't the differentiator."
       - title: "Why I Build Financial Technology"
         body: "My why is giving people clarity and control over money. Here, the person on the other side of that isn't a shopper — it's the merchant. Confirming payment by webhook rather than assuming it went through, and keying every payment to one unique reference, gave the client clarity on what money had actually come in — and control over their own sales channel for the first time."
 ---
