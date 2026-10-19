@@ -9,7 +9,7 @@ const facts = [
   },
   {
     label: "Leading",
-    value: "Software Lead at Graceland eCommerce, leading a full-stack online store",
+    value: "Lead Software Engineer at Graceland Baby Products, leading a full-stack online store",
   },
 ];
 

@@ -44,7 +44,7 @@ sections:
     body: |
       My manager raised this alongside other work. I took it because it sits squarely on why I build software: tools that help advisors give members confidence and clarity in their financial plans, with business value for leadership on top.
 
-      I was assigned the whole feature and asked to propose the solution. I wrote the Azure DevOps feature and user stories, then built the .NET REST API service while another software developer built the UI screens. Our Product Owner approved every piece of UI wording, a senior software developer signed off on each design decision I made, and I demoed incrementally to advisors and stakeholders.
+      I was assigned the whole feature and asked to propose the solution. I wrote the Azure DevOps feature and user stories, then built the .NET REST API service while another software developer built the UI screens. I wrote unit tests for the API's service logic and validation, and releases ran through Azure DevOps pipelines that block deployment when tests fail. Our Product Owner approved every piece of UI wording, a senior software developer signed off on each design decision I made, and I demoed incrementally to advisors and stakeholders.
     callouts:
       - icon: "🤝"
         title: "Who was involved"
@@ -104,7 +104,7 @@ sections:
   - type: statGrid
     eyebrow: "Outcome"
     heading: "First month in production"
-    subheading: "Delivered in August 2026, tested end to end by QA, with no new service added."
+    subheading: "Delivered in August 2026, unit tested, tested end to end by QA, and with no new service added."
     stats:
       - value: "948"
         body: "Financial goals created by advisors in the first month."
